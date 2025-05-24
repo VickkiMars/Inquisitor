@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Inquisitor</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: Inter, "Noto Sans", sans-serif; /* Consistent font from original design */
+      }
+
+      /* Glitch animation styles */
+      .glitch {
+        position: relative;
+        color: #111418; /* Black as requested */
+        font-weight: 900; /* Extra bold for impact */
+        animation: glitch-main 3s infinite linear alternate;
+        text-shadow:
+          0.05em 0 0 rgba(255, 0, 0, 0.75), /* Red component */
+          -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), /* Green component */
+          0.025em 0.05em 0 rgba(0, 0, 255, 0.75); /* Blue component */
+      }
+
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text); /* Uses the text content of the element */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #111418; /* Black */
+        background: inherit; /* Inherit background to allow 'cutting' parts */
+        overflow: hidden;
+      }
+
+      .glitch::before {
+        left: 2px;
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75); /* Red shadow for before */
+        animation: glitch-layer-1 3s infinite linear alternate-reverse;
+      }
+
+      .glitch::after {
+        left: -2px;
+        text-shadow: -0.05em 0 0 rgba(0, 255, 0, 0.75); /* Green shadow for after */
+        animation: glitch-layer-2 3s infinite linear alternate-reverse;
+      }
+
+      /* Keyframes for the glitch effects */
+      @keyframes glitch-main {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-5px, 5px);
+        }
+        40% {
+          transform: translate(-5px, -5px);
+        }
+        60% {
+          transform: translate(5px, 5px);
+        }
+        80% {
+          transform: translate(5px, -5px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      @keyframes glitch-layer-1 {
+        0% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+        10% {
+          clip: rect(20px, 9999px, 10px, 0);
+        }
+        20% {
+          clip: rect(80px, 9999px, 50px, 0);
+        }
+        30% {
+          clip: rect(10px, 9999px, 120px, 0);
+        }
+        40% {
+          clip: rect(90px, 9999px, 30px, 0);
+        }
+        50% {
+          clip: rect(50px, 9999px, 110px, 0);
+        }
+        60% {
+          clip: rect(120px, 9999px, 40px, 0);
+        }
+        70% {
+          clip: rect(30px, 9999px, 100px, 0);
+        }
+        80% {
+          clip: rect(110px, 9999px, 60px, 0);
+        }
+        90% {
+          clip: rect(40px, 9999px, 70px, 0);
+        }
+        100% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+      }
+
+      @keyframes glitch-layer-2 {
+        0% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+        15% {
+          clip: rect(30px, 9999px, 60px, 0);
+        }
+        35% {
+          clip: rect(90px, 9999px, 20px, 0);
+        }
+        55% {
+          clip: rect(10px, 9999px, 80px, 0);
+        }
+        75% {
+          clip: rect(70px, 9999px, 40px, 0);
+        }
+        95% {
+          clip: rect(20px, 9999px, 110px, 0);
+        }
+        100% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#111418]">
+    <div class="relative flex size-full min-h-screen flex-col items-center justify-center group/design-root overflow-x-hidden">
+      <header class="absolute top-0 left-0 right-0 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#111418]">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path></svg>
+          </div>
+          <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Inquisitor</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-[#111418] text-sm font-medium leading-normal hover:text-[#0c7ff2]" href="#">Home</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal hover:text-[#0c7ff2]" href="#">Generate</a>
+            <a class="text-[#111418] text-sm font-medium leading-normal hover:text-[#0c7ff2]" href="#">About</a>
+          </div>
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f0f2f5] text-[#111418] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[#e0e2e5]"
+          >
+            <div class="text-[#111418]" data-icon="Question" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                ></path>
+              </svg>
+            </div>
+            <span class="truncate">Help</span>
+          </button>
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCS-MZv4QqGkazJQLsSvtbuWaCt8yHY8ex1DwI5G45OmZg5DJD1LSp88YoR9nXFsCrimVn0I3Cg-kzWsgod1Rr1bwgGRVciuqPWpgfxqiB4R4X1_a_ZwNPujMcGT4PXJRZ37ca2yS3bwms-0OVcXQ452KEih_5V8eq4wUyC0Zd6qXu3I0C16Y0h_ZyW5ZAIfTTeyRi13Fs9PYX31Iu5WXM6rgcBVwQjUrVrTy0UT7Chl7jOy4OHYCH2MZdz-Qgc6-H3DsDrDCoov1g");'
+          ></div>
+        </div>
+      </header>
+
+      <div class="flex flex-col items-center justify-center text-center p-8">
+        <h1 class="text-[12rem] font-extrabold leading-none tracking-tight text-[#111418] glitch" data-text="404">404</h1>
+        <p class="text-3xl font-bold text-[#111418] mb-4">Page Not Found</p>
+        <p class="text-[1 rem] font-normal text-[#111418] mb-8 max-w-xl leading-relaxed">
+          It seems the <span class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Inquisitor</span> couldn't locate this page. Perhaps it's hidden in the depths of the internet, or maybe it never existed.
+        </p>
+        <div class="flex gap-4">
+          <a
+            href="#"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#000000] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0a6edc]"
+          >
+            <span class="truncate">Return to Sanctuary</span>
+          </a>
+          <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#e0e2e5]"
+            onclick="history.back()"
+          >
+            <span class="truncate">Recalibrate Route</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

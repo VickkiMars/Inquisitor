@@ -1,0 +1,153 @@
+{# templates/error.html #}
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found | Inquisitor{% endblock %}
+
+{% block content %}
+    <style>
+      /* Glitch animation styles */
+      .glitch {
+        position: relative;
+        color: #111418; /* Black */
+        font-weight: 900; /* Extra bold for impact */
+        animation: glitch-main 3s infinite linear alternate;
+        text-shadow:
+          0.05em 0 0 rgba(255, 0, 0, 0.75), /* Red component */
+          -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), /* Green component */
+          0.025em 0.05em 0 rgba(0, 0, 255, 0.75); /* Blue component */
+      }
+
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text); /* Uses the text content of the element */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #111418; /* Black */
+        background: inherit; /* Inherit background to allow 'cutting' parts */
+        overflow: hidden;
+      }
+
+      .glitch::before {
+        left: 2px;
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75); /* Red shadow for before */
+        animation: glitch-layer-1 3s infinite linear alternate-reverse;
+      }
+
+      .glitch::after {
+        left: -2px;
+        text-shadow: -0.05em 0 0 rgba(0, 255, 0, 0.75); /* Green shadow for after */
+        animation: glitch-layer-2 3s infinite linear alternate-reverse;
+      }
+
+      /* Keyframes for the glitch effects */
+      @keyframes glitch-main {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-5px, 5px);
+        }
+        40% {
+          transform: translate(-5px, -5px);
+        }
+        60% {
+          transform: translate(5px, 5px);
+        }
+        80% {
+          transform: translate(5px, -5px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      @keyframes glitch-layer-1 {
+        0% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+        10% {
+          clip: rect(20px, 9999px, 10px, 0);
+        }
+        20% {
+          clip: rect(80px, 9999px, 50px, 0);
+        }
+        30% {
+          clip: rect(10px, 9999px, 120px, 0);
+        }
+        40% {
+          clip: rect(90px, 9999px, 30px, 0);
+        }
+        50% {
+          clip: rect(50px, 9999px, 110px, 0);
+        }
+        60% {
+          clip: rect(120px, 9999px, 40px, 0);
+        }
+        70% {
+          clip: rect(30px, 9999px, 100px, 0);
+        }
+        80% {
+          clip: rect(110px, 9999px, 60px, 0);
+        }
+        90% {
+          clip: rect(40px, 9999px, 70px, 0);
+        }
+        100% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+      }
+
+      @keyframes glitch-layer-2 {
+        0% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+        15% {
+          clip: rect(30px, 9999px, 60px, 0);
+        }
+        35% {
+          clip: rect(90px, 9999px, 20px, 0);
+        }
+        55% {
+          clip: rect(10px, 9999px, 80px, 0);
+        }
+        75% {
+          clip: rect(70px, 9999px, 40px, 0);
+        }
+        95% {
+          clip: rect(20px, 9999px, 110px, 0);
+        }
+        100% {
+          clip: rect(100px, 9999px, 100px, 0);
+        }
+      }
+    </style>
+
+    <div class="flex flex-col items-center justify-center min-h-screen text-center p-8">
+        <h1 class="text-[12rem] font-extrabold leading-none tracking-tight text-[#111418] glitch" data-text="404">404</h1>
+        <p class="text-3xl font-bold text-[#111418] mb-4">Page Not Found</p>
+        
+        {% if message %}
+            <p class="text-xl font-normal text-[#111418] mb-8 max-w-xl leading-relaxed">
+                {{ message }}
+            </p>
+        {% else %}
+            <p class="text-[1rem] font-normal text-[#111418] mb-8 max-w-xl leading-relaxed">
+          It seems the <span class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Inquisitor</span> couldn't locate this page. Perhaps it's hidden in the depths of the internet, or maybe it never existed.
+        </p>
+        {% endif %}
+       
+        <div class="flex gap-4">
+            <a href="{{ url_for('index') }}" 
+               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0a6edc]">
+                Return to Sanctuary
+            </a>
+            <button onclick="history.back()"
+               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#e0e2e5]">
+                Recalibrate Route
+            </button>
+        </div>
+    </div>
+{% endblock %}

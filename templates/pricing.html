@@ -1,0 +1,169 @@
+{# templates/pricing.html #}
+{% extends "base.html" %}
+
+{% block title %}Pricing - Inquisitor{% endblock %}
+
+{% block content %}
+    <div class="flex flex-col items-center justify-center p-8">
+        <div class="text-center mb-12 max-w-3xl">
+            <h2 class="text-[#111418] text-4xl sm:text-5xl font-extrabold leading-tight tracking-[-0.025em] mb-4">
+                Simple & Transparent Pricing
+            </h2>
+            <p class="text-[#60758a] text-lg sm:text-xl font-normal leading-normal">
+                Choose the plan that best fits your needs, from casual question generation to advanced content analysis.
+            </p>
+        </div>
+
+        <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {# Pricing Card 1: Free Tier #}
+            <div class="bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5] flex flex-col items-center text-center">
+                <h3 class="text-[#0c7ff2] text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Free</h3>
+                <p class="text-[#111418] text-5xl font-extrabold mb-6">
+                    $0<span class="text-xl font-medium text-[#60758a]">/month</span>
+                </p>
+                <ul class="list-none p-0 mb-8 text-[#343a40] text-base leading-relaxed space-y-3">
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#28a745] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        50 Questions/month
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#28a745] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Basic Question Types
+                    </li>
+                    <li class="flex items-center justify-center text-[#60758a]">
+                        <svg class="w-5 h-5 text-gray-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path></svg>
+                        Advanced Analytics
+                    </li>
+                    <li class="flex items-center justify-center text-[#60758a]">
+                        <svg class="w-5 h-5 text-gray-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path></svg>
+                        Priority Support
+                    </li>
+                </ul>
+                <a href="#"
+                   class="w-full flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#e0e2e5] transition-colors duration-200">
+                    <span class="truncate">Start for Free</span>
+                </a>
+            </div>
+
+            {# Pricing Card 2: Pro Tier (Highlighted) #}
+            <div class="bg-[#0c7ff2] text-white p-8 rounded-lg shadow-xl border border-[#0c7ff2] flex flex-col items-center text-center transform scale-105 relative z-10">
+                <p class="absolute -top-3 right-3 bg-[#28a745] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Popular</p>
+                <h3 class="text-white text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Pro</h3>
+                <p class="text-white text-5xl font-extrabold mb-6">
+                    $39.99<span class="text-xl font-medium text-white">/month</span>
+                </p>
+                <ul class="list-none p-0 mb-8 text-white text-base leading-relaxed space-y-3">
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Unlimited Questions
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        All Question Types
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Advanced Analytics
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Standard Support
+                    </li>
+                </ul>
+                <button id="checkout-pro-btn"
+                   class="w-full flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white text-[#0c7ff2] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-colors duration-200"
+                   data-price-id="{{ config['STRIPE_PRICE_ID_PRO'] }}">
+                    <span class="truncate">Choose Pro</span>
+                </button>
+            </div>
+
+            {# Pricing Card 3: Enterprise Tier #}
+            <div class="bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5] flex flex-col items-center text-center">
+                <h3 class="text-[#0c7ff2] text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Enterprise</h3>
+                <p class="text-[#111418] text-5xl font-extrabold mb-6">
+                    $250<span class="text-xl font-medium text-[#60758a]">/month</span>
+                </p>
+                <ul class="list-none p-0 mb-8 text-[#343a40] text-base leading-relaxed space-y-3">
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#28a745] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Everything in Pro
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#28a745] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Dedicated Account Manager
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#28a745] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Custom Integrations
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <svg class="w-5 h-5 text-[#28a745] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        24/7 Priority Support
+                    </li>
+                </ul>
+                <button id="checkout-enterprise-btn"
+                   class="w-full flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#007bff] transition-colors duration-200"
+                   data-price-id="{{ config['STRIPE_PRICE_ID_ENTERPRISE_CONTACT'] }}">
+                    <span class="truncate">Contact Sales</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts_extra %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe({{ config['STRIPE_PUBLISHABLE_KEY']|tojson }});
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const proButton = document.getElementById('checkout-pro-btn');
+            const enterpriseButton = document.getElementById('checkout-enterprise-btn');
+
+            if (proButton) {
+                proButton.addEventListener('click', function() {
+                    handleCheckout(this.dataset.priceId);
+                });
+            }
+
+            if (enterpriseButton) {
+                enterpriseButton.addEventListener('click', function() {
+                    // For enterprise, you might want to redirect to a contact form
+                    // or use a specific Stripe Price ID for a "contact sales" placeholder
+                    handleCheckout(this.dataset.priceId);
+                });
+            }
+
+            async function handleCheckout(priceId) {
+                try {
+                    const response = await fetch('/create-checkout-session', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ priceId: priceId }),
+                    });
+
+                    const session = await response.json();
+
+                    if (session.error) {
+                        console.error('Error creating checkout session:', session.error.message);
+                        // Display error message to user (e.g., a modal or alert)
+                        alert('Error: ' + session.error.message);
+                    } else if (session.checkout_url) {
+                        // Redirect to Stripe Checkout
+                        window.location.href = session.checkout_url;
+                    } else {
+                        console.error('Unexpected response from checkout session creation:', session);
+                        alert('An unexpected error occurred. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Network or server error:', error);
+                    alert('Could not initiate checkout. Please check your connection and try again.');
+                }
+            }
+        });
+    </script>
+{% endblock %}

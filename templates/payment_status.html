@@ -1,0 +1,45 @@
+{# templates/payment_status.html #}
+{% extends "base.html" %}
+
+{% block title %}Payment Status - Inquisitor{% endblock %}
+
+{% block content %}
+    <div class="flex flex-col items-center justify-center min-h-[400px] text-center p-8">
+        {% if status == 'success' %}
+            <div class="size-20 mb-6 text-[#28a745]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,73.34-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,138.34l50.34-50.34a8,8,0,0,1,11.32,11.32Z"></path>
+                </svg>
+            </div>
+            <h2 class="text-[#111418] text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Payment Successful!</h2>
+            <p class="text-[#60758a] text-lg font-normal leading-normal mb-6">
+                Thank you for your purchase. Your plan has been activated.
+            </p>
+        {% elif status == 'cancelled' %}
+            <div class="size-20 mb-6 text-yellow-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-4-96V80a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm4,48a12,12,0,1,1,12-12A12,12,0,0,1,128,172Z"></path>
+                </svg>
+            </div>
+            <h2 class="text-[#111418] text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Payment Cancelled</h2>
+            <p class="text-[#60758a] text-lg font-normal leading-normal mb-6">
+                {{ message }}
+            </p>
+        {% else %}
+            <div class="size-20 mb-6 text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M228,128A100,100,0,1,1,128,28,100.11,100.11,0,0,1,228,128Zm-16,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128ZM164,92.69A8,8,0,0,0,152.69,81.34L128,106.06,103.31,81.34A8,8,0,0,0,92,92.69L116.69,117.34,92,142a8,8,0,0,0,11.31,11.31L128,128.69l24.69,24.66a8,8,0,0,0,11.31-11.31L139.31,117.34Z"></path>
+                </svg>
+            </div>
+            <h2 class="text-[#111418] text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Payment Error</h2>
+            <p class="text-[#60758a] text-lg font-normal leading-normal mb-6">
+                {{ message if message else 'An unknown error occurred during payment.' }}
+            </p>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}"
+           class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#007bff]">
+            Back to Homepage
+        </a>
+    </div>
+{% endblock %}

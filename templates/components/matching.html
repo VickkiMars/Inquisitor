@@ -1,0 +1,13 @@
+{# templates/components/matching.html #}
+<div class="matching-pairs mt-3 grid grid-cols-2 gap-4 border border-[#dee2e6] rounded-md p-4 bg-gray-50">
+    <div class="col-span-1 font-bold text-[#343a40]">Term</div>
+    <div class="col-span-1 font-bold text-[#343a40]">Definition</div>
+    {% for term, definition in question.pairs.items() %}
+    <div class="col-span-1 p-2 bg-white border border-dashed border-[#ccc] rounded-md text-[#343a40]">{{ term }}</div>
+    <div class="col-span-1 p-2 bg-white border border-dashed border-[#ccc] rounded-md text-[#343a40]">
+        {# In a real matching quiz, you'd have dropdowns or drag-and-drop here #}
+        <input type="text" placeholder="Match definition..." class="w-full text-sm p-1 border border-[#dee2e6] rounded-sm text-[#343a40]">
+    </div>
+    {% endfor %}
+    <p class="col-span-2 text-[#60758a] text-sm font-normal leading-normal mt-2">Match the terms with their correct definitions.</p>
+</div>

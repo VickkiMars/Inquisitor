@@ -1,0 +1,53 @@
+{# templates/generate.html #}
+{% extends "base.html" %}
+
+{% block title %}Generate Questions - Inquisitor{% endblock %}
+
+{% block content %}
+    <div class="flex flex-col items-center justify-center min-h-[500px] p-8">
+        <div class="text-center mb-10">
+            <h2 class="text-[#111418] text-4xl sm:text-5xl font-extrabold leading-tight tracking-[-0.025em] mb-4">
+                Unleash Your Custom Questions!
+            </h2>
+            <p class="text-[#60758a] text-lg sm:text-xl font-normal leading-normal max-w-2xl mx-auto">
+                Transform any content into engaging questions. Simply upload a document or paste a link, and let Inquisitor do the rest!
+            </p>
+        </div>
+
+        <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5]">
+            <h3 class="text-[#111418] text-xl font-bold leading-tight tracking-[-0.015em] mb-6 text-center">
+                Get Started
+            </h3>
+
+            <div class="mb-6">
+                <label for="file-upload" class="block text-[#111418] text-sm font-medium mb-2">Upload a Document:</label>
+                <input type="file" id="file-upload" name="document_file" accept=".pdf,.doc,.docx,.txt"
+                       class="block w-full text-sm text-[#343a40]
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-lg file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-[#f0f2f5] file:text-[#111418]
+                              hover:file:bg-[#e0e2e5]
+                              cursor-pointer">
+                <p class="text-[#60758a] text-xs mt-2">Supported formats: PDF, DOCX, TXT.</p>
+            </div>
+
+            <div class="text-center text-[#60758a] text-sm font-medium mb-6">
+                — OR —
+            </div>
+
+            <div class="mb-6">
+                <label for="link-input" class="block text-[#111418] text-sm font-medium mb-2">Enter a Link:</label>
+                <input type="url" id="link-input" name="content_link" placeholder="e.g., https://en.wikipedia.org/wiki/Artificial_intelligence"
+                       class="w-full p-3 border border-[#dee2e6] rounded-lg text-[#343a40] focus:ring-2 focus:ring-[#0c7ff2] focus:border-transparent outline-none transition-all duration-200">
+                <p class="text-[#60758a] text-xs mt-2">Paste a URL to a web page or online document or even a youtube video.</p>
+            </div>
+
+            <button
+                class="w-full flex items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-[#0c7ff2] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#007bff] transition-colors duration-200"
+            >
+                <span class="truncate">Generate Questions Now!</span>
+            </button>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{# templates/components/multiple_choice.html #}
+<div class="options-list mt-3">
+    {% for option in question.options %}
+    <label class="block text-[#343a40] text-sm cursor-pointer p-2 border border-[#e0e0e0] rounded-md hover:bg-[#f0f0f0]">
+        <input type="radio" name="question_{{ index }}" value="{{ option }}" class="mr-2">
+        {{ option }}
+    </label>
+    {% endfor %}
+    <p class="text-[#60758a] text-sm font-normal leading-normal mt-2">Select the best answer from the options below.</p>
+</div>
