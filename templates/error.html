@@ -8,37 +8,37 @@
       /* Glitch animation styles */
       .glitch {
         position: relative;
-        color: #111418; /* Black */
-        font-weight: 900; /* Extra bold for impact */
+        color: #111418;
+        font-weight: 900;
         animation: glitch-main 3s infinite linear alternate;
         text-shadow:
-          0.05em 0 0 rgba(255, 0, 0, 0.75), /* Red component */
-          -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), /* Green component */
-          0.025em 0.05em 0 rgba(0, 0, 255, 0.75); /* Blue component */
+          0.05em 0 0 rgba(255, 0, 0, 0.75),
+          -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+          0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
       }
 
       .glitch::before,
       .glitch::after {
-        content: attr(data-text); /* Uses the text content of the element */
+        content: attr(data-text);
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        color: #111418; /* Black */
-        background: inherit; /* Inherit background to allow 'cutting' parts */
+        color: #111418;
+        background: inherit;
         overflow: hidden;
       }
 
       .glitch::before {
         left: 2px;
-        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75); /* Red shadow for before */
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75);
         animation: glitch-layer-1 3s infinite linear alternate-reverse;
       }
 
       .glitch::after {
         left: -2px;
-        text-shadow: -0.05em 0 0 rgba(0, 255, 0, 0.75); /* Green shadow for after */
+        text-shadow: -0.05em 0 0 rgba(0, 255, 0, 0.75);
         animation: glitch-layer-2 3s infinite linear alternate-reverse;
       }
 
@@ -125,29 +125,29 @@
       }
     </style>
 
-    <div class="flex flex-col items-center justify-center min-h-screen text-center p-8">
-        <h1 class="text-[12rem] font-extrabold leading-none tracking-tight text-[#111418] glitch" data-text="404">404</h1>
-        <p class="text-3xl font-bold text-[#111418] mb-4">Page Not Found</p>
+    <div class="flex flex-col items-center justify-center min-h-screen text-center px-4 py-8 sm:p-8">
+        <!-- Responsive 404 text -->
+        <h1 class="text-[6rem] sm:text-[8rem] md:text-[12rem] font-extrabold leading-none tracking-tight text-[#111418] glitch" data-text="404">404</h1>
+        
+        <!-- Responsive title -->
+        <p class="text-2xl sm:text-3xl font-bold text-[#111418] mb-4">Page Not Found</p>
         
         {% if message %}
-            <p class="text-xl font-normal text-[#111418] mb-8 max-w-xl leading-relaxed">
+            <p class="text-lg sm:text-xl font-normal text-[#111418] mb-6 sm:mb-8 max-w-xl leading-relaxed">
                 {{ message }}
             </p>
         {% else %}
-            <p class="text-[1rem] font-normal text-[#111418] mb-8 max-w-xl leading-relaxed">
-          It seems the <span class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Inquisitor</span> couldn't locate this page. Perhaps it's hidden in the depths of the internet, or maybe it never existed.
-        </p>
+            <p class="text-base sm:text-[1rem] font-normal text-[#111418] mb-6 sm:mb-8 max-w-xl leading-relaxed">
+                It seems the <span class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Inquisitor</span> couldn't locate this page. Perhaps it's hidden in the depths of the internet, or maybe it never existed.
+            </p>
         {% endif %}
        
-        <div class="flex gap-4">
-            <a href="{{ url_for('index') }}" 
-               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0a6edc]">
-                Return to Sanctuary
-            </a>
-            <button onclick="history.back()"
-               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#e0e2e5]">
-                Recalibrate Route
-            </button>
+        <!-- Responsive button group -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto items-center">
+          <a href="{{ url_for('index') }}"
+            class="min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#000000] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0a6edc] flex text-center">
+              Return to Sanctuary
+          </a>
         </div>
     </div>
 {% endblock %}
