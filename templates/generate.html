@@ -3,6 +3,55 @@
 
 {% block title %}Generate Questions - Inquisitor{% endblock %}
 
+{% block head %}
+    {{ super() }}
+    <style>
+        .corner-arcs {
+            position: relative; /* Needed for pseudo-elements positioning */
+            overflow: hidden; /* Ensures arcs don't spill out */
+        }
+
+        /* Top-left arc */
+        .corner-arcs::before {
+            content: '';
+            position: absolute;
+            background: none;
+            border: 1.5px solid black; /* Black arc color and thickness */
+            border-radius: 50%;
+            width: 30px; /* Size of the full circle the arc is part of */
+            height: 30px; /* Size of the full circle the arc is part of */
+            top: -15px; /* Half of height to position arc on corner */
+            left: -15px; /* Half of width to position arc on corner */
+            border-top-color: transparent; /* Hide top part */
+            border-left-color: transparent; /* Hide left part */
+            border-right-color: black; /* Visible part */
+            border-bottom-color: black; /* Visible part */
+            z-index: 10;
+        }
+
+        /* Bottom-right arc */
+        .corner-arcs::after {
+            content: '';
+            position: absolute;
+            background: none;
+            border: 1.5px solid black; /* Black arc color and thickness */
+            border-radius: 50%;
+            width: 30px; /* Size of the full circle the arc is part of */
+            height: 30px; /* Size of the full circle the arc is part of */
+            bottom: -15px; /* Half of height */
+            right: -15px; /* Half of width */
+            border-bottom-color: transparent; /* Hide bottom part */
+            border-right-color: transparent; /* Hide right part */
+            border-top-color: black; /* Visible part */
+            border-left-color: black; /* Visible part */
+            z-index: 10;
+        }
+
+        /* If you need all four corners, you'd add more pseudo-elements or a more complex CSS solution.
+           For this implementation, top-left and bottom-right are covered by ::before and ::after. */
+    </style>
+{% endblock %}
+
 {% block content %}
     <div class="flex flex-col items-center justify-center min-h-[500px] p-8">
         <div class="text-center mb-10">
@@ -10,44 +59,362 @@
                 Unleash Your Custom Questions!
             </h2>
             <p class="text-[#60758a] text-lg sm:text-xl font-normal leading-normal max-w-2xl mx-auto">
-                Transform any content into engaging questions. Simply upload a document or paste a link, and let Inquisitor do the rest!
+                Transform any content into engaging questions. Simply <span id="textUploadDocument" class="text-link-blue cursor-pointer hover:underline">upload a document</span> or <span id="textPasteLink" class="text-link-blue cursor-pointer hover:underline">paste a link</span>, and let Inquisitor do the rest!
             </p>
         </div>
 
-        <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5]">
-            <h3 class="text-[#111418] text-xl font-bold leading-tight tracking-[-0.015em] mb-6 text-center">
-                Get Started
-            </h3>
-
-            <div class="mb-6">
-                <label for="file-upload" class="block text-[#111418] text-sm font-medium mb-2">Upload a Document:</label>
-                <input type="file" id="file-upload" name="document_file" accept=".pdf,.doc,.docx,.txt"
-                       class="block w-full text-sm text-[#343a40]
-                              file:mr-4 file:py-2 file:px-4
-                              file:rounded-lg file:border-0
-                              file:text-sm file:font-semibold
-                              file:bg-[#f0f2f5] file:text-[#111418]
-                              hover:file:bg-[#e0e2e5]
-                              cursor-pointer">
-                <p class="text-[#60758a] text-xs mt-2">Supported formats: PDF, DOCX, TXT.</p>
-            </div>
-
-            <div class="text-center text-[#60758a] text-sm font-medium mb-6">
-                — OR —
-            </div>
-
-            <div class="mb-6">
-                <label for="link-input" class="block text-[#111418] text-sm font-medium mb-2">Enter a Link:</label>
-                <input type="url" id="link-input" name="content_link" placeholder="e.g., https://en.wikipedia.org/wiki/Artificial_intelligence"
-                       class="w-full p-3 border border-[#dee2e6] rounded-lg text-[#343a40] focus:ring-2 focus:ring-[#0c7ff2] focus:border-transparent outline-none transition-all duration-200">
-                <p class="text-[#60758a] text-xs mt-2">Paste a URL to a web page or online document or even a youtube video.</p>
-            </div>
-
-            <button
-                class="w-full flex items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-[#0c7ff2] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#007bff] transition-colors duration-200"
-            >
-                <span class="truncate">Generate Questions Now!</span>
+        <div id="toggleButtons" class="flex space-x-4 mb-8">
+            <button id="fileButton"
+                    class="px-6 py-3 rounded-lg text-inactive-text text-base font-semibold transition-colors duration-200
+                           bg-button-grey hover:bg-button-grey-hover focus:outline-none focus:ring-2 focus:ring-[#0c7ff2] focus:ring-opacity-50">
+                File
+            </button>
+            <button id="linkButton"
+                    class="px-6 py-3 rounded-lg text-inactive-text text-base font-semibold transition-colors duration-200
+                           bg-button-grey hover:bg-button-grey-hover focus:outline-none focus:ring-2 focus:ring-[#0c7ff2] focus:ring-opacity-50">
+                Link
             </button>
         </div>
+
+        <div id="fileCard" class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5] mb-8 flex flex-col justify-between corner-arcs">
+            <div> <h3 class="text-[#111418] text-xl font-bold leading-tight tracking-[-0.015em] mb-6 text-center">
+                    Upload a Document
+                </h3>
+
+                <div class="mb-6">
+                    <label for="file-upload" class="block text-[#111418] text-sm font-medium mb-2">Select your document:</label>
+                    <input type="file" id="file-upload" name="document_file" accept=".pdf,.doc,.docx,.txt"
+                           class="block w-full text-sm text-[#343a40]
+                                  file:mr-4 file:py-2 file:px-4
+                                  file:rounded-lg file:border-0
+                                  file:text-sm file:font-semibold
+                                  file:bg-[#f0f2f5] file:text-[#111418]
+                                  hover:file:bg-[#e0e2e5]
+                                  cursor-pointer">
+                    <p class="text-[#60758a] text-xs mt-2">Supported formats: PDF, DOCX, TXT.</p>
+                </div>
+
+                <div class="mb-6">
+                    <label for="num-questions-file" class="block text-[#111418] text-sm font-medium mb-2">Number of Questions:</label>
+                    <input type="number" id="num-questions-file" name="num_questions_file" placeholder="e.g., 5" value="5" min="1" max="20"
+                           class="w-full p-3 border border-[#dee2e6] rounded-lg text-[#343a40] focus:ring-2 focus:ring-[#0c7ff2] focus:border-transparent outline-none transition-all duration-200">
+                    <p class="text-[#60758a] text-xs mt-2">Specify how many questions you'd like (1-20).</p>
+                </div>
+            </div>
+            <button id="generateFileBtn"
+                class="w-full flex items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-[#0c7ff2] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#007bff] transition-colors duration-200"
+            >
+                <span class="truncate">Generate Questions from File!</span>
+            </button>
+        </div>
+
+        <div id="linkCard" class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5] hidden flex-col justify-between corner-arcs">
+            <div> <h3 class="text-[#111418] text-xl font-bold leading-tight tracking-[-0.015em] mb-6 text-center">
+                    Enter a Link
+                </h3>
+
+                <div class="mb-6">
+                    <label for="link-input" class="block text-[#111418] text-sm font-medium mb-2">Paste your link here:</label>
+                    <input type="url" id="link-input" name="content_link" placeholder="e.g., https://en.wikipedia.org/wiki/Artificial_intelligence"
+                           class="w-full p-3 border border-[#dee2e6] rounded-lg text-[#343a40] focus:ring-2 focus:ring-[#0c7ff2] focus:border-transparent outline-none transition-all duration-200">
+                    <p class="text-[#60758a] text-xs mt-2">Paste a URL to a web page, online document, or even a YouTube video.</p>
+                </div>
+
+                <div class="mb-6">
+                    <label for="num-questions-link" class="block text-[#111418] text-sm font-medium mb-2">Number of Questions:</label>
+                    <input type="number" id="num-questions-link" name="num_questions_link" placeholder="e.g., 5" value="5" min="1" max="20"
+                           class="w-full p-3 border border-[#dee2e6] rounded-lg text-[#343a40] focus:ring-2 focus:ring-[#0c7ff2] focus:border-transparent outline-none transition-all duration-200">
+                    <p class="text-[#60758a] text-xs mt-2">Specify how many questions you'd like (1-20).</p>
+                </div>
+            </div>
+            <button id="generateLinkBtn"
+                class="w-full flex items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-[#0c7ff2] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#007bff] transition-colors duration-200"
+            >
+                <span class="truncate">Generate Questions from Link!</span>
+            </button>
+        </div>
+
+        <div id="progressBarContainer" class="w-full max-w-md bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5] hidden flex-col items-center justify-center text-center">
+            <div class="w-full mb-4">
+                <h3 id="progressBarStageText" class="text-[#111418] text-xl font-bold leading-tight tracking-[-0.015em] mb-2">
+                    Loading...
+                </h3>
+                <p class="text-[#60758a] text-sm mb-4">This typically takes around 60 seconds for complex content, as advanced AI models are at work.</p>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                    <div id="progressBarFill" class="bg-[#0c7ff2] h-4 rounded-full transition-all duration-100 ease-linear" style="width: 0%;"></div>
+                </div>
+                <p id="timeRemainingText" class="text-[#60758a] text-xs mt-2">Time remaining: 60 seconds</p>
+            </div>
+            <p id="dynamicTip" class="text-[#60758a] text-sm italic mt-4"></p>
+        </div>
+
     </div>
+
+    <script>
+        // Custom Tailwind CSS Configuration for colors (only if you're using CDN and not a build process)
+        // If you are using a build process with tailwind.config.js, this block can be removed.
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'demarcator-grey': '#f0f2f5',
+                        'button-grey': '#e2e8f0', // Light grey for inactive
+                        'button-grey-hover': '#cbd5e1', // Hover state
+                        'button-grey-active': '#64748b', // Darker grey for active state (slate-500)
+                        'active-text': '#f8fafc', // text-slate-50 for active button text
+                        'inactive-text': '#111418', // text-[#111418] for inactive button text
+                        'link-blue': '#0c7ff2', // The original primary blue color for clickable text
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileButton = document.getElementById('fileButton');
+            const linkButton = document.getElementById('linkButton');
+            const toggleButtonsDiv = document.getElementById('toggleButtons');
+            const fileCard = document.getElementById('fileCard');
+            const linkCard = document.getElementById('linkCard');
+            const generateFileBtn = document.getElementById('generateFileBtn');
+            const generateLinkBtn = document.getElementById('generateLinkBtn');
+
+            const textUploadDocument = document.getElementById('textUploadDocument');
+            const textPasteLink = document.getElementById('textPasteLink');
+
+            const progressBarContainer = document.getElementById('progressBarContainer');
+            const progressBarStageText = document.getElementById('progressBarStageText');
+            const progressBarFill = document.getElementById('progressBarFill');
+            const timeRemainingText = document.getElementById('timeRemainingText');
+            const dynamicTip = document.getElementById('dynamicTip');
+
+            let currentActiveCard = fileCard;
+            let progressInterval;
+            let currentProgressTime = 0;
+            const totalProgressDuration = 60; // seconds
+
+            const stages = [
+                { duration: 10, text: "Uploading Document / Fetching Link..." },
+                { duration: 25, text: "Analyzing content for key information..." },
+                { duration: 20, text: "Generating diverse questions with AI..." },
+                { duration: 5,  text: "Finalizing and preparing your questions..." }
+            ];
+            let accumulatedDuration = 0;
+
+            const tips = [
+                "Tip: For best results, use well-structured documents.",
+                "Did you know Inquisitor uses advanced AI models to understand context?",
+                "AI is constantly evolving to help us learn and create faster.",
+                "Pro-tip: You can paste a YouTube link too!",
+                "Inquisitor helps you create engaging educational materials."
+            ];
+            let tipIndex = 0;
+            let tipInterval;
+
+            function setActiveButton(activeBtn, inactiveBtn) {
+                activeBtn.classList.add('bg-button-grey-active', 'text-active-text');
+                activeBtn.classList.remove('bg-button-grey', 'hover:bg-button-grey-hover', 'text-inactive-text');
+
+                inactiveBtn.classList.remove('bg-button-grey-active', 'text-active-text');
+                inactiveBtn.classList.add('bg-button-grey', 'hover:bg-button-grey-hover', 'text-inactive-text');
+            }
+
+            function showCard(cardToShow) {
+                currentActiveCard = cardToShow;
+
+                if (cardToShow === fileCard) {
+                    fileCard.classList.remove('hidden');
+                    fileCard.classList.add('flex', 'flex-col');
+                    linkCard.classList.add('hidden');
+                    setActiveButton(fileButton, linkButton);
+                } else if (cardToShow === linkCard) {
+                    linkCard.classList.remove('hidden');
+                    linkCard.classList.add('flex', 'flex-col');
+                    fileCard.classList.add('hidden');
+                    setActiveButton(linkButton, fileButton);
+                }
+            }
+
+            function startProgressBar() {
+                // Hide active card and main toggle buttons
+                currentActiveCard.classList.add('hidden');
+                toggleButtonsDiv.classList.add('hidden');
+
+                // Show progress bar
+                progressBarContainer.classList.remove('hidden');
+                progressBarContainer.classList.add('flex', 'flex-col');
+
+                currentProgressTime = 0;
+                accumulatedDuration = 0;
+                progressBarFill.style.width = '0%';
+                timeRemainingText.textContent = `Time remaining: ${totalProgressDuration} seconds`;
+
+                // Start dynamic tips
+                tipIndex = 0;
+                dynamicTip.textContent = tips[tipIndex];
+                tipInterval = setInterval(() => {
+                    tipIndex = (tipIndex + 1) % tips.length;
+                    dynamicTip.textContent = tips[tipIndex];
+                }, 5000);
+
+                progressInterval = setInterval(() => {
+                    currentProgressTime += 0.1;
+                    const percentage = (currentProgressTime / totalProgressDuration) * 100;
+                    progressBarFill.style.width = `${percentage}%`;
+
+                    const remainingTime = Math.max(0, totalProgressDuration - Math.ceil(currentProgressTime));
+                    timeRemainingText.textContent = `Time remaining: ${remainingTime} seconds`;
+
+                    let currentStageText = "Processing...";
+                    let stageProgress = 0;
+                    for (let i = 0; i < stages.length; i++) {
+                        stageProgress += stages[i].duration;
+                        if (currentProgressTime <= stageProgress) {
+                            currentStageText = stages[i].text;
+                            break;
+                        }
+                    }
+                    progressBarStageText.textContent = currentStageText;
+
+                    if (currentProgressTime >= totalProgressDuration) {
+                        endProgressBar();
+                    }
+                }, 100);
+            }
+
+            function endProgressBar() {
+                clearInterval(progressInterval);
+                clearInterval(tipInterval);
+
+                // Hide progress bar
+                progressBarContainer.classList.add('hidden');
+                progressBarContainer.classList.remove('flex', 'flex-col');
+
+                // Show the last active card again (or transition to results page/card)
+                showCard(currentActiveCard);
+                // Re-enable toggle buttons
+                toggleButtonsDiv.classList.remove('hidden');
+
+                // In a real application, you would now fetch or display the generated questions.
+                // For demonstration, we just reset the UI.
+            }
+
+
+            // Initial display: Show File Card by default and set "File" button as active
+            showCard(fileCard);
+
+            // Event listeners for the main toggle buttons
+            fileButton.addEventListener('click', function() {
+                showCard(fileCard);
+            });
+
+            linkButton.addEventListener('click', function() {
+                showCard(linkCard);
+            });
+
+            // Event listeners for the new clickable text spans
+            textUploadDocument.addEventListener('click', function() {
+                showCard(fileCard);
+            });
+
+            textPasteLink.addEventListener('click', function() {
+                showCard(linkCard);
+            });
+
+            // --- Updated Question Generation Logic ---
+            // Replaced the placeholder logic with the actual fetch calls and redirection
+
+            generateFileBtn.addEventListener('click', async function(event) {
+                event.preventDefault();
+
+                const fileInput = document.getElementById('file-upload');
+                const numQuestions = parseInt(document.getElementById('num-questions-file').value);
+
+                if (fileInput.files.length === 0) {
+                    alert('Please select a file to upload.');
+                    return;
+                }
+                if (isNaN(numQuestions) || numQuestions < 1 || numQuestions > 20) {
+                    alert('Please enter a valid number of questions between 1 and 20.');
+                    return;
+                }
+
+                startProgressBar();
+
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]); // Changed 'document_file' to 'file' for consistency with common API patterns
+                formData.append('num_questions', numQuestions);
+
+                try {
+                    const response = await fetch('/api/generate/file', { // Corrected endpoint as per previous conversation
+                        method: 'POST',
+                        body: formData,
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Unknown error during file generation.');
+                    }
+
+                    const data = await response.json();
+                    console.log('Generated Data from File:', data);
+                    // Assuming the backend saves questions to questions.json and then redirects,
+                    // or provides a way to view them.
+                    window.location.href = '/questions/questions.json'; // Redirect to view questions
+                } catch (error) {
+                    console.error('Error generating questions from file:', error);
+                    alert('Failed to generate questions from file: ' + error.message);
+                    endProgressBar(); // End progress bar on error as well
+                }
+            });
+
+            generateLinkBtn.addEventListener('click', async function(event) {
+                event.preventDefault();
+
+                const linkInput = document.getElementById('link-input');
+                const userLink = linkInput.value;
+                const numQuestions = parseInt(document.getElementById('num-questions-link').value);
+
+                if (!userLink) {
+                    alert('Please enter a link.');
+                    return;
+                }
+                if (isNaN(numQuestions) || numQuestions < 1 || numQuestions > 20) {
+                    alert('Please enter a valid number of questions between 1 and 20.');
+                    return;
+                }
+
+                startProgressBar();
+
+                let payload = {
+                    url: userLink,
+                    num_questions: numQuestions
+                };
+
+                try {
+                    const response = await fetch('/api/generate/url', { // Corrected endpoint as per previous conversation
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Unknown error during URL generation.');
+                    }
+
+                    const data = await response.json();
+                    console.log('Generated Data from URL:', data);
+                    // Assuming the backend saves questions to questions.json and then redirects,
+                    // or provides a way to view them.
+                    window.location.href = '/questions/questions.json'; // Redirect to view questions
+                } catch (error) {
+                    console.error('Error generating questions from link:', error);
+                    alert('Failed to generate questions from link: ' + error.message);
+                    endProgressBar(); // End progress bar on error as well
+                }
+            });
+        });
+    </script>
 {% endblock %}

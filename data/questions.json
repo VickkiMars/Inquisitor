@@ -1,0 +1,53 @@
+{
+  "topic": "The Tyranny of Thirty",
+  "questions": [
+    {
+      "type": "short_answer",
+      "question": "According to the text, what is the 'pernicious deadline' affecting ambitious twenty-somethings?",
+      "answer": "Making it by thirty.",
+      "explanation": "The text explicitly states that the 'tyranny of thirty' has become a significant deadline."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which of the following best describes the central idea of the text?",
+      "options": [
+        "The importance of achieving success before turning thirty.",
+        "A critique of the societal pressure to achieve success by age thirty.",
+        "An analysis of the careers of successful individuals who started young.",
+        "A comparison of different career paths for ambitious twenty-somethings."
+      ],
+      "answer": "A critique of the societal pressure to achieve success by age thirty.",
+      "explanation": "The text focuses on the negative impact of the 'tyranny of thirty' on young people."
+    },
+    {
+      "type": "long_answer",
+      "question": "Analyze the impact of the '30 Under 30' concept on the career expectations and mental well-being of young professionals. How does the text portray this impact, and what are some potential counterarguments or alternative perspectives?",
+      "answer": "The text portrays the '30 Under 30' concept as creating undue pressure and anxiety among young professionals, leading to a sense of inadequacy if they haven't achieved significant success by that age. It suggests this pressure can be detrimental to their mental well-being. Alternative perspectives might argue that such lists can be motivational for some individuals, providing benchmarks and inspiration. However, the text primarily focuses on the negative consequences of this artificial deadline.",
+      "explanation": "This response requires synthesizing information from the text and considering potential counterarguments, encouraging critical thinking about the topic."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which of the following inferences can be BEST supported by the information provided in the text?",
+      "options": [
+        "Success is guaranteed if achieved before the age of 30.",
+        "Significant achievements are possible for individuals in their twenties.",
+        "Becoming a billionaire is easier in one's twenties than in later life.",
+        "Artistic success is typically achieved later in life."
+      ],
+      "answer": "Significant achievements are possible for individuals in their twenties.",
+      "explanation": "The text highlights examples of individuals achieving success in their twenties, suggesting this is a period of potential for significant accomplishment."
+    },
+    {
+      "type": "short_answer",
+      "question": "Based on the provided information, what common theme can be identified among the accomplishments of MrBeast, the Collison brothers, and Kehinde Wiley?",
+      "answer": "Early success/achievement in their respective fields.",
+      "explanation": "All three examples demonstrate notable achievements attained before the age of 30."
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "The examples of MrBeast, the Collison brothers, and Kehinde Wiley suggest that impactful contributions can be made during one's _______ years.",
+      "answer": "twenties",
+      "explanation": "The text uses these individuals as examples of accomplishments during this specific age range."
+    }
+  ]
+}

@@ -1,0 +1,2319 @@
+2025-05-29 16:14:34,481 - INFO - Input data fetched(app.py:174)
+2025-05-29 16:14:35,218 - ERROR - Error: File 'questions.json' not found.(app.py:36)
+2025-05-29 16:29:25,014 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:30:55,253 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:30:55,916 - ERROR - ('Member-only story\nCancelling 30 Under 30\nThe Tyranny of Thirty\nThe Artificial Deadline That’s Ruining a Generation\n→ Read the next essay: Your Thirties Aren’t What They Used to Be\nThe tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.\nAll of them chanting the same frantic mantra:\n“I gotta make it by thirty.”\nThirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.\nAnd there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:\n- Taylor Swift won her first Album of the Year Grammy at age 20.\n- Mr. Beast became the world’s most subscribed YouTuber at age 26.\n- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.\n- Kehinde Wiley began his iconic Rumors of War series at age 29.', 'The Tyranny of Thirty')(base.py:31)
+2025-05-29 16:32:45,214 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:32:45,819 - ERROR - ('Member-only story\nCancelling 30 Under 30\nThe Tyranny of Thirty\nThe Artificial Deadline That’s Ruining a Generation\n→ Read the next essay: Your Thirties Aren’t What They Used to Be\nThe tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.\nAll of them chanting the same frantic mantra:\n“I gotta make it by thirty.”\nThirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.\nAnd there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:\n- Taylor Swift won her first Album of the Year Grammy at age 20.\n- Mr. Beast became the world’s most subscribed YouTuber at age 26.\n- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.\n- Kehinde Wiley began his iconic Rumors of War series at age 29.', 'The Tyranny of Thirty')(base.py:33)
+2025-05-29 16:32:51,052 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 16:32:54,793 - INFO - Model Response: Okay, I understand. Based on the content provided ("Member-only story\nCancelling 30 Under 30\nThe Tyranny of Thirty\nThe Artificial Deadline That’s Ruining a Generation\n→ Read the next essay: Your Thirties Aren’t What They Used to Be\nThe tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.\nAll of them chanting the same frantic mantra:\n“I gotta make it by thirty.”\nThirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.\nAnd there’s a hint of truth in their words.", 'Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:\n- Taylor Swift won her first Album of the Year Grammy at age 20.\n- Mr.', 'Beast became the world’s most subscribed YouTuber at age 26.\n- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.\n- Kehinde Wiley began his iconic Rumors of War series at age 29.', "', 'The Tyranny of Thirty')"), and the descriptions of the question types you provided, here's why I still believe that ["short_answer", "multiple_choice", "long_answer"] are suitable.
+
+*   **Short Answer Questions:** The content lends itself to questions that test recall of key ideas, such as "What is the 'tyranny of thirty' according to the passage?" or "Give one example mentioned in the passage of someone who achieved success before age 30.".
+
+*   **Multiple Choice Questions:** I can create multiple-choice questions about the main argument of the article, the examples used, or the meaning of specific phrases, such as "According to the passage, what is the significance of turning thirty?".
+
+*   **Long Answer Questions:** The content allows for questions that prompt discussion and critical thinking, such as "Discuss the potential positive and negative effects of the 'tyranny of thirty' on young people's ambitions and mental health" or "Analyze the effectiveness of the examples used in the passage to support the author's argument about early success.".
+
+(gemcall.py:30)
+2025-05-29 16:32:58,954 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "According to the passage, what is the 'tyranny of thirty'?",
+    "answer": "The 'tyranny of thirty' is the societal pressure and self-imposed deadline for young people to achieve significant success before turning thirty, leading to anxiety and a sense of impending irrelevance."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following best describes the author's main argument?",
+    "options": [
+      "Celebrating early success is harmful.",
+      "The pressure to succeed by thirty is detrimental.",
+      "Achieving success after thirty is impossible.",
+      "Silicon Valley is the only place where the 'tyranny of thirty' exists."
+    ],
+    "answer": "The pressure to succeed by thirty is detrimental.",
+    "explanation": "The passage focuses on the negative impact and anxieties caused by the perceived need to achieve success before the age of thirty."
+  },
+  {
+    "type": "long_answer",
+    "question": "Analyze the effectiveness of the examples (Taylor Swift, Mr. Beast, the Collison brothers, Kehinde Wiley) used in the passage to support the author's argument about the 'tyranny of thirty.' Do these examples strengthen or weaken the argument? Explain your reasoning.",
+    "answer": "The effectiveness of the examples is debatable. On one hand, they highlight individuals who achieved significant success before 30, potentially reinforcing the idea that early success is possible and desirable. On the other hand, the author uses them to subtly highlight the pressure and anxiety created by the 'tyranny of thirty,' as these examples become benchmarks of comparison. Whether the examples strengthen or weaken the argument depends on the reader's interpretation and their prior beliefs regarding the importance of early success versus sustained growth over time.",
+    "explanation": "This response encourages critical thinking about how evidence is used and how it can be interpreted in multiple ways, thus creating a thorough drill."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:37:58,117 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:37:58,854 - ERROR - ('Member-only story\nCancelling 30 Under 30\nThe Tyranny of Thirty\nThe Artificial Deadline That’s Ruining a Generation\n→ Read the next essay: Your Thirties Aren’t What They Used to Be\nThe tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.\nAll of them chanting the same frantic mantra:\n“I gotta make it by thirty.”\nThirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.\nAnd there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:\n- Taylor Swift won her first Album of the Year Grammy at age 20.\n- Mr. Beast became the world’s most subscribed YouTuber at age 26.\n- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.\n- Kehinde Wiley began his iconic Rumors of War series at age 29.', 'The Tyranny of Thirty')(base.py:33)
+2025-05-29 16:38:01,945 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 16:38:07,200 - INFO - Model Response: Okay, I understand. Given the content and the detailed descriptions of the question types, here's a breakdown of why I chose those three and some example questions based on the provided text about the "Tyranny of Thirty":
+
+*   **Short Answer:** This is suitable for quickly testing comprehension of key concepts and facts presented in the text.
+
+    *   Example:
+        
+        {
+            "type": "short_answer",
+            "question": "What is the 'tyranny of thirty' referring to in the article?",
+            "answer": "The societal pressure and perceived deadline for achieving success before turning thirty.",
+            "explanation": "The article introduces this term to describe the anxiety many young people feel."
+        }
+        
+
+*   **Multiple Choice:** This allows for assessing understanding of specific details and arguments made in the text.
+
+    *   Example:
+        
+        {
+            "type": "multiple_choice",
+            "question": "According to the article, the 'tyranny of thirty' is most acutely felt by ambitious twenty-somethings in which fields?",
+            "options": ["Medicine, Law, and Education", "Tech startups, artist studios, and influencer houses", "Government, Finance, and Real Estate", "Academia, Research, and Non-profits"],
+            "answer": "Tech startups, artist studios, and influencer houses",
+            "explanation": "The article explicitly mentions these fields as examples where this pressure is prevalent."
+        }
+        
+
+*   **Long Answer:** This encourages deeper engagement with the text, prompting analysis, synthesis, and critical thinking about the themes and arguments presented.
+
+    *   Example:
+        
+        {
+            "type": "long_answer",
+            "question": "Discuss the examples provided in the article. How do these examples support or challenge the concept of the 'tyranny of thirty'?",
+            "answer": "The article provides examples of Taylor Swift, Mr. Beast, the Collison brothers, and Kehinde Wiley as figures who achieved significant success before the age of 30.  These examples initially appear to support the idea that early success is crucial. However, a deeper analysis shows that these are exceptions.  These early achievers may intensify the pressure of the 'tyranny of thirty' by creating a benchmark against which others measure themselves.  It also neglects individuals who find success later in life.",
+            "explanation": "This answer explores how the examples function within the argument of the article, considering both their apparent and potential contrasting effect."
+        }
+        
+
+Therefore, my answer remains:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 16:38:11,130 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "What specific phrase does the article use to describe the cultural pressure on young people to achieve success?",
+    "answer": "Tyranny of Thirty",
+    "explanation": "This tests the recall of the central concept introduced in the article."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the article, the 'tyranny of thirty' leads young people to believe that after thirty, 'high potential' transforms into what two possibilities?",
+    "options": ["Continued growth or stagnation", "Undeniable achievement or probable irrelevance", "Greater wisdom or increased responsibility", "Financial stability or personal fulfillment"],
+    "answer": "Undeniable achievement or probable irrelevance",
+    "explanation": "This directly reflects a key statement in the provided text."
+  },
+  {
+    "type": "long_answer",
+    "question": "Analyze how the examples of Taylor Swift, Mr. Beast, the Collison brothers, and Kehinde Wiley function within the author's argument about the 'tyranny of thirty.' Do these examples strengthen or weaken the author's claim? Justify your answer with specific references to the text and logical reasoning.",
+    "answer": "The article presents these individuals as examples of early success, which could initially appear to promote the 'tyranny of thirty' by establishing a benchmark. However, critically, these examples can weaken the author's claim by presenting exceptions that reinforce unrealistic societal expectations. The exceptional nature of these individuals highlight the pitfalls in the 'tyranny of thirty' concept because they do not address the circumstances or personal journey of others and the more important message is that success should be more inclusive and diverse. Success stories like these magnify the pressure to accomplish milestones by a certain age and undermine the actual validity of the author's thesis, thereby reinforcing the anxieties this 'deadline' creates among ambitious twenty-somethings.",
+    "explanation": "This question encourages critical thinking about the examples used and their impact on the argument's effectiveness."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:38:11,135 - ERROR - Could not process article: the JSON object must be str, bytes or bytearray, not list(app.py:198)
+2025-05-29 16:38:11,139 - ERROR - Error in /api/generate/url: cannot access local variable 'questions' where it is not associated with a value(app.py:209)
+2025-05-29 16:42:55,191 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:42:55,906 - ERROR - ('Member-only story\nCancelling 30 Under 30\nThe Tyranny of Thirty\nThe Artificial Deadline That’s Ruining a Generation\n→ Read the next essay: Your Thirties Aren’t What They Used to Be\nThe tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.\nAll of them chanting the same frantic mantra:\n“I gotta make it by thirty.”\nThirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.\nAnd there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:\n- Taylor Swift won her first Album of the Year Grammy at age 20.\n- Mr. Beast became the world’s most subscribed YouTuber at age 26.\n- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.\n- Kehinde Wiley began his iconic Rumors of War series at age 29.', 'The Tyranny of Thirty')(base.py:33)
+2025-05-29 16:42:56,882 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 16:43:01,589 - INFO - Model Response: Okay, I understand. Given the content provided and the specifications for each question type, here's how I would formulate the questions.
+
+
+[
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'mantra' chanted by ambitious twenty-somethings?",
+    "answer": "\"I gotta make it by thirty.\"",
+    "explanation": "The text explicitly states this mantra as the driving force behind the anxiety surrounding turning thirty."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the text, what does turning thirty often represent in the eyes of ambitious individuals?",
+    "options": [
+      "A time for relaxed reflection on past achievements",
+      "The point at which potential solidifies into either success or irrelevance",
+      "An opportunity to explore new career paths without pressure",
+      "A celebration of youthful energy and limitless possibilities"
+    ],
+    "answer": "The point at which potential solidifies into either success or irrelevance",
+    "explanation": "The text describes thirty as 'the line in the sand' that separates high potential from actual achievement or probable irrelevance."
+  },
+  {
+    "type": "long_answer",
+    "question": "The article refers to 'the tyranny of thirty'. Elaborate on what this phrase means in the context of the article and provide examples from the text to support your explanation. How does the article portray the pressure faced by young people striving for success?",
+    "answer": "The 'tyranny of thirty' refers to the intense pressure and anxiety that many young people feel to achieve significant success before they turn thirty. The article describes it as 'the most pernicious deadline of our culture' and a 'guillotine over the necks of ambitious twenty-somethings'. The text highlights the 'frantic mantra' of 'I gotta make it by thirty,' illustrating the pervasive fear of not achieving enough by that age. Examples like Taylor Swift winning her first Grammy at 20, Mr. Beast becoming the most subscribed Youtuber at 26, the Collison brothers becoming billionaires in their 20s, and Kehinde Wiley starting his iconic series at 29 are used to reinforce the idea that early success is crucial. The article portrays young people as feeling immense pressure to reach milestones and achieve iconic status early in their careers, thus making it by age thirty.",
+    "explanation": "This response addresses the meaning of the phrase, provides textual support, and synthesizes the article's portrayal of the pressure faced by young people."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:43:05,993 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "What specific phrase does the text use to describe the pressure faced by ambitious individuals regarding the age of thirty?",
+    "answer": "\"The tyranny of thirty\"",
+    "explanation": "This answer demonstrates recall of a key concept introduced in the text."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the article, the pressure to achieve success by age thirty is MOST evident in which of the following environments?",
+    "options": [
+      "Retirement communities and senior centers",
+      "Academic research institutions focusing on gerontology",
+      "Tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood",
+      "Government agencies focused on social security benefits"
+    ],
+    "answer": "Tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood",
+    "explanation": "This answer directly references the specific locations mentioned in the text, showcasing comprehension."
+  },
+  {
+    "type": "long_answer",
+    "question": "The article presents a critical view of the 'tyranny of thirty.' Analyze the potential benefits and drawbacks of this cultural pressure. Does the pressure to achieve early success ultimately motivate or hinder individuals? Use examples, both from the text and from your own understanding, to support your argument.",
+    "answer": "The 'tyranny of thirty,' while potentially fostering ambition and driving individuals to achieve early success, also presents significant drawbacks. The pressure can lead to anxiety, burnout, and a narrow focus on external validation rather than genuine passion. The article highlights the fear of 'irrelevance' after thirty, which can stifle creativity and risk-taking. While examples like Taylor Swift and Mr. Beast showcase the rewards of early success, it's important to recognize that success is not always linear or age-dependent. Furthermore, the pressure may prevent individuals from exploring different paths and developing a well-rounded identity. In conclusion, while some may thrive under this pressure, it more often than not can be detrimental and can be a hindrance to personal fulfillment and long-term success.",
+    "explanation": "This answer requires analysis, synthesis, and application of the content, encouraging critical thinking and a balanced perspective."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:43:06,017 - ERROR - Error: File 'questions.json' not found.(app.py:37)
+2025-05-29 16:44:54,709 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:44:55,381 - ERROR - ('Member-only story\nCancelling 30 Under 30\nThe Tyranny of Thirty\nThe Artificial Deadline That’s Ruining a Generation\n→ Read the next essay: Your Thirties Aren’t What They Used to Be\nThe tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.\nAll of them chanting the same frantic mantra:\n“I gotta make it by thirty.”\nThirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.\nAnd there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:\n- Taylor Swift won her first Album of the Year Grammy at age 20.\n- Mr. Beast became the world’s most subscribed YouTuber at age 26.\n- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.\n- Kehinde Wiley began his iconic Rumors of War series at age 29.', 'The Tyranny of Thirty')(base.py:33)
+2025-05-29 16:45:00,794 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 16:45:03,060 - INFO - Model Response: Okay, I understand. Given the content and the detailed descriptions of the question types, here's a refined list of three suitable question types in Python format:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+
+
+**Explanation of why these question types are suitable:**
+
+*   **Short Answer:** The provided text presents concise ideas and examples (e.g., the ages at which people achieved success). Short answer questions can effectively test recall of these key details.
+
+*   **Multiple Choice:** Multiple choice questions can be used to assess understanding of specific facts or concepts introduced in the text, such as the "mantra" people are chanting or the significance of the age of 30.
+
+*   **Long Answer:** The text touches on broader themes about societal pressures and the definition of success. Long answer questions can encourage critical thinking about these themes, prompting the respondent to analyze and synthesize the information presented.
+(gemcall.py:30)
+2025-05-29 16:45:07,326 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'mantra' that ambitious twenty-somethings are chanting?",
+    "answer": "\"I gotta make it by thirty.\"",
+    "explanation": "This directly assesses recall of a key phrase from the passage, illustrating the pressure felt by young people."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "In the context of the article, the 'tyranny of thirty' refers to:",
+    "options": [
+      "The challenges faced by people in their thirties.",
+      "The societal pressure to achieve significant success before the age of thirty.",
+      "The government policies that discriminate against those over thirty.",
+      "The belief that life ends at the age of thirty."
+    ],
+    "answer": "The societal pressure to achieve significant success before the age of thirty.",
+    "explanation": "This option correctly identifies the central theme of the text: the pressure to succeed by thirty."
+  },
+  {
+    "type": "long_answer",
+    "question": "The article presents the idea that there is a cultural 'guillotine' over the necks of ambitious twenty-somethings. Analyze how the examples of Taylor Swift, Mr. Beast, the Collison brothers, and Kehinde Wiley either support or challenge this idea. In your response, consider the potential downsides of achieving success at a young age, as well as the pressures this 'tyranny of thirty' might create.",
+    "answer": "The examples provided show notable successes at young ages, potentially reinforcing the 'tyranny of thirty.' However, this emphasis on early achievement can create undue stress and anxiety, ignoring the value of later-in-life accomplishments. Furthermore, early success doesn't guarantee long-term fulfillment or well-being and may lead to burnout or a lack of exploration of other interests. The pressure to peak early could limit overall potential and personal growth.",
+    "explanation": "This question encourages critical analysis, requiring the student to synthesize information from the text, evaluate the examples given, and consider the broader implications of the 'tyranny of thirty' concept. It also prompts a nuanced understanding by considering potential drawbacks."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:51:33,045 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:51:33,735 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 16:51:36,991 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 16:51:39,823 - INFO - Model Response: Okay, I understand. Based on the content provided and the guidelines for each question type, here's how I would formulate question examples for each of the selected types:
+
+
+[
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'tyranny of thirty'?",
+    "answer": "The pressure ambitious twenty-somethings feel to achieve success by the age of thirty.",
+    "explanation": "The text describes it as a cultural deadline, creating anxiety among young professionals."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the text, what is the common mantra chanted by ambitious twenty-somethings?",
+    "options": [
+      "I'll figure it out eventually.",
+      "I gotta make it by forty.",
+      "I gotta make it by thirty.",
+      "Success is not important."
+    ],
+    "answer": "I gotta make it by thirty.",
+    "explanation": "The text specifically mentions this phrase as a common expression of the pressure to succeed before turning thirty."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The author describes the 'tyranny of thirty' as a ______ over the necks of ambitious twenty-somethings.",
+    "answer": "guillotine",
+    "explanation": "The text uses the metaphor of a guillotine to emphasize the perceived threat and pressure associated with the age of thirty."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:51:42,613 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "Explain, in your own words, what the author means by 'probable irrelevance' in the context of turning thirty.",
+    "answer": "Acceptable answers should reflect the idea that after thirty, society may perceive individuals who haven't achieved significant success as less likely to do so in the future.",
+    "explanation": "This assesses understanding of a key concept presented in the second paragraph."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following best summarizes the author's primary argument?",
+    "options": [
+      "Thirty Under 30 lists are beneficial for young entrepreneurs.",
+      "Early success is the only path to a fulfilling career.",
+      "The pressure to achieve by thirty is a harmful societal construct.",
+      "Silicon Valley is the only place where young people feel this pressure."
+    ],
+    "answer": "The pressure to achieve by thirty is a harmful societal construct.",
+    "explanation": "This assesses comprehension of the central theme of the essay."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The author mentions that the 'tyranny of thirty' affects individuals in tech startups in __________, artist studios in __________, and influencer houses in ___________.",
+    "answer": "Silicon Valley, Bed-Stuy, West Hollywood",
+    "explanation": "This tests recall of specific examples provided in the text."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:51:43,742 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 16:51:46,443 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "According to the provided text, at what age did Beast become the world's most subscribed YouTuber?",
+    "options": [
+      "20",
+      "24",
+      "26",
+      "28"
+    ],
+    "answer": "26",
+    "explanation": "The text explicitly states that Beast achieved this milestone at age 26."
+  },
+  {
+    "type": "short_answer",
+    "question": "What series did Kehinde Wiley begin at the age of 29?",
+    "answer": "Rumors of War",
+    "explanation": "The text mentions Kehinde Wiley starting his 'Rumors of War' series at age 29."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "John and Patrick Collison became the world's youngest ________ at ages 26 and 28.",
+    "answer": "billionaires",
+    "explanation": "The text states that they became the world's youngest billionaires."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:51:49,769 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "Based on the provided examples, which of the following inferences is most reasonable?",
+    "options": [
+      "Achieving success before the age of 30 is impossible.",
+      "Significant accomplishments are only possible in the fields of YouTube and business.",
+      "Early success is a common, but not exclusive, characteristic of notable individuals.",
+      "Individuals who achieve success before 30 are guaranteed lifelong fame and fortune."
+    ],
+    "answer": "Early success is a common, but not exclusive, characteristic of notable individuals.",
+    "explanation": "This question requires analysis and inference, prompting students to consider the broader implications of the examples."
+  },
+  {
+    "type": "short_answer",
+    "question": "How could the achievements of the individuals listed be used to argue against the 'tyranny of thirty' concept?",
+    "answer": "Acceptable answers should address that the individuals highlight the achievements that are possible before the age of 30.",
+    "explanation": "This question encourages students to apply the information to a previously discussed concept (presumably from the broader text the excerpt is from)."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The provided text gives examples of success in the areas of ________ (Beast), ________ (Collison brothers), and ________ (Wiley).",
+    "answer": "YouTube, business/entrepreneurship, art",
+    "explanation": "This assesses understanding of the different fields represented by the individuals listed, going beyond simple recall."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:51:49,773 - ERROR - Could not process article: the JSON object must be str, bytes or bytearray, not list(app.py:199)
+2025-05-29 16:53:12,570 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:53:13,199 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 16:53:14,383 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 16:53:17,804 - INFO - Model Response: Okay, I understand. Based on your specifications and the content provided (about the "30 Under 30" list and the pressure to achieve success by age 30), here are examples of the three question types you selected:
+
+
+[
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'tyranny of thirty'?",
+    "answer": "The 'tyranny of thirty' is the societal pressure and anxiety placed on young adults to achieve significant success before the age of 30.",
+    "explanation": "The text describes it as a 'guillotine' hanging over ambitious twenty-somethings, highlighting the perceived deadline for success."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "The text implies that the pressure to 'make it by thirty' is most prevalent among which group?",
+    "options": [
+      "Retirees planning their next chapter",
+      "High school students choosing a career path",
+      "Ambitious twenty-somethings at tech startups, artist studios, and influencer houses",
+      "Middle-aged professionals seeking a career change"
+    ],
+    "answer": "Ambitious twenty-somethings at tech startups, artist studios, and influencer houses",
+    "explanation": "The passage specifically mentions individuals in Silicon Valley tech startups, Bed-Stuy artist studios, and West Hollywood influencer houses as being subject to this pressure."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The text suggests that turning thirty is seen as the point where 'high potential' either resolves into achievement or probable ________.",
+    "answer": "irrelevance",
+    "explanation": "The text explicitly states that thirty is 'the point beyond which 'high potential' resolves into undeniable achievement or probable irrelevance.'"
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:53:21,621 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "In your own words, explain the central argument of the essay regarding the '30 Under 30' mentality and its impact on young professionals.",
+    "answer": "The essay argues that the societal pressure to achieve significant success before the age of 30, often exemplified by lists like '30 Under 30,' creates unnecessary anxiety and an artificial deadline that can be detrimental to the well-being and potential of young professionals.",
+    "explanation": "This assesses understanding of the core thesis presented in the text."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following best reflects the author's view on the importance of early success, as implied by the mention of Taylor Swift?",
+    "options": [
+      "Early success is the only path to lasting fame and fortune.",
+      "While early success can provide advantages, it is not a guarantee of future achievement or fulfillment.",
+      "The author believes that individuals who do not achieve success by 30 are unlikely to ever reach their full potential.",
+      "Taylor Swift's early success is irrelevant to the broader argument about the 'tyranny of thirty.'"
+    ],
+    "answer": "While early success can provide advantages, it is not a guarantee of future achievement or fulfillment.",
+    "explanation": "The Taylor Swift example acknowledges that early success exists and can be beneficial, but doesn't endorse it as the *only* or *necessary* path. This evaluates analytical skills and inference."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The essay uses the metaphor of a ___________ to describe the pressure and anxiety associated with the 'tyranny of thirty', highlighting the perceived consequences of not achieving success by that age.",
+    "answer": "guillotine",
+    "explanation": "This checks for direct recall and understanding of a key literary device used in the text."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:53:22,663 - INFO - Model Response: ["short_answer", "multiple_choice", "true_false"]
+
+(gemcall.py:30)
+2025-05-29 16:53:25,114 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "What is the name of the YouTuber who became the world's most subscribed at age 26?",
+    "answer": "Beast",
+    "explanation": "The text states 'Beast became the world’s most subscribed YouTuber at age 26.'"
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the text, at what age did John and Patrick Collison become the world's youngest billionaires?",
+    "options": [
+      "25 and 27",
+      "26 and 28",
+      "27 and 29",
+      "28 and 30"
+    ],
+    "answer": "26 and 28",
+    "explanation": "The text states '- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.'"
+  },
+  {
+    "type": "true_false",
+    "question": "Kehinde Wiley was older than 30 when he began his 'Rumors of War' series.",
+    "answer": "false",
+    "explanation": "The text says Kehinde Wiley began his 'Rumors of War' series at age 29."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:53:28,521 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "Synthesize the information provided: What common theme can be drawn from the accomplishments of Beast, the Collison brothers, and Kehinde Wiley?",
+    "answer": "The common theme is that significant success and recognition can be achieved at a relatively young age (before the age of 30).",
+    "explanation": "This tests the ability to synthesize information from multiple data points."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Based on the information provided, which of the following inferences is MOST reasonable?",
+    "options": [
+      "Becoming a billionaire before 30 is easily attainable with hard work.",
+      "Significant success in various fields is only possible for individuals under 30.",
+      "Exceptional achievements are possible at a young age in diverse fields like online content creation, technology, and art.",
+      "Kehinde Wiley's 'Rumors of War' series is primarily about the challenges of achieving success before turning 30."
+    ],
+    "answer": "Exceptional achievements are possible at a young age in diverse fields like online content creation, technology, and art.",
+    "explanation": "This assesses the ability to draw logical conclusions from the given examples."
+  },
+  {
+    "type": "true_false",
+    "question": "The provided examples demonstrate that achieving significant success before the age of 30 is a guarantee of continued success throughout one's life.",
+    "answer": "false",
+    "explanation": "This challenges a common misconception and requires critical analysis of the limitations of the presented data; success before 30 doesn't guarantee lifetime success."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:53:28,525 - ERROR - Could not process article: unhashable type: 'list'(app.py:199)
+2025-05-29 16:56:30,660 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:56:32,150 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 16:56:38,721 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 16:56:42,308 - INFO - Model Response: Okay, I understand. Based on the provided examples and the original content about the "Tyranny of Thirty," here's a refined list of question types with examples tailored to the subject matter:
+
+
+[
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'mantra' chanted by ambitious twenty-somethings?",
+    "answer": "\"I gotta make it by thirty.\"",
+    "explanation": "This quote encapsulates the pressure to achieve success before turning thirty."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the text, what does turning thirty often represent?",
+    "options": [
+      "A time for celebration and reflection.",
+      "The point beyond which 'high potential' resolves into achievement or irrelevance.",
+      "A period of increased creativity and innovation.",
+      "A chance to start a new career path."
+    ],
+    "answer": "The point beyond which 'high potential' resolves into achievement or irrelevance.",
+    "explanation": "The text explicitly states that thirty is seen as the line where potential turns into demonstrable success or probable failure."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The tyranny of thirty is described as a ________ over the necks of ambitious twenty-somethings.",
+    "answer": "guillotine",
+    "explanation": "The text uses 'guillotine' as a metaphor to highlight the perceived threat and pressure associated with turning thirty without achieving significant success."
+  }
+]
+
+
+Therefore, the Python list representing the question types is:
+
+
+["short_answer", "multiple_choice", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 16:56:46,198 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "Explain, in your own words, what the author means by the 'tyranny of thirty.'",
+    "answer": "The 'tyranny of thirty' refers to the societal pressure and anxiety experienced by many young adults to achieve significant success before reaching the age of 30.",
+    "explanation": "This assesses understanding of the central theme."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following best describes the author's primary concern regarding the '30 Under 30' phenomenon?",
+    "options": [
+      "It celebrates genuine achievements and inspires young people.",
+      "It creates an artificial and harmful deadline for success, leading to unnecessary stress.",
+      "It accurately reflects the natural timeline for career progression.",
+      "It encourages healthy competition and innovation among young entrepreneurs."
+    ],
+    "answer": "It creates an artificial and harmful deadline for success, leading to unnecessary stress.",
+    "explanation": "This tests comprehension of the author's overall argument."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The author suggests that the pressure to 'make it by thirty' is particularly felt in places like Silicon Valley, Bed-Stuy, and ________.",
+    "answer": "West Hollywood",
+    "explanation": "This checks recall of specific details from the text."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:56:47,422 - INFO - Model Response: ["multiple_choice", "short_answer", "true_false"]
+
+(gemcall.py:30)
+2025-05-29 16:56:50,320 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "According to the provided text, what is Beast's most notable achievement by age 26?",
+    "options": [
+      "Becoming the youngest billionaire in the world.",
+      "Winning a Grammy Award.",
+      "Becoming the world's most subscribed YouTuber.",
+      "Starting the Rumors of War series."
+    ],
+    "answer": "Becoming the world's most subscribed YouTuber.",
+    "explanation": "The text explicitly states that Beast became the world's most subscribed YouTuber at age 26."
+  },
+  {
+    "type": "short_answer",
+    "question": "What achievement did John and Patrick Collison share, and at what ages did they accomplish it?",
+    "answer": "They became the world's youngest billionaires at ages 26 and 28, respectively.",
+    "explanation": "This answer concisely provides the key information requested in the question."
+  },
+  {
+    "type": "true_false",
+    "question": "Kehinde Wiley started his Rumors of War series before the age of 30.",
+    "answer": "true",
+    "explanation": "The text indicates that Kehinde Wiley started the series at age 29, which is before 30."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:56:54,183 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "The examples provided (Beast, the Collison brothers, and Kehinde Wiley) are used to support what potential argument (that is not explicitly stated)?",
+    "options": [
+      "Success is guaranteed if you start early.",
+      "Achieving success before age 30 is impossible.",
+      "Significant accomplishments are possible at a young age.",
+      "Artistic achievements are less valuable than business accomplishments."
+    ],
+    "answer": "Significant accomplishments are possible at a young age.",
+    "explanation": "This question assesses the ability to infer an underlying message from the examples provided."
+  },
+  {
+    "type": "short_answer",
+    "question": "Based on the limited information, what common thread or characteristic might connect Beast's YouTube success, the Collison brothers' billionaire status, and Kehinde Wiley's art career? (Consider factors beyond just age).",
+    "answer": "Innovation, dedication, and potentially risk-taking are common threads. Beast innovated in the YouTube space, the Collison brothers disrupted the payment processing industry, and Wiley challenged traditional portraiture.",
+    "explanation": "This requires analytical thinking beyond simple recall."
+  },
+  {
+    "type": "true_false",
+    "question": "Given only the information provided, it is accurate to conclude that *most* people achieve extraordinary success before the age of 30.",
+    "answer": "false",
+    "explanation": "This tests critical thinking. The examples are exceptional and do not represent a general trend."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:56:54,187 - ERROR - Error in /api/generate/url: the JSON object must be str, bytes or bytearray, not list(app.py:209)
+2025-05-29 16:57:46,702 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:57:47,076 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 16:57:49,183 - INFO - Model Response: ["multiple_choice", "short_answer", "use_case"]
+
+(gemcall.py:30)
+2025-05-29 16:57:53,163 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "The author uses the phrase 'guillotine over the necks of ambitious twenty-somethings' to illustrate:",
+    "options": [
+      "The excitement of starting a new career.",
+      "The financial rewards of early success.",
+      "The pressure and anxiety associated with the 'tyranny of thirty'.",
+      "The importance of networking in certain industries."
+    ],
+    "answer": "The pressure and anxiety associated with the 'tyranny of thirty'.",
+    "explanation": "The guillotine is a metaphor for a looming threat or deadline, representing the anxiety of turning 30 without achieving success."
+  },
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'frantic mantra' repeated by many ambitious twenty-somethings?",
+    "answer": "\"I gotta make it by thirty.\"",
+    "explanation": "This phrase encapsulates the pressure to achieve success before turning thirty."
+  },
+  {
+    "type": "use_case",
+    "question": "Imagine you are a career counselor working with a 27-year-old artist who feels discouraged because they haven't achieved significant recognition yet. How would you use the ideas presented in this article to counsel them?",
+    "answer": "I would discuss the 'tyranny of thirty' concept, explaining that it's an artificial deadline created by societal pressures, not a reflection of their true potential. I'd emphasize that success can happen at any age and focus on their individual progress, strengths, and long-term goals rather than comparing themselves to others who may have achieved success earlier.",
+    "explanation": "This requires applying the concept to a real-world scenario to provide helpful advice."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:57:57,785 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "The author mentions Taylor Swift's early success as an example of:",
+    "options": [
+      "The only path to a fulfilling career.",
+      "How early success guarantees long-term happiness.",
+      "One potential outcome, but not a universal requirement for success.",
+      "The inherent superiority of young artists."
+    ],
+    "answer": "One potential outcome, but not a universal requirement for success.",
+    "explanation": "The example is used to illustrate the possibility of early success but implicitly acknowledges that it's not the only way to achieve it."
+  },
+  {
+    "type": "short_answer",
+    "question": "Besides the pressure to achieve success before 30, what other societal pressures might contribute to the anxiety experienced by young adults?",
+    "answer": "Financial stability, relationship status, homeownership, and comparison to peers on social media are other societal pressures.",
+    "explanation": "This encourages students to think beyond the immediate text and consider broader societal factors."
+  },
+  {
+    "type": "use_case",
+    "question": "Imagine a media company is considering launching a '20 Under 20' list to highlight young achievers. Based on the arguments in this article, what potential ethical considerations should they take into account when creating and promoting this list?",
+    "answer": "The company should consider the potential for increased anxiety and pressure on those listed, as well as those not listed, to achieve success before a certain age. They should frame the list as a celebration of individual achievements rather than a competition, and emphasize that success can be defined in many ways and achieved at any age.",
+    "explanation": "This requires students to apply the article's arguments to a real-world scenario and consider the ethical implications."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:57:59,964 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 16:58:04,222 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following individuals became the world's most subscribed YouTuber by the age of 26, according to the text?",
+    "options": [
+      "John Collison",
+      "Patrick Collison",
+      "Kehinde Wiley",
+      "Beast"
+    ],
+    "answer": "Beast",
+    "explanation": "The provided text states that 'Beast became the world’s most subscribed YouTuber at age 26.'"
+  },
+  {
+    "type": "short_answer",
+    "question": "What did John and Patrick Collison achieve together, and what were their respective ages at the time?",
+    "answer": "They became the world's youngest billionaires at ages 26 and 28.",
+    "explanation": "This response directly addresses the question with accurate information from the text."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "Kehinde Wiley is known for beginning his iconic series, __________, at age 29.",
+    "answer": "Rumors of War",
+    "explanation": "Completing the blank with 'Rumors of War' accurately reflects the information provided in the text."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:58:08,731 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "If these examples (Beast, the Collison brothers, and Wiley) were used in an argument *against* the 'tyranny of thirty,' what point would they *most likely* be used to illustrate?",
+    "options": [
+      "That everyone should strive to become famous before 30.",
+      "That success is only meaningful if achieved at a young age.",
+      "That significant achievements are possible before the age of 30, though not guaranteed.",
+      "That turning 30 marks the end of one's potential for success."
+    ],
+    "answer": "That significant achievements are possible before the age of 30, though not guaranteed.",
+    "explanation": "This requires understanding how the examples could be applied to a broader argument about success and age."
+  },
+  {
+    "type": "short_answer",
+    "question": "What potential limitations or biases should be considered when using these three individuals as examples of success?",
+    "answer": "The examples may suffer from selection bias (focusing on exceptional cases), and may not reflect the diverse paths to success or the realities of individuals facing systemic disadvantages.",
+    "explanation": "This tests the ability to critically analyze the use of examples."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "While the text highlights accomplishments before the age of 30, it's important to remember that __________, sustained effort, and often luck also play a significant role in long-term success, regardless of age.",
+    "answer": "dedication",
+    "explanation": "This encourages considering factors beyond just age, emphasizing the importance of other attributes."
+  }
+]
+(gemcall.py:30)
+2025-05-29 16:58:08,737 - ERROR - Error in /api/generate/url: the JSON object must be str, bytes or bytearray, not list(app.py:209)
+2025-05-29 16:58:29,137 - INFO - Input data fetched(app.py:175)
+2025-05-29 16:58:30,265 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 16:58:32,795 - INFO - Model Response: Here's a breakdown of why certain question types are suitable for the provided content and the resulting list:
+
+*   **Short Answer Questions:** The text presents a central argument about the pressure to succeed by age 30. Short answer questions can effectively assess comprehension of this argument and the supporting details. For example, "What is the 'tyranny of thirty' according to the text?"
+
+*   **Multiple Choice Questions:** These are suitable for testing understanding of specific details or arguments presented in the text. For example, a question could ask about the examples of successful young people mentioned.
+
+*   **Fill-in-the-blank Questions:** These can be used to test recall of specific phrases or keywords used in the text. For example, "Thirty is the line in the ____ — the point beyond which 'high potential' resolves into undeniable achievement or probable irrelevance."
+
+
+["short_answer", "multiple_choice", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 16:58:32,802 - ERROR - Error evaluating question type from Gemini: unterminated string literal (detected at line 1) (<unknown>, line 1). Raw response: Here's a breakdown of why certain question types are suitable for the provided content and the resulting list:
+
+*   **Short Answer Questions:** The text presents a central argument about the pressure to succeed by age 30. Short answer questions can effectively assess comprehension of this argument and the supporting details. For example, "What is the 'tyranny of thirty' according to the text?"
+
+*   **Multiple Choice Questions:** These are suitable for testing understanding of specific details or arguments presented in the text. For example, a question could ask about the examples of successful young people mentioned.
+
+*   **Fill-in-the-blank Questions:** These can be used to test recall of specific phrases or keywords used in the text. For example, "Thirty is the line in the ____ — the point beyond which 'high potential' resolves into undeniable achievement or probable irrelevance."
+
+
+["short_answer", "multiple_choice", "fill_in_the_blank"](pipe.py:23)
+2025-05-29 16:58:32,804 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 16:58:34,942 - INFO - Model Response: Here's my analysis of the best question types for the provided content:
+
+*   **Multiple Choice Questions:** This question type is suitable because you can create questions that test the recall of specific details, such as the age at which someone achieved something or the specific achievement itself.
+
+*   **Short Answer Questions:** Short answer questions are effective for quickly assessing whether the reader grasped the key information about each person and their accomplishment. For example, "What is Beast known for achieving at age 26?".
+
+*   **Fill-in-the-blank Questions:** Fill-in-the-blank questions work well for this content as they can be used to test memory of names, ages or accomplishments.
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 16:58:34,948 - ERROR - Error evaluating question type from Gemini: unterminated string literal (detected at line 1) (<unknown>, line 1). Raw response: Here's my analysis of the best question types for the provided content:
+
+*   **Multiple Choice Questions:** This question type is suitable because you can create questions that test the recall of specific details, such as the age at which someone achieved something or the specific achievement itself.
+
+*   **Short Answer Questions:** Short answer questions are effective for quickly assessing whether the reader grasped the key information about each person and their accomplishment. For example, "What is Beast known for achieving at age 26?".
+
+*   **Fill-in-the-blank Questions:** Fill-in-the-blank questions work well for this content as they can be used to test memory of names, ages or accomplishments.
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"](pipe.py:23)
+2025-05-29 16:58:34,954 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 16:58:34,959 - ERROR - Error in /api/generate/url: the JSON object must be str, bytes or bytearray, not list(app.py:209)
+2025-05-29 21:30:41,411 - INFO - Input data fetched(app.py:175)
+2025-05-29 21:30:42,432 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 21:30:50,155 - INFO - Model Response: Here's an analysis of the provided content and a selection of suitable question types:
+
+**Analysis:**
+
+The content focuses on the pressure faced by young people to achieve success by the age of thirty, using examples and observations to illustrate this phenomenon. Given this, question types that explore comprehension, critical thinking, and application of the concepts are most relevant.
+
+**Suitable Question Types:**
+
+1.  **Multiple Choice Questions:** This format would be good for testing understanding of the author's arguments, the meaning of specific phrases, or the examples provided.
+
+2.  **Short Answer Questions:** This format works well for eliciting concise responses about the main idea, the pressure to succeed by 30, and understanding of specific examples.
+
+3.  **Long Answer Question:** This type allows for a more in-depth exploration of the themes presented. For example, discussing the implications of this pressure or offering alternative perspectives.
+
+
+["multiple_choice", "short_answer", "long_answer"]
+(gemcall.py:30)
+2025-05-29 21:30:50,159 - ERROR - Error evaluating question type from Gemini: unterminated string literal (detected at line 1) (<unknown>, line 1). Raw response: Here's an analysis of the provided content and a selection of suitable question types:
+
+**Analysis:**
+
+The content focuses on the pressure faced by young people to achieve success by the age of thirty, using examples and observations to illustrate this phenomenon. Given this, question types that explore comprehension, critical thinking, and application of the concepts are most relevant.
+
+**Suitable Question Types:**
+
+1.  **Multiple Choice Questions:** This format would be good for testing understanding of the author's arguments, the meaning of specific phrases, or the examples provided.
+
+2.  **Short Answer Questions:** This format works well for eliciting concise responses about the main idea, the pressure to succeed by 30, and understanding of specific examples.
+
+3.  **Long Answer Question:** This type allows for a more in-depth exploration of the themes presented. For example, discussing the implications of this pressure or offering alternative perspectives.
+
+
+["multiple_choice", "short_answer", "long_answer"](pipe.py:23)
+2025-05-29 21:30:50,162 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 21:30:52,202 - INFO - Model Response: The content provides specific examples of individuals who achieved significant success before the age of 30.
+
+Here's an analysis of suitable question types:
+
+1.  **Multiple Choice Questions:** To test recall of specific details, such as the age at which someone achieved a particular milestone.
+
+2.  **Fill-in-the-blank Questions:** Suitable for testing recall of names, ages, or achievements.
+
+3.  **Short Answer Questions:** Good for asking about the overall point the examples are meant to illustrate.
+
+
+["multiple_choice", "fill_in_the_blank", "short_answer"]
+(gemcall.py:30)
+2025-05-29 21:30:52,206 - ERROR - Error evaluating question type from Gemini: unterminated string literal (detected at line 3) (<unknown>, line 3). Raw response: The content provides specific examples of individuals who achieved significant success before the age of 30.
+
+Here's an analysis of suitable question types:
+
+1.  **Multiple Choice Questions:** To test recall of specific details, such as the age at which someone achieved a particular milestone.
+
+2.  **Fill-in-the-blank Questions:** Suitable for testing recall of names, ages, or achievements.
+
+3.  **Short Answer Questions:** Good for asking about the overall point the examples are meant to illustrate.
+
+
+["multiple_choice", "fill_in_the_blank", "short_answer"](pipe.py:23)
+2025-05-29 21:30:52,209 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 21:30:52,213 - ERROR - Error in /api/generate/url: dump() missing 1 required positional argument: 'fp'(app.py:210)
+2025-05-29 21:32:55,303 - INFO - Input data fetched(app.py:175)
+2025-05-29 21:33:06,664 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 21:33:09,368 - INFO - Model Response: Here's a breakdown of why certain question types are suitable for the provided content, and the resulting list:
+
+*   **Short Answer Questions:** The text presents a clear argument and specific examples. Short answer questions can effectively test comprehension of the main idea, the examples used, and the author's perspective on the "tyranny of thirty."
+
+*   **Multiple Choice Questions:** These are well-suited for assessing understanding of specific details and the author's arguments. They can target comprehension of the "frantic mantra" or the examples given (like Taylor Swift).
+
+*   **Fill-in-the-blank Questions:** Fill-in-the-blank questions can be used to test recall of key phrases or concepts presented in the text. For example, "Thirty is the line in the ____" or "The tyranny of thirty has become the most ____ deadline of our culture."
+
+
+["short_answer", "multiple_choice", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 21:33:09,371 - ERROR - Error evaluating question type from Gemini: unterminated string literal (detected at line 1) (<unknown>, line 1). Raw response: Here's a breakdown of why certain question types are suitable for the provided content, and the resulting list:
+
+*   **Short Answer Questions:** The text presents a clear argument and specific examples. Short answer questions can effectively test comprehension of the main idea, the examples used, and the author's perspective on the "tyranny of thirty."
+
+*   **Multiple Choice Questions:** These are well-suited for assessing understanding of specific details and the author's arguments. They can target comprehension of the "frantic mantra" or the examples given (like Taylor Swift).
+
+*   **Fill-in-the-blank Questions:** Fill-in-the-blank questions can be used to test recall of key phrases or concepts presented in the text. For example, "Thirty is the line in the ____" or "The tyranny of thirty has become the most ____ deadline of our culture."
+
+
+["short_answer", "multiple_choice", "fill_in_the_blank"](pipe.py:23)
+2025-05-29 21:33:09,374 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 21:33:11,058 - INFO - Model Response: Here's my analysis of suitable question types for the content:
+
+*   **Multiple Choice Questions:** Effective for testing recall of specific details, such as the age at which someone achieved a certain milestone or the type of achievement.
+
+*   **Fill-in-the-blank Questions:** Useful for reinforcing memory of names, ages, and accomplishments presented in the examples.
+
+*   **True/False Questions:** Suited for verifying basic understanding of the provided facts and to check for any potential misinterpretations.
+
+
+["multiple_choice", "fill_in_the_blank", "true_false"]
+(gemcall.py:30)
+2025-05-29 21:33:11,062 - ERROR - Error evaluating question type from Gemini: unterminated string literal (detected at line 1) (<unknown>, line 1). Raw response: Here's my analysis of suitable question types for the content:
+
+*   **Multiple Choice Questions:** Effective for testing recall of specific details, such as the age at which someone achieved a certain milestone or the type of achievement.
+
+*   **Fill-in-the-blank Questions:** Useful for reinforcing memory of names, ages, and accomplishments presented in the examples.
+
+*   **True/False Questions:** Suited for verifying basic understanding of the provided facts and to check for any potential misinterpretations.
+
+
+["multiple_choice", "fill_in_the_blank", "true_false"](pipe.py:23)
+2025-05-29 21:33:11,066 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 21:37:25,523 - INFO - Input data fetched(app.py:175)
+2025-05-29 21:37:26,660 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 21:37:26,741 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:37:38,315 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 21:37:38,319 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:37:39,236 - INFO - Model Response: Okay, I understand. I will continue to return a list containing the question types.
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 21:37:39,240 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:37:43,230 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'pernicious deadline' affecting ambitious twenty-somethings?",
+    "answer": "The tyranny of thirty.",
+    "explanation": "The text explicitly states that the tyranny of thirty is a deadline that has become the most pernicious deadline."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following locations is NOT mentioned in the text as a place where ambitious twenty-somethings feel pressured by the 'thirty' deadline?",
+    "options": ["Silicon Valley tech startups", "Artist studios in Bed-Stuy", "Influencer houses in West Hollywood", "Law firms in Manhattan"],
+    "answer": "Law firms in Manhattan",
+    "explanation": "The text mentions Silicon Valley tech startups, artist studios in Bed-Stuy, and influencer houses in West Hollywood as locations affected by this pressure, but not law firms in Manhattan."
+  },
+  {
+    "type": "long_answer",
+    "question": "The text suggests that there is 'a hint of truth' to the idea that one must 'make it by thirty.' Discuss the potential validity of this claim, considering both the benefits of early success and the potential pitfalls of adhering too rigidly to this timeline. Use examples beyond the text to support your arguments.",
+    "answer": "Early success can provide opportunities for compounding gains, as exemplified by Taylor Swift's early Grammy win, which boosted her career. However, rigidly adhering to a 'make it by thirty' timeline can lead to undue stress, anxiety, and potentially rash decisions that undermine long-term goals. Many successful individuals, such as Vera Wang (started designing in her 40s) and Samuel L. Jackson (achieved mainstream success in his 40s), demonstrate that significant achievements can occur later in life, and that diverse experiences can enrich one's work.",
+    "explanation": "This answer explores both sides of the issue, acknowledging the advantages of early success while also highlighting the limitations and potential downsides of strictly adhering to an artificial timeline. It uses external examples to strengthen the argument."
+  }
+]
+(gemcall.py:30)
+2025-05-29 21:37:43,233 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:37:44,458 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 21:37:44,463 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:37:45,993 - INFO - Model Response: Okay, I understand. I will continue to return a list containing the question types.
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 21:37:45,997 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:37:49,065 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "Based on the text, what is Kehinde Wiley known for?",
+    "options": [
+      "Becoming the world's most subscribed YouTuber",
+      "Becoming one of the world's youngest billionaires",
+      "Beginning the Rumors of War series",
+      "Inventing a new social media platform"
+    ],
+    "answer": "Beginning the Rumors of War series",
+    "explanation": "The text explicitly states that Kehinde Wiley began his iconic Rumors of War series."
+  },
+  {
+    "type": "short_answer",
+    "question": "According to the provided text, what ages were John and Patrick Collison when they became the world's youngest billionaires?",
+    "answer": "26 and 28",
+    "explanation": "The text states that John and Patrick Collison became billionaires at ages 26 and 28."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "__________ became the world's most subscribed YouTuber at age 26.",
+    "answer": "Beast",
+    "explanation": "The text clearly mentions that Beast achieved this milestone."
+  }
+]
+(gemcall.py:30)
+2025-05-29 21:48:44,342 - INFO - Input data fetched(app.py:175)
+2025-05-29 21:48:45,369 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 21:48:45,468 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:48:51,560 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 21:48:51,564 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:48:52,708 - INFO - Model Response: Okay, I understand. Here's a list of the question types based on your specifications and the content provided:
+
+["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 21:48:52,711 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:48:56,908 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "What is the 'pernicious deadline' mentioned in the text, and who does it primarily affect?",
+    "answer": "The 'pernicious deadline' is the age of thirty, and it primarily affects ambitious twenty-somethings.",
+    "explanation": "The text explicitly states that the tyranny of thirty is a deadline affecting ambitious twenty-somethings."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "According to the text, what happens at the age of thirty?",
+    "options": [
+      "Individuals automatically become irrelevant.",
+      "High potential either solidifies into achievement or shifts toward probable irrelevance.",
+      "Everyone achieves their dreams.",
+      "Early success is guaranteed."
+    ],
+    "answer": "High potential either solidifies into achievement or shifts toward probable irrelevance.",
+    "explanation": "The text directly states that thirty is the line where 'high potential' resolves into either 'undeniable achievement or probable irrelevance.'"
+  },
+  {
+    "type": "long_answer",
+    "question": "The passage references a cultural pressure to 'make it by thirty.' Analyze the potential benefits and drawbacks of this mindset on individuals and society, using examples beyond those explicitly mentioned in the text.",
+    "answer": "A detailed response would explore how this pressure can drive ambition and innovation but also lead to anxiety, burnout, and a narrow definition of success. Examples beyond the text could include the pressure on young athletes, academics, or entrepreneurs to achieve milestones early in their careers, considering both the positive outcomes (record-breaking performances, groundbreaking research, successful startups) and the negative consequences (early retirement due to injury, mental health struggles, unsustainable business practices). The response should also analyze how societal values contribute to this pressure and whether alternative perspectives on success exist.",
+    "explanation": "This question encourages critical thinking and synthesis by requiring the respondent to analyze the implications of the 'make it by thirty' mentality beyond the immediate context of the provided text. A good answer will demonstrate a comprehensive understanding of both the potential advantages and disadvantages, supported by relevant examples and insights."
+  }
+]
+(gemcall.py:30)
+2025-05-29 21:48:56,912 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:48:58,033 - INFO - Model Response: ["short_answer", "fill_in_the_blank", "multiple_choice"]
+
+(gemcall.py:30)
+2025-05-29 21:48:58,036 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:49:00,466 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "At what age did Beast become the world's most subscribed YouTuber?",
+    "answer": "26",
+    "explanation": "The text states, 'Beast became the world’s most subscribed YouTuber at age 26.'"
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "John and Patrick Collison became the world's youngest __________ at ages 26 and 28.",
+    "answer": "billionaires",
+    "explanation": "The text explicitly mentions they became the world's youngest billionaires."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "What series did Kehinde Wiley begin at age 29?",
+    "options": [
+      "Portraits of Power",
+      "Rumors of War",
+      "Icons of the 21st Century",
+      "Global Landscapes"
+    ],
+    "answer": "Rumors of War",
+    "explanation": "The text states, 'Kehinde Wiley began his iconic Rumors of War series at age 29.'"
+  }
+]
+(gemcall.py:30)
+2025-05-29 21:49:00,470 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 21:49:03,973 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "What is one common characteristic shared by Beast, John and Patrick Collison, and Kehinde Wiley, as highlighted by the provided information?",
+    "answer": "They all achieved significant success at a relatively young age (under 30).",
+    "explanation": "The content showcases examples of individuals achieving remarkable feats before the age of 30."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "At 26, Beast achieved the title of the world's most subscribed __________ on YouTube.",
+    "answer": "YouTuber",
+    "explanation": "The sentence states that Beast became the world's most subscribed YouTuber."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Based on the examples provided, what broader theme do these individuals' accomplishments illustrate?",
+    "options": [
+      "Success is only possible after the age of 30.",
+      "Significant achievements are attainable at a young age.",
+      "Becoming a billionaire is the only measure of success.",
+      "Artistic recognition always comes later in life."
+    ],
+    "answer": "Significant achievements are attainable at a young age.",
+    "explanation": "The examples of Beast, the Collison brothers, and Kehinde Wiley all highlight success achieved before the age of 30, suggesting that youth is not necessarily a barrier to accomplishment."
+  }
+]
+(gemcall.py:30)
+2025-05-29 21:49:03,976 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:212)
+2025-05-29 22:10:24,775 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:10:25,905 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:10:25,948 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:10:32,270 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:10:32,273 - ERROR - Error evaluating question type from Gemini: invalid syntax (<unknown>, line 0). Raw response: (pipe.py:23)
+2025-05-29 22:10:32,277 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 22:10:32,281 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:10:33,290 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:10:33,293 - ERROR - Error evaluating question type from Gemini: invalid syntax (<unknown>, line 0). Raw response: (pipe.py:23)
+2025-05-29 22:10:33,297 - ERROR - An error occurred while mapping question type: 'd'(pipe.py:37)
+2025-05-29 22:10:33,300 - ERROR - An error occurred while using `literal_eval`: malformed node or string: ['', ''](app.py:202)
+2025-05-29 22:10:33,303 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:218)
+2025-05-29 22:17:00,218 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:17:01,314 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:17:01,360 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:17:07,616 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:17:07,619 - INFO - Question type: (pipe.py:21)
+2025-05-29 22:17:07,622 - ERROR - Error evaluating question type from Gemini: invalid syntax (<unknown>, line 0). Raw response: (pipe.py:24)
+2025-05-29 22:17:07,626 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:17:08,535 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:17:08,538 - INFO - Question type: (pipe.py:21)
+2025-05-29 22:17:08,541 - ERROR - Error evaluating question type from Gemini: invalid syntax (<unknown>, line 0). Raw response: (pipe.py:24)
+2025-05-29 22:17:08,544 - ERROR - An error occurred while using `literal_eval`: malformed node or string: ['', ''](app.py:202)
+2025-05-29 22:17:08,548 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:218)
+2025-05-29 22:20:58,180 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:20:59,183 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:20:59,225 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:21:00,674 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 22:21:00,681 - INFO - Question type: ["short_answer", "multiple_choice", "long_answer"](pipe.py:21)
+2025-05-29 22:21:00,685 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:21:01,693 - INFO - Model Response: Okay, I understand. Based on the content provided and the detailed descriptions of each question type, here's the list of suitable question types:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 22:21:01,696 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:21:05,689 - INFO - Model Response: [
+  {
+    "type": "short_answer",
+    "question": "According to the text, what is the 'tyranny of thirty'?",
+    "answer": "The pressure for ambitious twenty-somethings to achieve significant success by the age of thirty.",
+    "explanation": "This answer directly addresses the central theme of the provided text, requiring the student to recall and define the core concept."
+  },
+  {
+    "type": "multiple_choice",
+    "question": "Which of the following best describes the consequence of not 'making it by thirty,' according to the text?",
+    "options": [
+      "Increased potential for future success.",
+      "Probable irrelevance.",
+      "Guaranteed financial stability.",
+      "Greater opportunities for career change."
+    ],
+    "answer": "Probable irrelevance.",
+    "explanation": "This is the consequence stated in the text when describing the pressure of the 'thirty' deadline."
+  },
+  {
+    "type": "long_answer",
+    "question": "Analyze the impact of the '30 Under 30' concept on the career aspirations and mental well-being of young professionals. Use examples from the text and/or personal observations to support your analysis.",
+    "answer": "The '30 Under 30' concept can create immense pressure on young professionals, leading to anxiety and a feeling of inadequacy if they haven't achieved significant success by that age. The text describes this as a 'guillotine' over their heads. This pressure can stifle creativity, discourage risk-taking, and ultimately harm their mental well-being as they focus solely on external validation rather than personal growth. For example, driven by the fear of irrelevance, young professionals may choose career paths that appear successful but are ultimately unfulfilling. While early success, exemplified by Taylor Swift, can compound gains, it also sets a high bar, potentially discouraging those who develop at a different pace. This can create a culture of competition and comparison that is detrimental to overall professional satisfaction.",
+    "explanation": "This answer provides a comprehensive analysis of the issue, including the concept, the impact and possible ways it can impact mental well-being of young professionals."
+  }
+]
+(gemcall.py:30)
+2025-05-29 22:21:05,694 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:21:06,916 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 22:21:06,920 - INFO - Question type: ["multiple_choice", "short_answer", "fill_in_the_blank"](pipe.py:21)
+2025-05-29 22:21:06,927 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:21:09,783 - INFO - Model Response: Okay, I understand the requirements. I will generate questions based on the content: "['Beast became the world’s most subscribed YouTuber at age 26.', '- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.', '- Kehinde Wiley began his iconic Rumors of War series at age 29.']" and the specified question types.
+
+
+[
+  {
+    "type": "multiple_choice",
+    "question": "According to the text, at what age did Beast become the world's most subscribed YouTuber?",
+    "options": [
+      "25",
+      "26",
+      "27",
+      "28"
+    ],
+    "answer": "26",
+    "explanation": "The text explicitly states that Beast achieved this milestone at age 26."
+  },
+  {
+    "type": "short_answer",
+    "question": "What is one achievement of John and Patrick Collison mentioned in the text?",
+    "answer": "They became the world's youngest billionaires.",
+    "explanation": "This answer requires recalling a specific fact from the provided text."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "Kehinde Wiley began his iconic Rumors of War series at age _____.",
+    "answer": "29",
+    "explanation": "The completed sentence provides a key detail from the text regarding Kehinde Wiley's career."
+  }
+]
+(gemcall.py:30)
+2025-05-29 22:21:09,787 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:21:12,851 - INFO - Model Response: [
+  {
+    "type": "multiple_choice",
+    "question": "The examples provided in the text suggest that success before the age of 30 is:",
+    "options": [
+      "Impossible to achieve.",
+      "Rare and unattainable for most.",
+      "A possible but not guaranteed indicator of future achievement.",
+      "The only path to becoming a billionaire."
+    ],
+    "answer": "A possible but not guaranteed indicator of future achievement.",
+    "explanation": "The examples show that early success is possible, but not the only path, nor a guarantee."
+  },
+  {
+    "type": "short_answer",
+    "question": "Briefly describe the common thread between the individuals mentioned in the text.",
+    "answer": "They all achieved significant success before the age of 30.",
+    "explanation": "This answer asks for a concise summary of the shared characteristic of the individuals listed."
+  },
+  {
+    "type": "fill_in_the_blank",
+    "question": "The text highlights that both Beast and John and Patrick Collison achieved significant milestones in their respective fields before the age of _____",
+    "answer": "30",
+    "explanation": "Completing the sentence emphasizes the theme of achieving success early in life."
+  }
+]
+(gemcall.py:30)
+2025-05-29 22:21:12,852 - ERROR - An error occurred while using `literal_eval`: malformed node or string: ['[\n  {\n    "type": "short_answer",\n    "question": "According to the text, what is the \'tyranny of thirty\'?",\n    "answer": "The pressure for ambitious twenty-somethings to achieve significant success by the age of thirty.",\n    "explanation": "This answer directly addresses the central theme of the provided text, requiring the student to recall and define the core concept."\n  },\n  {\n    "type": "multiple_choice",\n    "question": "Which of the following best describes the consequence of not \'making it by thirty,\' according to the text?",\n    "options": [\n      "Increased potential for future success.",\n      "Probable irrelevance.",\n      "Guaranteed financial stability.",\n      "Greater opportunities for career change."\n    ],\n    "answer": "Probable irrelevance.",\n    "explanation": "This is the consequence stated in the text when describing the pressure of the \'thirty\' deadline."\n  },\n  {\n    "type": "long_answer",\n    "question": "Analyze the impact of the \'30 Under 30\' concept on the career aspirations and mental well-being of young professionals. Use examples from the text and/or personal observations to support your analysis.",\n    "answer": "The \'30 Under 30\' concept can create immense pressure on young professionals, leading to anxiety and a feeling of inadequacy if they haven\'t achieved significant success by that age. The text describes this as a \'guillotine\' over their heads. This pressure can stifle creativity, discourage risk-taking, and ultimately harm their mental well-being as they focus solely on external validation rather than personal growth. For example, driven by the fear of irrelevance, young professionals may choose career paths that appear successful but are ultimately unfulfilling. While early success, exemplified by Taylor Swift, can compound gains, it also sets a high bar, potentially discouraging those who develop at a different pace. This can create a culture of competition and comparison that is detrimental to overall professional satisfaction.",\n    "explanation": "This answer provides a comprehensive analysis of the issue, including the concept, the impact and possible ways it can impact mental well-being of young professionals."\n  }\n]', '[\n  {\n    "type": "multiple_choice",\n    "question": "The examples provided in the text suggest that success before the age of 30 is:",\n    "options": [\n      "Impossible to achieve.",\n      "Rare and unattainable for most.",\n      "A possible but not guaranteed indicator of future achievement.",\n      "The only path to becoming a billionaire."\n    ],\n    "answer": "A possible but not guaranteed indicator of future achievement.",\n    "explanation": "The examples show that early success is possible, but not the only path, nor a guarantee."\n  },\n  {\n    "type": "short_answer",\n    "question": "Briefly describe the common thread between the individuals mentioned in the text.",\n    "answer": "They all achieved significant success before the age of 30.",\n    "explanation": "This answer asks for a concise summary of the shared characteristic of the individuals listed."\n  },\n  {\n    "type": "fill_in_the_blank",\n    "question": "The text highlights that both Beast and John and Patrick Collison achieved significant milestones in their respective fields before the age of _____",\n    "answer": "30",\n    "explanation": "Completing the sentence emphasizes the theme of achieving success early in life."\n  }\n]'](app.py:202)
+2025-05-29 22:21:12,853 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:218)
+2025-05-29 22:42:38,014 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:42:39,035 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:42:39,072 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:42:58,857 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 22:42:58,861 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 22:42:58,864 - ERROR - Error evaluating question type from Gemini: malformed node or string: ['short_answer', 'multiple_choice', 'long_answer']. Raw response: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:25)
+2025-05-29 22:42:58,867 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:43:00,904 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 22:43:00,908 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:43:00,911 - ERROR - Error evaluating question type from Gemini: malformed node or string: ['multiple_choice', 'short_answer', 'fill_in_the_blank']. Raw response: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:25)
+2025-05-29 22:43:00,915 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:215)
+2025-05-29 22:45:47,243 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:45:48,442 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:45:48,491 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:45:49,779 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 22:45:49,783 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 22:45:49,786 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:45:50,699 - INFO - Model Response: Okay, I understand. I will use those definitions to generate the questions.
+
+(gemcall.py:30)
+2025-05-29 22:45:50,703 - ERROR - Model error: invalid syntax (<unknown>, line 1)(gemcall.py:34)
+2025-05-29 22:45:50,707 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:45:51,517 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:45:51,521 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:45:51,524 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:45:52,336 - INFO - Model Response: Okay, I understand. I will use those definitions to generate the questions.
+
+(gemcall.py:30)
+2025-05-29 22:45:52,340 - ERROR - Model error: invalid syntax (<unknown>, line 1)(gemcall.py:34)
+2025-05-29 22:45:52,343 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:215)
+2025-05-29 22:50:20,888 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:50:22,036 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:50:22,123 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:50:28,937 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:50:28,940 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:50:28,944 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:50:29,756 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:50:29,759 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:50:32,519 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "According to the text, what is the 'tyranny of thirty,' and where does it manifest?",
+        "answer": "The 'tyranny of thirty' is the cultural pressure to achieve success by the age of thirty. It manifests in places like Silicon Valley tech startups, Bed-Stuy artist studios, and West Hollywood influencer houses.",
+        "explanation": "This question assesses understanding of the central theme and its specific examples."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "What does the author suggest is the consequence of not 'making it' by thirty?",
+        "options": ["Guaranteed financial ruin", "Probable irrelevance", "Increased creativity", "Immediate fame"],
+        "answer": "Probable irrelevance",
+        "explanation": "The text states that beyond thirty, 'high potential' resolves into either undeniable achievement or probable irrelevance."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "The author describes the pressure of turning thirty as a ________ over the necks of ambitious twenty-somethings.",
+        "answer": "guillotine",
+        "explanation": "This question tests recall of a key metaphor used to describe the intense pressure."
+    }
+]
+(gemcall.py:30)
+2025-05-29 22:50:32,523 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:50:33,544 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:50:33,547 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:50:33,550 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:50:36,003 - INFO - Model Response: [
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, how old was Beast when he became the world’s most subscribed YouTuber?",
+        "options": ["24", "26", "28", "29"],
+        "answer": "26",
+        "explanation": "The text explicitly states that Beast became the world’s most subscribed YouTuber at age 26."
+    },
+    {
+        "type": "short_answer",
+        "question": "What achievement did John and Patrick Collison accomplish, and at what ages?",
+        "answer": "John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.",
+        "explanation": "This question directly tests the recall of specific details provided in the text."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "Kehinde Wiley began his iconic ________ of War series at age 29.",
+        "answer": "Rumors",
+        "explanation": "This fill-in-the-blank question assesses the ability to recall the title of Kehinde Wiley's series."
+    }
+]
+(gemcall.py:30)
+2025-05-29 22:50:36,006 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:50:39,690 - INFO - Model Response: [
+    {
+        "type": "multiple_choice",
+        "question": "Based on the provided information, which statement best reflects a common theme among Beast, John and Patrick Collison, and Kehinde Wiley?",
+        "options": [
+            "They all achieved success in traditional corporate environments.",
+            "They all attained significant recognition before the age of 30.",
+            "They all primarily focused on philanthropic endeavors.",
+            "They all inherited their wealth and fame."
+        ],
+        "answer": "They all attained significant recognition before the age of 30.",
+        "explanation": "This question requires analysis and synthesis, identifying a common thread of early success across all individuals mentioned."
+    },
+    {
+        "type": "short_answer",
+        "question": "What implications can be drawn from the provided examples regarding the relationship between age and achievement?",
+        "answer": "The examples suggest that significant achievement is possible at a young age, challenging the notion that success is solely a product of extensive experience gained later in life.",
+        "explanation": "This question encourages a concise analytical response about the broader implications of the information."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "While Beast achieved YouTube fame, the Collison brothers achieved ________ success, and Kehinde Wiley achieved artistic recognition with his 'Rumors of War' series.",
+        "answer": "billionaire",
+        "explanation": "This question tests understanding by requiring the fill-in to relate to the Collison brother's achievement"
+    }
+]
+(gemcall.py:30)
+2025-05-29 22:50:39,695 - ERROR - Error in /api/generate/url: 'list' object has no attribute 'find'(app.py:215)
+2025-05-29 22:51:41,478 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:51:42,367 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:51:42,399 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:51:43,655 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:30)
+2025-05-29 22:51:43,659 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 22:51:43,662 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:51:44,697 - INFO - Model Response: Okay, I understand. Based on the content provided and the detailed explanations of the question types, here's a list of the most suitable question types:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:30)
+2025-05-29 22:51:44,701 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:34)
+2025-05-29 22:51:44,704 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:51:45,640 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:51:45,644 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:51:45,647 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:51:46,866 - INFO - Model Response: Okay, I understand. Based on the content provided and the detailed explanations of the question types, here's a list of the most suitable question types:
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:30)
+2025-05-29 22:51:46,869 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:34)
+2025-05-29 22:51:46,873 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 22:53:44,578 - INFO - Input data fetched(app.py:177)
+2025-05-29 22:53:46,648 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 22:53:46,718 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:53:47,908 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:53:47,911 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:53:47,914 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:53:48,756 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:53:48,760 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:53:51,594 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "According to the text, what is the 'tyranny of thirty' and where is it most prevalent?",
+        "answer": "The 'tyranny of thirty' is the societal pressure for ambitious individuals to achieve significant success before the age of thirty. It's prevalent in tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.",
+        "explanation": "This question assesses comprehension of the central theme and specific examples provided."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "What does the phrase 'Thirty is the line in the sand' imply in the context of the passage?",
+        "options": [
+            "Thirty is the age when people should retire.",
+            "Thirty represents the boundary between potential and realized success or irrelevance.",
+            "Thirty is the ideal age to start a new career.",
+            "Thirty is the age when people lose their creativity."
+        ],
+        "answer": "Thirty represents the boundary between potential and realized success or irrelevance.",
+        "explanation": "This question evaluates understanding of figurative language and its meaning within the text."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "The author mentions that early success can enable individuals to _______ their gains, citing _______ as an example of someone who achieved early success.",
+        "answer": "compound, Taylor Swift",
+        "explanation": "This question tests recall of specific details and the example used to support a claim in the text."
+    }
+]
+(gemcall.py:30)
+2025-05-29 22:53:51,598 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:53:52,617 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:30)
+2025-05-29 22:53:52,621 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 22:53:52,624 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:53:55,496 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "What achievement is Beast known for, and at what age did he accomplish it?",
+        "answer": "Beast became the world's most subscribed YouTuber at age 26.",
+        "explanation": "Tests recall of specific factual information."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "Which of the following pairs of individuals became the world's youngest billionaires, according to the text?",
+        "options": [
+            "Beast and Kehinde Wiley",
+            "John and Kehinde",
+            "John and Patrick Collison",
+            "Patrick Collison and Beast"
+        ],
+        "answer": "John and Patrick Collison",
+        "explanation": "Assesses comprehension and attention to detail."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "Kehinde Wiley started his iconic _______ series, titled _______, at the age of 29.",
+        "answer": "Rumors of War",
+        "explanation": "Tests recall of a specific creative work and its creator."
+    }
+]
+(gemcall.py:30)
+2025-05-29 22:53:55,500 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 22:53:58,865 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "Based on the provided information, what is a common theme among the individuals mentioned?",
+        "answer": "They all achieved significant success at a relatively young age.",
+        "explanation": "This question encourages synthesis by identifying a common thread among the examples."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "If the trend of early achievement continues, which of the following is the MOST likely outcome?",
+        "options": [
+            "Older generations will become less relevant.",
+            "Younger individuals will face increased pressure to succeed early in life.",
+            "The concept of traditional career paths will become more standardized.",
+            "There will be less innovation due to a focus on quick success."
+        ],
+        "answer": "Younger individuals will face increased pressure to succeed early in life.",
+        "explanation": "This question probes analytical skills by requiring the student to infer a logical consequence based on the given information."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "To become the world's most subscribed YouTuber, Beast had to demonstrate a high degree of _______ and _______.",
+        "answer": "creativity, consistency",
+        "explanation": "This question prompts application of the content by requiring students to consider what skills are required to achieve the described successes."
+    }
+]
+(gemcall.py:30)
+2025-05-29 22:53:58,869 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:00:34,445 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:00:35,719 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:00:35,752 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:00:42,439 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:32)
+2025-05-29 23:00:42,445 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:00:42,449 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:00:43,462 - INFO - Model Response: Okay, I understand. Based on your specifications, here are three question types suitable for the provided content, formatted as a Python list:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:32)
+2025-05-29 23:00:43,465 - ERROR - Model error: invalid syntax (<unknown>, line 1)(gemcall.py:36)
+2025-05-29 23:00:43,468 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:00:44,277 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:32)
+2025-05-29 23:00:44,281 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:00:44,284 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:00:45,321 - INFO - Model Response: Okay, I understand. Based on your specifications and the question type guidelines, here's the Python list:
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:32)
+2025-05-29 23:00:45,324 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:36)
+2025-05-29 23:00:45,328 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:04:52,205 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:04:53,253 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:04:53,331 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:05:00,693 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:34)
+2025-05-29 23:05:00,697 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:05:00,700 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:05:01,922 - INFO - Model Response: "short_answer", "multiple_choice", "long_answer"
+(gemcall.py:34)
+2025-05-29 23:05:01,925 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:05:05,815 - INFO - Model Response: 
+    {
+        "type": "short_answer",
+        "question": "According to the text, what is the 'mantra' chanted by ambitious twenty-somethings?",
+        "answer": "\"I gotta make it by thirty.\"",
+        "explanation": "This answer directly quotes the text and identifies a key element of the described cultural pressure."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, what does the age of thirty represent for many ambitious twenty-somethings?",
+        "options": [
+            "A time for relaxation and enjoyment of life.",
+            "The point at which potential solidifies into achievement or irrelevance.",
+            "An opportunity to start a completely new career path.",
+            "A chance to reflect on past mistakes and learn from them."
+        ],
+        "answer": "The point at which potential solidifies into achievement or irrelevance.",
+        "explanation": "This choice accurately reflects the text's description of thirty as a critical turning point."
+    },
+    {
+        "type": "long_answer",
+        "question": "The text describes the 'tyranny of thirty' as a cultural pressure. Analyze the potential positive and negative impacts of this pressure on individuals and society as a whole. Consider factors such as innovation, mental health, and social mobility.",
+        "answer": "A comprehensive answer would discuss how the pressure to achieve by thirty could drive innovation and ambition, but also lead to anxiety, burnout, and a narrowed focus on career success. It should also discuss how it might impact social mobility by creating a sense of urgency and competition, potentially disadvantaging those who have different timelines or access to resources.",
+        "explanation": "This question requires critical thinking and synthesis, prompting the student to weigh various aspects of the described phenomenon."
+    }
+
+(gemcall.py:34)
+2025-05-29 23:05:05,819 - ERROR - Model error: unexpected indent (<unknown>, line 2)(gemcall.py:38)
+2025-05-29 23:05:05,822 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:05:07,450 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+
+(gemcall.py:34)
+2025-05-29 23:05:07,454 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:05:07,458 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:05:09,912 - INFO - Model Response: 
+    {
+        "type": "short_answer",
+        "question": "According to the text, what achievement is Beast known for?",
+        "answer": "Becoming the world’s most subscribed YouTuber.",
+        "explanation": "This answer directly reflects the information provided in the content."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, at what age did John and Patrick Collison become the world’s youngest billionaires?",
+        "options": [
+            "25 and 27",
+            "26 and 28",
+            "27 and 29",
+            "28 and 30"
+        ],
+        "answer": "26 and 28",
+        "explanation": "This choice accurately reflects the ages provided in the text for John and Patrick Collison."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "Kehinde Wiley began his iconic _____ series at age 29.",
+        "answer": "Rumors of War",
+        "explanation": "This answer correctly completes the sentence with information directly from the provided content."
+    }
+
+(gemcall.py:34)
+2025-05-29 23:05:09,916 - ERROR - Model error: unexpected indent (<unknown>, line 2)(gemcall.py:38)
+2025-05-29 23:05:09,919 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:20:18,325 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:20:19,275 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:20:19,312 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:20:25,530 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+
+(gemcall.py:34)
+2025-05-29 23:20:25,535 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:20:25,538 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:20:26,551 - INFO - Model Response: Okay, I understand. Based on your specifications, here's the Python list of question types:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:34)
+2025-05-29 23:20:26,555 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:38)
+2025-05-29 23:20:26,559 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:20:27,577 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+
+(gemcall.py:34)
+2025-05-29 23:20:27,581 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:20:27,585 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:20:28,701 - INFO - Model Response: Okay, given the content and the detailed descriptions of the question types, here's the Python list:
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:34)
+2025-05-29 23:20:28,704 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:38)
+2025-05-29 23:20:28,707 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:22:29,919 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:22:30,868 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:22:30,901 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:22:32,175 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:22:32,180 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:35)
+2025-05-29 23:22:32,183 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:22:32,187 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:22:33,811 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:22:33,814 - INFO - Model Response: Okay, I understand. Based on the guidelines and examples provided, here's the list of question types:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:35)
+2025-05-29 23:22:33,818 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:39)
+2025-05-29 23:22:33,821 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:22:34,752 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:22:34,763 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:35)
+2025-05-29 23:22:34,778 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:22:34,793 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:22:36,063 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:22:36,067 - INFO - Model Response: Okay, I understand. Based on the guidelines and examples provided, here's the list of question types:
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:35)
+2025-05-29 23:22:36,070 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:39)
+2025-05-29 23:22:36,073 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:24:21,755 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:24:22,692 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:24:22,722 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:24:24,288 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:24:24,292 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:35)
+2025-05-29 23:24:24,297 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:24:24,301 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:24:28,380 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:24:28,384 - INFO - Model Response: [
+    "A time for relaxed reflection on past achievements.",
+    "The point where potential turns into achievement or irrelevance.",
+    "The beginning of a new and exciting chapter in life.",
+    "A celebration of personal growth and wisdom."
+  ]
+(gemcall.py:35)
+2025-05-29 23:24:28,388 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:24:31,867 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:24:31,874 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "In the context of the article, what is meant by the 'tyranny of thirty'?",
+        "answer": "The intense societal pressure for young people to achieve significant success by the age of thirty.",
+        "explanation": "This assesses basic understanding of a key concept from the text."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, what does the age of thirty represent for many ambitious people?",
+        "options": [
+            "A time for relaxed reflection on past achievements.",
+            "The point where potential turns into achievement or irrelevance.",
+            "The beginning of a new and exciting chapter in life.",
+            "A celebration of personal growth and wisdom."
+        ],
+        "answer": "The point where potential turns into achievement or irrelevance.",
+        "explanation": "Tests recall of explicitly stated information."
+    },
+    {
+        "type": "long_answer",
+        "question": "Analyze how the concept of the 'tyranny of thirty' might disproportionately affect individuals from disadvantaged backgrounds. Consider factors such as access to resources, networks, and early opportunities.  How could societal structures be reformed to mitigate these effects?",
+        "answer": "Individuals from disadvantaged backgrounds often lack the resources, networks, and early opportunities that facilitate rapid career advancement.  The 'tyranny of thirty' amplifies these inequalities, creating a system where those with privileged backgrounds are more likely to 'make it' by thirty, while others are left behind. Societal reforms could include increased access to quality education, mentorship programs, funding for early-stage ventures from diverse founders, and a cultural shift away from valuing early success above all else.",
+        "explanation": "Encourages analysis and application of the concept to broader societal issues."
+    }
+]
+(gemcall.py:35)
+2025-05-29 23:24:31,882 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:24:33,090 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:24:33,093 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:35)
+2025-05-29 23:24:33,096 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:24:33,099 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:24:36,160 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:24:36,164 - INFO - Model Response: ['Beast became the world’s most subscribed YouTuber at age 26.', '- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.', '- Kehinde Wiley began his iconic Rumors of War series at age 29.']", here are examples of questions for each of the specified question types:
+
+**Multiple Choice Question Example:**
+
+
+{
+  "type": "multiple_choice",
+  "question": "At what age did Beast achieve the title of the world's most subscribed YouTuber?",
+  "options": [
+    "24",
+    "26",
+    "28",
+    "29"
+  ]
+(gemcall.py:35)
+2025-05-29 23:24:36,167 - ERROR - Model error: unterminated string literal (detected at line 1) (<unknown>, line 1)(gemcall.py:39)
+2025-05-29 23:24:36,171 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:26:00,814 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:26:06,828 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:26:06,856 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:26:13,430 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:26:13,434 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:35)
+2025-05-29 23:26:13,437 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:26:13,441 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:26:14,862 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:26:14,865 - INFO - Model Response: Okay, I understand. Based on the content provided and the detailed explanations of the question types, I will maintain my original answer:
+
+
+["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:35)
+2025-05-29 23:26:14,868 - ERROR - Model error: invalid syntax (<unknown>, line 1)(gemcall.py:39)
+2025-05-29 23:26:14,871 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:26:15,886 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:26:15,890 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:35)
+2025-05-29 23:26:15,893 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:26:15,896 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:26:17,115 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:26:17,118 - INFO - Model Response: Okay, I understand. Based on the content and the detailed explanations, I confirm my previous answer:
+
+
+["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:35)
+2025-05-29 23:26:17,121 - ERROR - Model error: invalid syntax (<unknown>, line 1)(gemcall.py:39)
+2025-05-29 23:26:17,124 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:30:40,800 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:30:41,755 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:30:41,835 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:30:42,954 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:30:42,962 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+(gemcall.py:34)
+2025-05-29 23:30:42,966 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:30:42,970 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:30:44,047 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:30:44,051 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+(gemcall.py:34)
+2025-05-29 23:30:44,056 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:31:16,091 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:31:16,095 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "What is the central idea of the 'tyranny of thirty' according to the text?",
+        "answer": "The pressure for young people to achieve significant success before the age of thirty.",
+        "explanation": "The text describes 'thirty' as an artificial deadline creating pressure for young individuals to achieve success."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, where is the pressure to 'make it by thirty' most prominently felt?",
+        "options": ["Retirement homes", "Tech startups, artist studios, and influencer houses", "Elementary schools", "Government agencies"],
+        "answer": "Tech startups, artist studios, and influencer houses",
+        "explanation": "The text explicitly mentions 'tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood' as places where this pressure is felt."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "The text suggests that early success can help you __________ your gains, as exemplified by Taylor Swift.",
+        "answer": "compound",
+        "explanation": "The passage states that 'early success enables you to compound your gains,' indicating that early achievements can lead to further success."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:31:16,099 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:31:17,220 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:31:17,223 - INFO - Model Response: ["short_answer", "multiple_choice", "fill_in_the_blank"]
+(gemcall.py:34)
+2025-05-29 23:31:17,226 - INFO - Question type: ['short_answer', 'multiple_choice', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:31:17,229 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:31:19,574 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:31:19,577 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "At what age did Beast become the world's most subscribed YouTuber?",
+        "answer": "26",
+        "explanation": "The provided text states that 'Beast became the world’s most subscribed YouTuber at age 26.'"
+    },
+    {
+        "type": "multiple_choice",
+        "question": "Who began the 'Rumors of War' series at age 29?",
+        "options": ["John Collison", "Patrick Collison", "Beast", "Kehinde Wiley"],
+        "answer": "Kehinde Wiley",
+        "explanation": "The text mentions that 'Kehinde Wiley began his iconic Rumors of War series at age 29.'"
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "John and Patrick Collison became the world's youngest __________ at ages 26 and 28.",
+        "answer": "billionaires",
+        "explanation": "According to the text, 'John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.'"
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:31:19,581 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:31:22,647 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:31:22,651 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "Based on the information provided, what is one commonality among Beast, the Collison brothers, and Kehinde Wiley?",
+        "answer": "They all achieved significant success at a relatively young age (under 30).",
+        "explanation": "The text highlights their achievements and the ages at which they occurred, showcasing early success."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "Which of the following best describes the accomplishments highlighted in the provided text?",
+        "options": ["Technological innovation", "Artistic expression and business success", "Scientific discovery", "Political reform"],
+        "answer": "Artistic expression and business success",
+        "explanation": "The text mentions a YouTuber, billionaires, and an artist, representing both business and artistic achievements."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "The Collison brothers, John and Patrick, are noted for becoming the world's youngest __________ at ages 26 and 28, highlighting their entrepreneurial achievements.",
+        "answer": "billionaires",
+        "explanation": "The text specifically states that they 'became the world’s youngest billionaires' emphasizing their success in business."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:31:22,658 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:31:49,308 - INFO - Input data fetched(app.py:177)
+2025-05-29 23:31:49,674 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:31:49,684 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:31:56,439 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:31:56,443 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:34)
+2025-05-29 23:31:56,450 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:31:56,454 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:31:59,715 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:31:59,719 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "According to the text, what is the 'tyranny of thirty'?",
+        "answer": "The pressure for young people to achieve significant success before the age of thirty.",
+        "explanation": "The text defines it as a 'pernicious deadline' and 'guillotine' over ambitious twenty-somethings."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "Which of the following locations is NOT explicitly mentioned as a place where the 'tyranny of thirty' is felt?",
+        "options": ["Silicon Valley tech startups", "Bed-Stuy artist studios", "West Hollywood influencer houses", "Wall Street investment banks"],
+        "answer": "Wall Street investment banks",
+        "explanation": "The text specifically lists 'tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood'."
+    },
+    {
+        "type": "long_answer",
+        "question": "The text refers to the 'tyranny of thirty' as a negative phenomenon. Discuss the potential benefits and drawbacks of having age-related expectations for success, drawing on examples beyond those mentioned in the text.",
+        "answer": "Benefits could include motivation and drive for early achievement. Drawbacks may include increased stress, anxiety, and discouragement if expectations aren't met. Consider examples from sports, academia, or other fields.",
+        "explanation": "This response requires critical thinking and the application of the concept to broader contexts."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:31:59,724 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:32:03,812 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:32:03,816 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "What mantra do ambitious twenty-somethings chant, according to the text, reflecting the 'tyranny of thirty'?",
+        "answer": "'I gotta make it by thirty.'",
+        "explanation": "The text directly quotes this mantra as representative of the pressure to succeed before thirty."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, what does the age of thirty represent in the context of career potential?",
+        "options": ["The beginning of one's career", "A point where high potential resolves into achievement or irrelevance", "The ideal age for retirement", "A time for changing career paths"],
+        "answer": "A point where high potential resolves into achievement or irrelevance",
+        "explanation": "The text states that 'Thirty is the line in the sand — the point beyond which 'high potential' resolves into undeniable achievement or probable irrelevance.'"
+    },
+    {
+        "type": "long_answer",
+        "question": "The author presents a critical view of the 'tyranny of thirty.' Argue for or against the idea that focusing on early success is beneficial for long-term achievement, considering both individual well-being and societal progress. Support your argument with examples from various fields.",
+        "answer": "Arguments for might include the advantage of compounding gains, establishing a reputation, or securing funding. Arguments against could include the risk of burnout, limited perspective, or neglecting other life aspects. Examples could include entrepreneurs who achieved early success but later struggled, or individuals who found success later in life.",
+        "explanation": "This question encourages the student to analyze the concept, develop their own argument, and provide supporting evidence."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:32:03,820 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:32:05,382 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:32:05,388 - INFO - Model Response: ["short_answer", "multiple_choice", "true_false"]
+(gemcall.py:34)
+2025-05-29 23:32:05,394 - INFO - Question type: ['short_answer', 'multiple_choice', 'true_false'](pipe.py:22)
+2025-05-29 23:32:05,398 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:32:08,396 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:32:08,401 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "What is one achievement of the Collison brothers mentioned in the text?",
+        "answer": "Becoming the world's youngest billionaires.",
+        "explanation": "The text explicitly states this achievement."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "What field is Kehinde Wiley known for?",
+        "options": ["YouTube content creation", "Financial technology", "Visual arts", "Formula One Racing"],
+        "answer": "Visual arts",
+        "explanation": "The text refers to his 'iconic Rumors of War series,' indicating his involvement in the arts."
+    },
+    {
+        "type": "true_false",
+        "question": "Beast became the world's most subscribed YouTuber before the age of 25.",
+        "answer": "false",
+        "explanation": "The text states that Beast achieved this at age 26."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:32:08,406 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:32:12,001 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:32:12,004 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "Based on the provided text, what is the age range in which these individuals achieved significant success?",
+        "answer": "Between 26 and 29 years old.",
+        "explanation": "The text specifies the ages at which each individual achieved their milestone."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "Which statement is most accurate based on the information given?",
+        "options": ["All three individuals achieved success in the same field.", "The Collison brothers are older than Kehinde Wiley.", "Beast and the Collison brothers achieved success around the same age.", "Kehinde Wiley's 'Rumors of War' series focuses on technological advancements."],
+        "answer": "Beast and the Collison brothers achieved success around the same age.",
+        "explanation": "Their ages are all within a close range (26-28) when they reached their milestones."
+    },
+    {
+        "type": "true_false",
+        "question": "The text implies that significant success is impossible after the age of 30.",
+        "answer": "false",
+        "explanation": "The text only highlights examples of early success, not that success after 30 is impossible."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:32:12,007 - INFO - Successfully dumped data(app.py:208)
+2025-05-29 23:43:36,475 - INFO - Input data fetched(app.py:178)
+2025-05-29 23:43:37,591 - ERROR - Member-only story
+Cancelling 30 Under 30
+The Tyranny of Thirty
+The Artificial Deadline That’s Ruining a Generation
+→ Read the next essay: Your Thirties Aren’t What They Used to Be
+The tyranny of thirty has become the most pernicious deadline of our culture — a guillotine over the necks of ambitious twenty-somethings at tech startups in Silicon Valley, artist studios in Bed-Stuy, and influencer houses in West Hollywood.
+All of them chanting the same frantic mantra:
+“I gotta make it by thirty.”
+Thirty is the line in the sand — the point beyond which “high potential” resolves into undeniable achievement or probable irrelevance.
+And there’s a hint of truth in their words. Early success enables you to compound your gains and many of our culture’s most iconic figures got their start at a young age:
+- Taylor Swift won her first Album of the Year Grammy at age 20.
+- Mr. Beast became the world’s most subscribed YouTuber at age 26.
+- John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.
+- Kehinde Wiley began his iconic Rumors of War series at age 29.(base.py:33)
+2025-05-29 23:43:37,624 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:43:52,382 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:43:52,392 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:34)
+2025-05-29 23:43:52,402 - INFO - Question type: ['short_answer', 'multiple_choice', 'long_answer'](pipe.py:22)
+2025-05-29 23:43:52,413 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:44:00,159 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:44:00,164 - INFO - Model Response: ["short_answer", "multiple_choice", "long_answer"]
+(gemcall.py:34)
+2025-05-29 23:44:00,168 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:44:03,840 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:44:03,843 - INFO - Model Response: [
+    {
+        "type": "short_answer",
+        "question": "According to the text, what is the 'pernicious deadline' affecting ambitious twenty-somethings?",
+        "answer": "Making it by thirty.",
+        "explanation": "The text explicitly states that the 'tyranny of thirty' has become a significant deadline."
+    },
+    {
+        "type": "multiple_choice",
+        "question": "Which of the following best describes the central idea of the text?",
+        "options": [
+            "The importance of achieving success before turning thirty.",
+            "A critique of the societal pressure to achieve success by age thirty.",
+            "An analysis of the careers of successful individuals who started young.",
+            "A comparison of different career paths for ambitious twenty-somethings."
+        ],
+        "answer": "A critique of the societal pressure to achieve success by age thirty.",
+        "explanation": "The text focuses on the negative impact of the 'tyranny of thirty' on young people."
+    },
+    {
+        "type": "long_answer",
+        "question": "Analyze the impact of the '30 Under 30' concept on the career expectations and mental well-being of young professionals. How does the text portray this impact, and what are some potential counterarguments or alternative perspectives?",
+        "answer": "The text portrays the '30 Under 30' concept as creating undue pressure and anxiety among young professionals, leading to a sense of inadequacy if they haven't achieved significant success by that age. It suggests this pressure can be detrimental to their mental well-being. Alternative perspectives might argue that such lists can be motivational for some individuals, providing benchmarks and inspiration. However, the text primarily focuses on the negative consequences of this artificial deadline.",
+        "explanation": "This response requires synthesizing information from the text and considering potential counterarguments, encouraging critical thinking about the topic."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:44:03,845 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:44:04,868 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:44:04,873 - INFO - Model Response: ["multiple_choice", "short_answer", "fill_in_the_blank"]
+(gemcall.py:34)
+2025-05-29 23:44:04,879 - INFO - Question type: ['multiple_choice', 'short_answer', 'fill_in_the_blank'](pipe.py:22)
+2025-05-29 23:44:04,885 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:44:07,529 - INFO - text zero: O(gemcall.py:30)
+2025-05-29 23:44:07,535 - INFO - Model Response: [
+    {
+        "type": "multiple_choice",
+        "question": "According to the text, at what age did MrBeast become the world’s most subscribed YouTuber?",
+        "options": ["24", "26", "28", "30"],
+        "answer": "26",
+        "explanation": "The text states 'Beast became the world’s most subscribed YouTuber at age 26.'"
+    },
+    {
+        "type": "short_answer",
+        "question": "What accomplishment did John and Patrick Collison achieve, and at what ages did they achieve it?",
+        "answer": "They became the world's youngest billionaires at ages 26 and 28.",
+        "explanation": "The text mentions 'John and Patrick Collison became the world’s youngest billionaires at ages 26 and 28.'"
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "Kehinde Wiley began his iconic Rumors of War series at age _____.",
+        "answer": "29",
+        "explanation": "The text states 'Kehinde Wiley began his iconic Rumors of War series at age 29.'"
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:44:07,541 - INFO - Passing prompt to LLM...(gemcall.py:24)
+2025-05-29 23:44:10,808 - INFO - text zero: [(gemcall.py:30)
+2025-05-29 23:44:10,813 - INFO - Model Response: [
+    {
+        "type": "multiple_choice",
+        "question": "Which of the following inferences can be BEST supported by the information provided in the text?",
+        "options": [
+            "Success is guaranteed if achieved before the age of 30.",
+            "Significant achievements are possible for individuals in their twenties.",
+            "Becoming a billionaire is easier in one's twenties than in later life.",
+            "Artistic success is typically achieved later in life."
+        ],
+        "answer": "Significant achievements are possible for individuals in their twenties.",
+        "explanation": "The text highlights examples of individuals achieving success in their twenties, suggesting this is a period of potential for significant accomplishment."
+    },
+    {
+        "type": "short_answer",
+        "question": "Based on the provided information, what common theme can be identified among the accomplishments of MrBeast, the Collison brothers, and Kehinde Wiley?",
+        "answer": "Early success/achievement in their respective fields.",
+        "explanation": "All three examples demonstrate notable achievements attained before the age of 30."
+    },
+    {
+        "type": "fill_in_the_blank",
+        "question": "The examples of MrBeast, the Collison brothers, and Kehinde Wiley suggest that impactful contributions can be made during one's _______ years.",
+        "answer": "twenties",
+        "explanation": "The text uses these individuals as examples of accomplishments during this specific age range."
+    }
+]
+(gemcall.py:34)
+2025-05-29 23:44:10,819 - INFO - Successfully dumped data(app.py:209)
+2025-05-29 23:44:10,865 - INFO - File found, loading file for rendering(app.py:36)

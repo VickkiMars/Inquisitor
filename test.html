@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        select, input, textarea, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #0c7ff2;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+        button:hover {
+            background: #0066cc;
+        }
+        #response {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 4px;
+            background: #f9f9f9;
+            white-space: pre-wrap;
+            min-height: 100px;
+        }
+        .loading {
+            display: none;
+            margin: 10px 0;
+            color: #666;
+        }
+        .progress-bar {
+            height: 5px;
+            background: #eee;
+            margin: 10px 0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #0c7ff2;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>API Test Tool</h1>
+        
+        <div class="form-group">
+            <label for="apiEndpoint">API Endpoint:</label>
+            <select id="apiEndpoint">
+                <option value="/api/generate/file">File Upload (/api/generate/file)</option>
+                <option value="/api/generate/url">URL Processing (/api/generate/url)</option>
+            </select>
+        </div>
+
+        <div id="fileInputGroup" class="form-group">
+            <label for="fileUpload">Select File (for file upload):</label>
+            <input type="file" id="fileUpload">
+        </div>
+
+        <div id="urlInputGroup" class="form-group" style="display:none;">
+            <label for="urlInput">Enter URL:</label>
+            <input type="url" id="urlInput" placeholder="https://example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="numQuestions">Number of Questions:</label>
+            <input type="number" id="numQuestions" value="5" min="1" max="20">
+        </div>
+
+        <button id="submitBtn">Make API Call</button>
+        
+        <div class="loading" id="loadingIndicator">
+            <div class="progress-bar">
+                <div class="progress" id="progressBar"></div>
+            </div>
+            <p>Processing your request...</p>
+        </div>
+
+        <div class="form-group">
+            <label>API Response:</label>
+            <div id="response">Response will appear here...</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiEndpoint = document.getElementById('apiEndpoint');
+            const fileInputGroup = document.getElementById('fileInputGroup');
+            const urlInputGroup = document.getElementById('urlInputGroup');
+            const fileUpload = document.getElementById('fileUpload');
+            const urlInput = document.getElementById('urlInput');
+            const numQuestions = document.getElementById('numQuestions');
+            const submitBtn = document.getElementById('submitBtn');
+            const responseDiv = document.getElementById('response');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const progressBar = document.getElementById('progressBar');
+
+            // Toggle between file/url inputs based on endpoint selection
+            apiEndpoint.addEventListener('change', function() {
+                if (apiEndpoint.value === '/api/generate/file') {
+                    fileInputGroup.style.display = 'flex';
+                    urlInputGroup.style.display = 'none';
+                } else {
+                    fileInputGroup.style.display = 'none';
+                    urlInputGroup.style.display = 'flex';
+                }
+            });
+
+            submitBtn.addEventListener('click', async function() {
+                const endpoint = apiEndpoint.value;
+                const questions = numQuestions.value;
+                
+                // Validate input
+                if (endpoint === '/api/generate/file' && !fileUpload.files[0]) {
+                    alert('Please select a file');
+                    return;
+                }
+                if (endpoint === '/api/generate/url' && !urlInput.value) {
+                    alert('Please enter a URL');
+                    return;
+                }
+
+                // Show loading indicator
+                loadingIndicator.style.display = 'block';
+                responseDiv.textContent = 'Waiting for response...';
+                
+                // Simulate progress (in real use, you'd update this based on actual progress)
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += 5;
+                    progressBar.style.width = `${Math.min(progress, 100)}%`;
+                    if (progress >= 100) clearInterval(progressInterval);
+                }, 300);
+
+                try {
+                    let response;
+                    
+                    if (endpoint === '/api/generate/file') {
+                        const formData = new FormData();
+                        formData.append('file', fileUpload.files[0]);
+                        formData.append('num_questions', questions);
+                        
+                        response = await fetch("http://localhost:5000"+endpoint, {
+                            method: 'POST',
+                            body: formData
+                        });
+                    } else {
+                        response = await fetch("http://localhost:5000"+endpoint, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                url: urlInput.value,
+                                num_questions: questions
+                            })
+                        });
+                    }
+
+                    const data = await response.json();
+                    
+                    // Display formatted JSON response
+                    responseDiv.textContent = JSON.stringify(data, null, 2);
+                } catch (error) {
+                    responseDiv.textContent = `Error: ${error.message}`;
+                } finally {
+                    loadingIndicator.style.display = 'none';
+                    progressBar.style.width = '0%';
+                    clearInterval(progressInterval);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
