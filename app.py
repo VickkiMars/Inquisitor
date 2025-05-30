@@ -191,7 +191,13 @@ def generate_questions_from_url_api():
         # Ensure process_yt/process_article are compatible (synchronous or properly awaited)
         if "youtu" in url:
             try:
-                questions, title = process_yt(url=url)
+                response = process_yt(url=url, num_questions=num_questions)
+
+                try:
+                    log_message(f"Youtube response: {response}")
+                    questions, title = response
+                except Exception as e:
+                    log_message(f"An error occurred while trying to unpackL {e}", "error")
             except Exception as e:
                 log_message(f"Could not process Youtube link: {e}" , 'error')
         else:

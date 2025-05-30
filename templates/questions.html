@@ -13,9 +13,9 @@
         </div>
     </div>
 
-    <div class="question-list">
+    <div class="flex overflow-x-auto snap-x snap-mandatory pb-4 hide-scrollbar">
         {% for question in topic_data.questions %}
-            <div class="question-item bg-white px-4 py-3 mb-5 border border-[#dee2e6] rounded-lg shadow-sm">
+            <div class="question-item flex-none w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/4 max-w-lg mx-2 bg-white px-4 py-3 border border-[#dee2e6] rounded-lg shadow-sm snap-center">
                 <h3 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] mb-2">
                     Question {{ loop.index }}: <span class="capitalize">{{ question.type | replace('_', ' ') }}</span>
                 </h3>
@@ -68,11 +68,13 @@
 
     <div class="flex justify-stretch mb-8">
         <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-end">
-            <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-                <span class="truncate">Regenerate Questions</span>
-            </button>
+            <a href="/generate">
+                <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                    <span class="truncate">Regenerate Questions</span>
+                </button>
+            </a>
             <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em]"
             >
@@ -104,4 +106,15 @@
         });
     });
 </script>
+
+<style>
+    /* Custom CSS to hide scrollbar while keeping scroll functionality */
+    .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;  /* Chrome, Safari, Opera */
+    }
+</style>
 {% endblock %}

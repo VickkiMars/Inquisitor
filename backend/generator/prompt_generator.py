@@ -272,5 +272,8 @@ def generate_prompt(chunk:str, prompt_types: List[str]) -> List[str]:
 
     - Relevant output:
         AVOID ANY JARGON in your response, respond ONLY with the questions in PYTHON DICTIONARY structure/format.
+
+    - Respond:
+        RESPOND WITH THE QUESTIONS IN THE SPECIFIED FORMAT
     """
     return PROMPT

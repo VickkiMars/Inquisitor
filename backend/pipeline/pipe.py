@@ -118,18 +118,22 @@ def process_article(url: str, num_questions: int = 10) -> List[str]:
     generated_questions = []
     count = 0
     for chunk in chunks:
-        if count >= num_questions:
+        if count == num_questions:
             break
-        try:
-            question_output = gem_pipe(chunk)
-            for i in question_output:
-                generated_questions.append(i)
-            count += 1
-        except Exception as e:
-            log_message(f"An error occurred during question generation for an article chunk: {e}", "error")
+        else:
+            try:
+                question_output = gem_pipe(chunk)
+                for i in question_output:
+                    generated_questions.append(i)
+                    count += 1
+            except Exception as e:
+                log_message(f"An error occurred during question generation for an article chunk: {e}", "error")
+    log_message(f"Requested Number of Questions: {num_questions}  : Outputted number of questions: {len(generated_questions)}")
+    # if len(generated_questions) > num_questions:
+    #     generated_questions = generated_questions[:num_questions]
     return generated_questions, title
 
-def process_yt(url: str) -> List[str]:
+def process_yt(url: str, num_questions:str) -> List[str]:
     """
     Processes a YouTube video by transcribing it, chunking the transcription,
     and generating questions.
@@ -140,24 +144,33 @@ def process_yt(url: str) -> List[str]:
         transcription = yt.transcribe(video_url=url)
     except Exception as e:
         log_message(f"An error occurred during YouTube transcription for URL {url}: {e}", "error")
-        return [] # Return empty list on transcription failure
+        return [], [] # Return empty list on transcription failure
 
     if not transcription:
-        return []
+        log_message(f"Transcription is empty: {transcription}")
+        return "An error occurred",[]
 
     chunks = []
     try:
         chunks = chunk_text(transcription)
     except Exception as e:
         log_message(f"An error occurred while chunking the transcription: {e}", "error")
-        return [] # Return empty list on chunking failure
-
+        return "An error occurred",[] # Return empty list on chunking failure
+    count = 0
     generated_questions = []
     for chunk in chunks:
+        log_message(f"Requested Number: {num_questions}: Outputted questions: {len(generated_questions)}")
+        if count == num_questions:
+            break
         try:
             response = gem_pipe(chunk)
-            log_message(f"Gemini response: {response[:50]}...") # Log a snippet for brevity
-            generated_questions.append(response)
+            for i in response:
+                if count == num_questions:
+                    break
+                generated_questions.append(i)
+                count +=1
         except Exception as e:
             log_message(f"An error occurred while getting Gemini's response for a YouTube chunk: {e}", "error")
-    return generated_questions
+    log_message(f"Requested Number: {num_questions}: Outputted questions: {len(generated_questions)}")
+    title = "Your Youtube Video"
+    return generated_questions, title
