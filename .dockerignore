@@ -4,7 +4,7 @@ __pycache__
 *.pyc
 *.log
 .venv
-venv/
+inquire/
 .env
 Dockerfile
 README.md
