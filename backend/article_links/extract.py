@@ -16,7 +16,7 @@ def sanitize_filename(title):
     """Clean the title to create a valid filename"""
     return re.sub(r'[\\/*?:"<>|]', '', title.strip())
 
-def extract_and_save_text(url):
+def extract_and_save_text(url, count=3):
     """Extract text from URL and save to a file"""
     if not is_valid_url(url):
         log_message("Invalid URL format. Please include http:// or https://", "error")
@@ -24,21 +24,29 @@ def extract_and_save_text(url):
 
     try:
         # Download and extract text
-        downloaded = trafilatura.fetch_url(url)
-        text = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
-        #language = detect_language(text)
+        for i in range(3):
+            if count == 0:
+                return "", ""
+            downloaded = trafilatura.fetch_url(url)
+            text = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
+            #language = detect_language(text)
 
-        if not text:
-            log_message("No extractable text found on this page","error")
-            return
+            if not text:
+                log_message("No extractable text found on this page","error")
+                return
 
-        # Get page title for filename
-        try:
-            title = trafilatura.extract_metadata(downloaded).title
-        except Exception as e:
-            log_message(f"Couldn't retrieve article title: {e}", "error")
-        return text, title
-    
+            # Get page title for filename
+            try:
+                title = trafilatura.extract_metadata(downloaded).title
+            except Exception as e:
+                log_message(f"Couldn't retrieve article title: {e}", "error")
+
+            if not text:
+                count -= 1
+                extract_and_save_text(url, count)
+            return text, title
+        
+        
     except Exception as e:
         log_message(f"Error while extracting link: {e}", "error")
 

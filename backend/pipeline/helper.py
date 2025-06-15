@@ -20,3 +20,5 @@ def get_content_between_curly_braces(text, sym1, sym2):
 
     return text[first_brace_index : last_brace_index + 1]
 
+
+

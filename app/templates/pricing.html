@@ -40,7 +40,7 @@
                         Priority Support
                     </li>
                 </ul>
-                <a href="#"
+                <a href="/generate"
                    class="w-full flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#e0e2e5] transition-colors duration-200">
                     <span class="truncate">Start for Free</span>
                 </a>
@@ -51,7 +51,7 @@
                 <p class="absolute -top-3 right-3 bg-[#28a745] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Popular</p>
                 <h3 class="text-white text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Pro</h3>
                 <p class="text-white text-5xl font-extrabold mb-6">
-                    $39.99<span class="text-xl font-medium text-white">/month</span>
+                    $19.99<span class="text-xl font-medium text-white">/month</span>
                 </p>
                 <ul class="list-none p-0 mb-8 text-white text-base leading-relaxed space-y-3">
                     <li class="flex items-center justify-center">
@@ -71,18 +71,19 @@
                         Standard Support
                     </li>
                 </ul>
-                <button id="checkout-pro-btn"
-                   class="w-full flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white text-[#0c7ff2] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-colors duration-200"
-                   data-price-id="{{ config['STRIPE_PRICE_ID_PRO'] }}">
-                    <span class="truncate">Choose Pro</span>
-                </button>
+                <a href="/payment">
+                    <button id="checkout-pro-btn" class="w-full flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white text-[#0c7ff2] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 transition-colors duration-200"
+                    data-price-id="{{ config['STRIPE_PRICE_ID_PRO'] }}">
+                        <span class="truncate">Choose Pro</span>
+                    </button>
+                </a>
             </div>
 
             {# Pricing Card 3: Enterprise Tier #}
             <div class="bg-white p-8 rounded-lg shadow-xl border border-[#f0f2f5] flex flex-col items-center text-center">
                 <h3 class="text-[#0c7ff2] text-3xl font-bold leading-tight tracking-[-0.015em] mb-4">Enterprise</h3>
                 <p class="text-[#111418] text-5xl font-extrabold mb-6">
-                    $250<span class="text-xl font-medium text-[#60758a]">/month</span>
+                    $59.99<span class="text-xl font-medium text-[#60758a]">/month</span>
                 </p>
                 <ul class="list-none p-0 mb-8 text-[#343a40] text-base leading-relaxed space-y-3">
                     <li class="flex items-center justify-center">
@@ -111,59 +112,4 @@
 
         </div>
     </div>
-{% endblock %}
-
-{% block scripts_extra %}
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        const stripe = Stripe({{ config['STRIPE_PUBLISHABLE_KEY']|tojson }});
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const proButton = document.getElementById('checkout-pro-btn');
-            const enterpriseButton = document.getElementById('checkout-enterprise-btn');
-
-            if (proButton) {
-                proButton.addEventListener('click', function() {
-                    handleCheckout(this.dataset.priceId);
-                });
-            }
-
-            if (enterpriseButton) {
-                enterpriseButton.addEventListener('click', function() {
-                    // For enterprise, you might want to redirect to a contact form
-                    // or use a specific Stripe Price ID for a "contact sales" placeholder
-                    handleCheckout(this.dataset.priceId);
-                });
-            }
-
-            async function handleCheckout(priceId) {
-                try {
-                    const response = await fetch('/create-checkout-session', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ priceId: priceId }),
-                    });
-
-                    const session = await response.json();
-
-                    if (session.error) {
-                        console.error('Error creating checkout session:', session.error.message);
-                        // Display error message to user (e.g., a modal or alert)
-                        alert('Error: ' + session.error.message);
-                    } else if (session.checkout_url) {
-                        // Redirect to Stripe Checkout
-                        window.location.href = session.checkout_url;
-                    } else {
-                        console.error('Unexpected response from checkout session creation:', session);
-                        alert('An unexpected error occurred. Please try again.');
-                    }
-                } catch (error) {
-                    console.error('Network or server error:', error);
-                    alert('Could not initiate checkout. Please check your connection and try again.');
-                }
-            }
-        });
-    </script>
 {% endblock %}

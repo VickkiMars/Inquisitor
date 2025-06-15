@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matching Quiz - Inquisitor</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+  />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <style>
+    body {
+      font-family: Inter, "Noto Sans", sans-serif;
+    }
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .tooltip:hover::after {
+      opacity: 1;
+    }
+    /* Custom styles for drag and drop */
+    .draggable {
+      cursor: grab;
+    }
+    .dragging {
+      opacity: 0.5;
+      border: 2px dashed #6366f1; /* Indigo */
+    }
+    .drop-target-hover {
+      background-color: #e0e7ff; /* Light indigo */
+      border-color: #6366f1;
+    }
+    .correct-match {
+      background-color: #d1fae5; /* Green-100 */
+      border-color: #34d399; /* Green-400 */
+      pointer-events: none; /* Prevent further dragging once matched */
+    }
+    .incorrect-match {
+      background-color: #fee2e2; /* Red-100 */
+      border-color: #ef4444; /* Red-400 */
+    }
+    .matched-definition-wrapper {
+        margin-left: auto; /* Pushes definition to the right within the term container */
+        min-width: 0; /* Allow content to shrink */
+        flex-shrink: 1; /* Allow content to shrink */
+    }
+    .matched-definition-placeholder {
+        flex-grow: 1; /* Allow placeholder to take up available space */
+    }
+  </style>
+
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+</head>
+<body class="min-h-screen bg-white text-[#111418]">
+  <div class="flex flex-col min-h-screen">
+    <header class="border-b border-[#f0f2f5] px-4 xs:px-5 sm:px-6 lg:px-10 py-3 sm:py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-4 h-4 sm:w-5 sm:h-5">
+            <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" /> </svg>
+          </div>
+          <a class="text-lg sm:text-xl font-bold" href="/">Inquisitor</a>
+        </div>
+
+        <div class="hidden sm:flex sm:items-center gap-3 sm:gap-6">
+          <nav class="flex gap-2 sm:gap-4 text-sm font-medium">
+            <a href="/pricing">Pricing</a>
+            <a href="/generate">Generate</a>
+            <a href="/questions">History</a>
+            <a href="/about">About</a>
+          </nav>
+
+          <div class="flex gap-2 sm:gap-3">
+            <a href="/login.html" class="text-sm font-medium text-[#111418] hover:text-gray-700 px-3 py-1.5 rounded-md border border-[#f0f2f5] hover:bg-[#f8fafc]">Log in</a>
+            <a href="/signup.html" class="text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 px-3 py-1.5 rounded-md shadow-sm">Sign up</a>
+          </div>
+
+          <div class="flex gap-2 sm:gap-3 border border-white rounded-md px-2 py-1 sm:px-3 sm:py-1">
+            <a href="/report-bug" class="relative tooltip" data-tooltip="Report a Bug">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor"
+                   viewBox="0 0 256 256" class="hover:text-[#4b5563]">
+                <path d="M128,40a88,88,0,0,0-88,88c0,27.07,10.66,50.48,27.17,67.89a8,8,0,0,0,10.84-2.22,8,8,0,0,0-2.22-10.84C62.83,169.52,56,150.84,56,128a72,72,0,0,1,144,0c0,22.84-6.83,41.52-17.79,54.83a8,8,0,0,0-2.22,10.84,8,8,0,0,0,10.84,2.22C221.34,178.48,232,155.07,232,128A88,88,0,0,0,128,40Zm-40,96a12,12,0,1,1,12-12A12,12,0,0,1,88,136Zm80,0a12,12,0,1,1,12-12A12,12,0,0,1,168,136ZM168,216a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,216ZM152,40a8,8,0,0,0-8-8H112a8,8,0,0,0,0,16h32A8,8,0,0,0,152,40Z"></path>
+              </svg>
+            </a>
+            <a href="/suggest-feature" class="relative tooltip" data-tooltip="Suggest a Feature">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor"
+                   viewBox="0 0 24 24" class="hover:text-[#4b5563]">
+                <path d="M12 2a10 10 0 0 0-3.16 19.48c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.45-1.1-1.45-.9-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 .1-2.71 0 0 .84-.27 2.75 1.03a9.3 9.3 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.29.71.1 1.61.05 2.71 0 3.86-2.34 4.69-4.57 4.94.36.3.69.9.69 1.82v2.7c0 .26.18.58.69.48A10 10 0 0 0 12 2z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="-mr-2 flex items-center sm:hidden">
+          <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-[#111418] hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden sm:hidden" id="mobile-menu">
+        <div class="pt-1 pb-1 space-y-0.5 text-right pr-4">
+          <a href="/login.html" class="block px-3 py-1 text-base font-medium text-indigo-600 hover:bg-gray-100">Log in</a>
+          <a href="/signup.html" class="block px-3 py-1 text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md mx-3">Sign up</a>
+          <div class="h-px bg-[#f0f2f5] my-2"></div>
+          <a href="/pricing">Pricing</a>
+          <a href="/generate">Generate</a>
+          <a href="/questions">History</a>
+          <a href="/about">About</a>
+        </div>
+        <div class="pt-4 pb-2 border-t border-[#f0f2f5] flex justify-end pr-4">
+          <div class="flex gap-3 px-3 py-2">
+            <a href="/report-bug" class="relative tooltip" data-tooltip="Report a Bug">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor"
+                   viewBox="0 0 256 256">
+                <path d="M128,40a88,88,0,0,0-88,88c0,27.07,10.66,50.48,27.17,67.89a8,8,0,0,0,10.84-2.22,8,8,0,0,0-2.22-10.84C62.83,169.52,56,150.84,56,128a72,72,0,0,1,144,0c0,22.84-6.83,41.52-17.79,54.83a8,8,0,0,0-2.22,10.84,8,8,0,0,0,10.84,2.22C221.34,178.48,232,155.07,232,128A88,88,0,0,0,128,40Zm-40,96a12,12,0,1,1,12-12A12,12,0,0,1,88,136Zm80,0a12,12,0,1,1,12-12A12,12,0,0,1,168,136ZM168,216a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,216ZM152,40a8,8,0,0,0-8-8H112a8,8,0,0,0,0,16h32A8,8,0,0,0,152,40Z"></path>
+              </svg>
+            </a>
+            <a href="/suggest-feature" class="relative tooltip" data-tooltip="Suggest a Feature">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor"
+                   viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 0 0-3.16 19.48c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.45-1.1-1.45-.9-.62.07-.6.07-.6 1 .08 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-2 .1-2.71 0 0 .84-.27 2.75 1.03a9.3 9.3 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.29.71.1 1.61.05 2.71 0 3.86-2.34 4.69-4.57 4.94.36.3.69.9.69 1.82v2.7c0 .26.18.58.69.48A10 10 0 0 0 12 2z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-10 py-4 sm:py-6 flex justify-center items-start">
+      <div class="w-full lg:max-w-3xl xl:max-w-4xl bg-white p-6 rounded-lg shadow-md border border-[#f0f2f5]">
+        <h2 class="text-2xl font-bold text-center mb-6 text-[#111418]">Match the Terms to their Definitions</h2>
+
+        <div class="flex flex-col md:flex-row gap-6 mb-8">
+          <div id="terms-container" class="flex-1 space-y-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Terms</h3>
+            </div>
+
+          <div id="definitions-container" class="flex-1 space-y-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">Definitions</h3>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <button id="check-answers-btn" class="px-6 py-2 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Check Answers
+          </button>
+          <button id="reset-btn" class="px-6 py-2 rounded-md bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+            Reset
+          </button>
+        </div>
+
+        <div id="score-display" class="text-center text-lg font-semibold mt-6 text-[#111418]">
+          Score: 0 / 0
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Mobile menu toggle script (from your base.html)
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = mobileMenuButton.querySelector('.block');
+    const closeIcon = mobileMenuButton.querySelector('.hidden');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Matching Quiz Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const termsData = [
+        { id: 'term-cpu', text: 'CPU', matchId: 'def-cpu' },
+        { id: 'term-ram', text: 'RAM', matchId: 'def-ram' },
+        { id: 'term-ssd', text: 'SSD', matchId: 'def-ssd' },
+        { id: 'term-gpu', text: 'GPU', matchId: 'def-gpu' }
+      ];
+
+      const definitionsData = [
+        { id: 'def-cpu', text: 'The brain of the computer, executing instructions.' },
+        { id: 'def-ram', text: 'Temporary memory for active programs and data.' },
+        { id: 'def-ssd', text: 'A fast, non-volatile storage device.' },
+        { id: 'def-gpu', text: 'Specialized processor for rendering graphics.' }
+      ];
+
+      const termsContainer = document.getElementById('terms-container');
+      const definitionsContainer = document.getElementById('definitions-container');
+      const checkAnswersBtn = document.getElementById('check-answers-btn');
+      const resetBtn = document.getElementById('reset-btn');
+      const scoreDisplay = document.getElementById('score-display');
+
+      let draggedItem = null;
+      let matches = new Map(); // Stores matched termId -> definitionId
+
+      // Function to shuffle an array (Fisher-Yates)
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+        }
+      }
+
+      // Render terms
+      function renderTerms() {
+        termsContainer.innerHTML = '<h3 class="text-lg font-semibold text-gray-800 mb-2">Terms</h3>';
+        termsData.forEach(term => {
+          const termEl = document.createElement('div');
+          termEl.id = term.id;
+          termEl.dataset.matchId = term.matchId; // Store the correct definition ID
+          termEl.classList.add('p-4', 'bg-gray-50', 'rounded-md', 'border', 'border-gray-200', 'shadow-sm', 'flex', 'items-center', 'justify-between', 'min-h-[60px]', 'flex-wrap'); // Added flex-wrap
+          termEl.innerHTML = `<span class="font-medium text-gray-900">${term.text}</span><span class="matched-definition-placeholder flex-1 text-right text-gray-400 italic text-sm ml-2">Drop definition here</span>`;
+          termEl.addEventListener('dragover', dragOver);
+          termEl.addEventListener('dragleave', dragLeave);
+          termEl.addEventListener('drop', drop);
+          termsContainer.appendChild(termEl);
+        });
+      }
+
+      // Render definitions
+      function renderDefinitions() {
+        definitionsContainer.innerHTML = '<h3 class="text-lg font-semibold text-gray-800 mb-2">Definitions</h3>';
+        const shuffledDefinitions = [...definitionsData]; // Create a copy to shuffle
+        shuffleArray(shuffledDefinitions);
+
+        shuffledDefinitions.forEach(def => {
+          const defEl = document.createElement('div');
+          defEl.id = def.id;
+          defEl.textContent = def.text;
+          defEl.setAttribute('draggable', true);
+          defEl.classList.add('draggable', 'p-4', 'bg-white', 'rounded-md', 'border', 'border-gray-300', 'shadow-sm', 'text-sm', 'text-gray-700', 'min-h-[60px]', 'text-left');
+          defEl.addEventListener('dragstart', dragStart);
+          defEl.addEventListener('dragend', dragEnd);
+          definitionsContainer.appendChild(defEl);
+        });
+      }
+
+      // Drag event handlers
+      function dragStart(e) {
+        draggedItem = e.target;
+        setTimeout(() => {
+          e.target.classList.add('dragging');
+        }, 0); // Add class after element is picked up
+        e.dataTransfer.setData('text/plain', e.target.id); // Store the ID of the dragged element
+        e.dataTransfer.effectAllowed = 'move';
+      }
+
+      function dragEnd(e) {
+        e.target.classList.remove('dragging');
+        draggedItem = null;
+      }
+
+      function dragOver(e) {
+        e.preventDefault(); // Allow drop
+        const targetEl = e.target.closest('[id^="term-"]'); // Find the closest term element
+        if (targetEl && targetEl.querySelector('.matched-definition-wrapper') === null) { // Only highlight if no definition is already there
+          targetEl.classList.add('drop-target-hover');
+        }
+      }
+
+      function dragLeave(e) {
+        e.preventDefault();
+        const targetEl = e.target.closest('[id^="term-"]');
+        if (targetEl) {
+          targetEl.classList.remove('drop-target-hover');
+        }
+      }
+
+      function drop(e) {
+        e.preventDefault();
+        const definitionId = e.dataTransfer.getData('text/plain');
+        const definitionEl = document.getElementById(definitionId);
+        let targetTermEl = e.target.closest('[id^="term-"]'); // Find the closest term element
+
+        if (targetTermEl && definitionEl) {
+            // Remove existing definition if any
+            const existingDefinitionWrapper = targetTermEl.querySelector('.matched-definition-wrapper');
+            if (existingDefinitionWrapper) {
+                const existingDefinition = existingDefinitionWrapper.querySelector('.draggable');
+                if (existingDefinition) {
+                    definitionsContainer.appendChild(existingDefinition); // Return to definitions pool
+                    existingDefinition.classList.remove('correct-match', 'incorrect-match');
+                    existingDefinition.style.pointerEvents = 'auto'; // Re-enable dragging
+                }
+                existingDefinitionWrapper.remove(); // Remove the wrapper
+            }
+
+            // Remove this definition from its previous term if it was already matched
+            for (let [termId, defId] of matches.entries()) {
+                if (defId === definitionId) {
+                    const prevTermEl = document.getElementById(termId);
+                    const prevDefWrapper = prevTermEl.querySelector('.matched-definition-wrapper');
+                    if (prevDefWrapper) {
+                        prevDefWrapper.remove();
+                        // Show placeholder again
+                        prevTermEl.querySelector('.matched-definition-placeholder').classList.remove('hidden');
+                    }
+                    matches.delete(termId);
+                    break;
+                }
+            }
+
+            // Create a wrapper for the definition to maintain layout and hide placeholder
+            const definitionWrapper = document.createElement('div');
+            definitionWrapper.classList.add('matched-definition-wrapper');
+            definitionWrapper.appendChild(definitionEl);
+            targetTermEl.appendChild(definitionWrapper);
+
+            // Hide the placeholder text
+            const placeholder = targetTermEl.querySelector('.matched-definition-placeholder');
+            if (placeholder) {
+                placeholder.classList.add('hidden');
+            }
+
+            matches.set(targetTermEl.id, definitionId); // Record the new match
+            updateScore(); // Update score immediately after a match
+        }
+
+        // Clean up hover class from any element
+        document.querySelectorAll('.drop-target-hover').forEach(el => {
+          el.classList.remove('drop-target-hover');
+        });
+      }
+
+      // Check Answers and update UI
+      function checkAnswers() {
+        let correctCount = 0;
+        termsData.forEach(term => {
+          const termEl = document.getElementById(term.id);
+          const matchedDefId = matches.get(term.id);
+          const definitionEl = matchedDefId ? document.getElementById(matchedDefId) : null;
+
+          // Remove previous feedback classes
+          termEl.classList.remove('correct-match', 'incorrect-match');
+          if (definitionEl) {
+            definitionEl.classList.remove('correct-match', 'incorrect-match');
+            definitionEl.style.pointerEvents = 'none'; // Disable dragging after checking
+          }
+
+          if (matchedDefId && term.matchId === matchedDefId) {
+            termEl.classList.add('correct-match');
+            if (definitionEl) definitionEl.classList.add('correct-match');
+            correctCount++;
+          } else if (matchedDefId) {
+            termEl.classList.add('incorrect-match');
+            if (definitionEl) definitionEl.classList.add('incorrect-match');
+          }
+        });
+        scoreDisplay.textContent = `Score: ${correctCount} / ${termsData.length}`;
+      }
+
+      // Update score display without checking correctness
+      function updateScore() {
+        scoreDisplay.textContent = `Score: ${matches.size} / ${termsData.length}`;
+      }
+
+      // Reset the quiz
+      function resetQuiz() {
+        matches.clear(); // Clear all recorded matches
+        renderTerms(); // Re-render terms to clear any matched definitions and show placeholders
+        renderDefinitions(); // Re-render definitions to shuffle and reset positions
+        scoreDisplay.textContent = `Score: 0 / ${termsData.length}`;
+        // Re-enable dragging for all definitions
+        document.querySelectorAll('.draggable').forEach(el => {
+            el.style.pointerEvents = 'auto';
+            el.classList.remove('correct-match', 'incorrect-match');
+        });
+      }
+
+      // Initial render
+      renderTerms();
+      renderDefinitions();
+      updateScore(); // Set initial score
+
+      // Event Listeners for buttons
+      checkAnswersBtn.addEventListener('click', checkAnswers);
+      resetBtn.addEventListener('click', resetQuiz);
+    });
+  </script>
+</body>
+</html>

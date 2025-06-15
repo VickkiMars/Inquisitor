@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}History - Inquisitor{% endblock %}
+
+{% block head_extra %}
+  <style>
+    /* Custom styles for the table for a cleaner look */
+    .table-header {
+        background-color: #f0f2f5; /* Light background for headers */
+        color: #60758a; /* Gray text color for headers */
+    }
+    .table-row-odd {
+        background-color: #ffffff; /* White background for odd rows */
+    }
+    .table-row-even {
+        background-color: #f9fafb; /* Light gray background for even rows */
+    }
+    .table-cell {
+        padding: 16px 24px; /* Consistent padding for cells */
+        font-size: 0.875rem; /* text-sm */
+        color: #343a40; /* Darker gray for cell text */
+    }
+    /* Style for clickable titles */
+    .clickable-title {
+        color: #0c7ff2; /* Blue color for links */
+        text-decoration: none; /* No underline by default */
+        font-weight: 500; /* Slightly bolder than normal text */
+    }
+    .clickable-title:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+    <div class="flex flex-wrap justify-between gap-3 relative mb-6">
+        <div class="flex min-w-72 flex-col gap-3">
+            <p class="text-[#111418] tracking-light text-[32px] font-bold leading-tight">Your History</p>
+            <p class="text-[#60758a] text-sm font-normal leading-normal">
+                This is a list of all past inputs given to The Inquisitor.
+            </p>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto rounded-lg shadow-sm border border-[#dee2e6]">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="table-header">
+                <tr>
+                    <th scope="col" class="table-cell text-left font-semibold uppercase tracking-wider rounded-tl-lg">
+                        
+                    </th>
+                    <th scope="col" class="table-cell text-left font-semibold uppercase tracking-wider">
+                        Title
+                    </th>
+                    <th scope="col" class="table-cell text-left font-semibold uppercase tracking-wider rounded-tr-lg">
+                        Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                {% for record in records %}
+                <tr class="{% if loop.index is odd %}table-row-odd{% else %}table-row-even{% endif %}">
+                    <td class="table-cell font-medium text-gray-900">
+                        {{ loop.index }}
+                    </td>
+                    <td class="table-cell">
+                        {# You would replace '#' with a dynamic URL like url_for('view_record_detail', record_id=record.id) #}
+                        <a href="{{ url_for('load_history_record', record_id=record.id) }}" class="clickable-title">{{ record.title }}</a>
+                    </td>
+                    <td class="table-cell">
+                        {{ record.created_at.strftime('%Y-%m-%d') }}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3" class="table-cell text-center text-gray-500">
+                        No history records found.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block scripts_extra %}
+  <!-- JavaScript for Mobile Menu Toggle (Assumed to be in base.html already, but included here if base.html doesn't provide it via a block) -->
+  <script>
+    // Toggle mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = mobileMenuButton.querySelector('.block');
+    const closeIcon = mobileMenuButton.querySelector('.hidden');
+
+    if (mobileMenuButton && mobileMenu) { // Ensure elements exist before adding listeners
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+
+            // Toggle menu visibility
+            mobileMenu.classList.toggle('hidden');
+
+            // Toggle icons
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+
+            // Update aria-expanded
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+  </script>
+{% endblock %}

@@ -60,7 +60,7 @@ def generate_question_type(context: str) -> str:
     """
     return PROMPT
 
-def map_type_to_prompt(types: list) -> list:
+def map_type_to_prompt(types: list) -> str:
     maps = {
         "multiple_choice": """Multiple-Choice-Questions (MCQ's):
         - Formulate questions with one correct answer and 4 distractors (incorrect options).
@@ -68,14 +68,13 @@ def map_type_to_prompt(types: list) -> list:
         - Include a brief explanation for the correct answer
 
         Example:
-        {
+        {{
             "type": "multiple_choice",
             "question": "What is the capital of France?",
             "options": ["Berlin", "Paris", "Rome", "Madrid"],
             "answer": "Paris",
             "explanation": "Paris is the capital city of France, known for landmarks like the Eiffel Tower"
-        }
-        
+        }}
         """,
 
         "short_answer": """
@@ -84,12 +83,12 @@ def map_type_to_prompt(types: list) -> list:
         - These questions should require the respondent to recall or explain important facts or definitions briefly.
 
         Example:
-        {
+        {{
             "type": "short_answer",
             "question": "Define Newton's First Law of Motion.",
             "answer": "An object at rest stays at rest and an object in motion stays in motion unless acted upon by an external force."
             "explanation": "This law highlights the concept of inertia and explains that motion doesn't change without a net external force"        
-        }
+        }}
 
         """,
 
@@ -100,12 +99,12 @@ def map_type_to_prompt(types: list) -> list:
         - These should be open-ended and might involve comparing, contrasting or evaluating different aspects of the content.
 
         Example:
-        {
+        {{
             "type": "long_answer",
             "question": "Discuss the causes and consequences of World War I."
             "answer": "Key causes include militarism, alliances, imperialism, and nationalism. The consequences included political restructuring, economic strain, and the Treaty of Versailles."
             "explanation" : "These points provide a comprehensive understanding of the root causes and widespread effects of WWI on global history."
-        }
+        }}
         
         """,
 
@@ -116,12 +115,12 @@ def map_type_to_prompt(types: list) -> list:
         - The question should require the use of methods or formulas discussed in the content.
 
         Example:
-        {
+        {{
             "type": "solve_problem",
             "question": "Solve for x: 2x + 3 = 11",
             "answer": "x = 4",
             "explanation": "Subtracting 3 from both sides gives 2x = 8 then dividing both sides by 2 gives x = 4."
-        }
+        }}
 
         """,
 
@@ -132,12 +131,12 @@ def map_type_to_prompt(types: list) -> list:
         - Ensure that there is a clear unambiguous answer for each blank
 
         Example:
-        {
+        {{
             "type": "fill_in_the_blank",
             "question": The process by which plants make food using sunlight is called _____.",
             "answer": "Photosynthesis",
             "explanation": "Photosynthesis is the process where plants use sunlight, carbon dioxide, and water to produce glucose and oxygen."    
-        }
+        }}
 
         """,
 
@@ -148,12 +147,12 @@ def map_type_to_prompt(types: list) -> list:
         - Encourage the application of theoretical knowledge in realistic settings.
 
         Example:
-        {
+        {{
             "type": "use_case",
             "question" "A company wants to imporove customer engagement through automation. Suggest a suitable AI technique and explain how it would help.",
             "answer": "Using chatbots powered by Natural Language Processing can help automate customer service and improve response time.",
             "explanation": "Chatbots use NLP to interpret customer queries and provide instant response, reducing human workload and improving service efficiency."
-        }
+        }}
 
         """,
 
@@ -164,16 +163,16 @@ def map_type_to_prompt(types: list) -> list:
         - Ask learners to correctly associate each term with its matching definition or closely related concept
 
         Example:
-        {
+        {{
             "type": "matching",
             "question": "Match the scientific terms with their correct definitions.",
-            "pairs": {
+            "pairs": {{
                 "Osmosis": "The diffusion of water across a semipermeable membrane.",
                 "Photosynthesis": "The process by which green plants use sunlight to synthesize food.",
                 "Mitochondria": "The powerhouse of the cell, responsible for energy production."
-            },
+            }},
             "explanation": "Each term matches a distinct biological function or process essential to cellular activity."
-        }
+        }}
 
         """,
 
@@ -184,12 +183,12 @@ def map_type_to_prompt(types: list) -> list:
         - Add explanations for the correct classification where necessary
 
         Example:
-        {
+        {{
             "type": "true_false",
             "question": "The boiling point of water is 100°C at sea level.",
             "answer": "true",
             "explanation": "At standard atmospheric pressure (sea level), water boils at 100°C."
-        }
+        }}
 
         """,
 
@@ -200,12 +199,12 @@ def map_type_to_prompt(types: list) -> list:
         - This format reinforces the connection between terminology and its meaning.
 
         Example:
-        {
+        {{
             "type": "reverse_definition",
             "question": "A gas law stating that pressure and volume are inversely proportional at constant temperature.",
             "answer": "Boyle's Law",
             "explanation": "Boyle's Law describes the inverse relationship between the pressure and volume of a gas at constant temperature.",
-        }
+        }}
 
         """,
 
@@ -215,7 +214,7 @@ def map_type_to_prompt(types: list) -> list:
         - Ask learners to correctly order the steps or events in their proper order.
 
         Example:
-        {
+        {{
             "type": "ordering",
             "question": "Arrange the steps of the water cycle in the correct order.",
             "items": [
@@ -231,13 +230,18 @@ def map_type_to_prompt(types: list) -> list:
                 "Collection"
             ],
             "explanation": "The water cycle begins with evaporation of water from surfaces, followed by condensation in the atmosphere to form clouds, then precipitation as rain or snow, and finally collection in water bodies of water like rivers and lakes."
-        }
+        }}
 
         """
     }
-    return [maps[x] for x in types]
+    out = ""
+    for x in types:
+        out += f"""{maps[x]}
+    
+    """
+    return out
 
-def generate_prompt(chunk:str, prompt_types: List[str]) -> List[str]:
+def generate_prompt(chunk:str, prompt_types: str) -> str:
     """
     Generates questions based on the input chunk of text
     
@@ -252,15 +256,31 @@ def generate_prompt(chunk:str, prompt_types: List[str]) -> List[str]:
     You are an expert question generator, generating questions for the next generation of students, the quality of the student will be dependent on the quality of your questions, how thorughly you drill the student will reflect in the future.
 
     Objective:
-    You are provided with {chunk}. Your task is to generate at least 1 question per question type that assess understanding, application, analysis, and synthesis of the content. The output must include, and is limited to, the following types of questions.
+    You are provided with {chunk}. Your task is to generate 1 question per question type that assesses understanding, application, analysis, and synthesis of the content. 
+    The output must include, and is limited to, the following Question Types, make sure to strictly follow the question formats found in Question Types:
 
-    {prompt_types}
+    Question Types:
+    [{prompt_types}]
 
 
     Instructions:
     - Input Interpretation:
         Carefully analyze the provided content or topic. Identify key concepts, definitions, procedures, and applications.
 
+    - Question Types:
+        The following are the allowed question types: 
+        - "multiple_choice"
+        - "short_answer"
+        - "long_answer"
+        - "solve_type"
+        - "fill_in_the_blank"
+        - "use_case"
+        - "matching"
+        - "true_false"
+        - "reverse_definition"
+        - "ordering"
+
+    DO NOT USE ANY ALTERNATIVE QUESTION TYPES
     - Question Categorization:
         Divide the content into logical segments or themes if applicable. Ensure you generate at one question per question type.
 
@@ -270,8 +290,11 @@ def generate_prompt(chunk:str, prompt_types: List[str]) -> List[str]:
     - Review and Variation:
         Ensure a balanced mix of question difficulties ranging form basic recall to higher-order analysis and verify that each question directly relates to the content. The goal is to challenge learners comprehensively across all aspects of the material
 
+    - Explanation:
+        Your explanation should contain a valid explanation of the answer, not a description of why that is the answer.
+
     - Relevant output:
-        AVOID ANY JARGON in your response, respond ONLY with the questions in PYTHON DICTIONARY structure/format.
+        Do not create any additional question types: AVOID ANY JARGON in your response, respond ONLY with the questions in PYTHON DICTIONARY structure/format.
 
     - Respond:
         RESPOND WITH THE QUESTIONS IN THE SPECIFIED FORMAT

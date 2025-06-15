@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment - Inquisitor{% endblock %}
+
+{% block content %}
+<main class="flex-1 w-full max-w-7xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-10 py-4 sm:py-6 flex items-center justify-center">
+  <div class="w-full max-w-md bg-white p-8 border border-[#f0f2f5] rounded-lg shadow-sm">
+    <h2 class="text-2xl font-bold text-center mb-6 text-[#111418]">Complete Your Payment</h2>
+
+    <form>
+      <div class="mb-4">
+        <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" required
+               class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-[#111418] bg-white"
+               placeholder="XXXX XXXX XXXX XXXX" pattern="[0-9]{13,19}" inputmode="numeric">
+      </div>
+
+      <div class="mb-4">
+        <label for="cardName" class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
+        <input type="text" id="cardName" name="cardName" required
+               class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-[#111418] bg-white"
+               placeholder="John Doe">
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div>
+          <label for="expMonth" class="block text-sm font-medium text-gray-700 mb-1">Expiration Month</label>
+          <select id="expMonth" name="expMonth" required
+                  class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-[#111418] bg-white">
+            <option value="" disabled selected>MM</option>
+            <option value="01">01 - January</option>
+            <option value="02">02 - February</option>
+            <option value="03">03 - March</option>
+            <option value="04">04 - April</option>
+            <option value="05">05 - May</option>
+            <option value="06">06 - June</option>
+            <option value="07">07 - July</option>
+            <option value="08">08 - August</option>
+            <option value="09">09 - September</option>
+            <option value="10">10 - October</option>
+            <option value="11">11 - November</option>
+            <option value="12">12 - December</option>
+          </select>
+        </div>
+        <div>
+          <label for="expYear" class="block text-sm font-medium text-gray-700 mb-1">Expiration Year</label>
+          <select id="expYear" name="expYear" required
+                  class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-[#111418] bg-white">
+            <option value="" disabled selected>YYYY</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label for="cvc" class="block text-sm font-medium text-gray-700 mb-1">CVC/CVV</label>
+        <input type="text" id="cvc" name="cvc" required
+               class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-[#111418] bg-white"
+               placeholder="XXX" pattern="[0-9]{3,4}" inputmode="numeric">
+      </div>
+
+      <div>
+        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Pay Now
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Dynamically populate expiration year dropdown
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentYear = new Date().getFullYear();
+    const yearSelect = document.getElementById('expYear');
+
+    for (let i = 0; i < 10; i++) { // Generates current year + next 9 years
+      const year = currentYear + i;
+      const option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      yearSelect.appendChild(option);
+    }
+  });
+</script>
+{% endblock %}

@@ -17,7 +17,7 @@ def remove_references(text):
     else:
         return text
 
-def chunk_text(text: str, chunk_size: int = 5) -> list[list[str]]:
+def chunk_text(text: str, num_questions=5, chunk_size: int = 9) -> list[list[str]]:
     """
     Chunks the input text into groups of sentences.
 
@@ -47,9 +47,15 @@ def chunk_text(text: str, chunk_size: int = 5) -> list[list[str]]:
         return []
 
     sentences = sent_tokenize(text)
+    x = round(num_questions / 3)
+    chunks = []
 
     # Group sentences into chunks of the given size
-    chunks = [sentences[i:i + chunk_size] for i in range(0, len(sentences), chunk_size)]
+    for i in range(0,  len(sentences), chunk_size):
+        if len(chunks) > x:
+            return chunks
+        chunks.append(sentences[i:i + chunk_size])
+ 
 
     return chunks
 

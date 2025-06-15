@@ -1,48 +1,43 @@
 from backend.article_links import extract as art
 from backend.chunking.base import chunk_text
 from backend.documents import extract as doc
-from backend.gemini_call.gemcall import call_gemini
+from backend.gemini_call.gemcall_v2 import call_gemini
 from backend.generator.prompt_generator import map_type_to_prompt, generate_prompt, generate_question_type
 from backend.log_helper.report import log_message
-from backend.pipeline.helper import get_content_between_curly_braces
+from backend.gemini_call.prime_parser import parse_gemini_question_blocks
+from backend.gemini_call.parser import PythonListOutputParser
+from langchain_core.output_parsers import StrOutputParser
 from backend.youtube_link import extract as yt
 from ast import literal_eval
 from typing import List
 
-def gem_pipe(chunk: str) -> str:
+
+def gem_pipe(chunks: List, num_questions) -> List:
     """
     Orchestrates the Gemini API calls for question generation.
     Returns a single generated question string.
     """
-    question_type = None
-    try:
-        # LLMs exist, so this call should ideally return a string representation of a list/tuple
-        # that can be safely evaluated by literal_eval.
-        question_type_raw = call_gemini(generate_question_type(chunk))
-        log_message(f"Question type: {question_type_raw}")
-        question_type = question_type_raw
-    except (ValueError, SyntaxError) as e:
-        log_message(f"Error evaluating question type from Gemini: {e}. Raw response: {question_type_raw}", "error")
-        # Handle cases where literal_eval fails, e.g., default to a common type or raise specific error
-    except Exception as e:
-        log_message(f"An error occurred while generating question type: {e}","error")
+    output_length = round(num_questions/3)
+    chunks = chunks[:output_length]
 
+    inputs_ = [generate_question_type(c) for c in chunks]
+    log_message("Question type prompts generated")
+    log_message(f"Number of prompts: {len(inputs_)}")
+    log_message(f"Number of questions: {num_questions}")
+    
+    results = call_gemini(inputs_, parser=PythonListOutputParser())
+    log_message(f"Question types generated: type: {results[0]}")
 
-    ttp = None
-    try:
-        if question_type: # Only proceed if question_type was successfully determined
-            ttp = call_gemini(map_type_to_prompt(question_type))
-    except Exception as e:
-        log_message(f"An error occurred while mapping question type: {e}","error")
+    types = [map_type_to_prompt(z) for z in results]
+    assert len(types)==len(results)
 
-    questions = "" # Initialize questions as an empty string
-    try:
-        if ttp: # Only proceed if ttp was successfully determined
-            questions = call_gemini(generate_prompt(chunk, ttp))
-    except Exception as e:
-        log_message(f"An error occurred while generating questions: {e}","error")
+    questions = [generate_prompt(chunks[i], x) for i,x in enumerate(types)]
 
-    return questions
+    response = call_gemini(questions, StrOutputParser())
+    
+    response = parse_gemini_question_blocks(response)
+    log_message(f"Response length: {len(response)}")
+    return response
 
 
 ## Modified Processing Functions
@@ -71,28 +66,10 @@ def process_document(file_path: str, num_questions: int) -> List[str]:
         log_message(f"Could not chunk text: {e}", "error")
         return [] # Return empty list on chunking failure
 
-    generated_questions = []
-    count = 0
-    for chunk in chunks:
-        if count >= num_questions: # Changed from == to >= to ensure num_questions is respected even if a chunk yields multiple questions or if we only need a few.
-            break
-
-        try:
-            # Assuming gem_pipe returns a single question string or a string that contains multiple questions separated
-            # We'll split it if it returns multiple questions in one go.
-            question_output = gem_pipe(chunk)
-            # Assuming gem_pipe might return a string with multiple questions (e.g., "1. Q1\n2. Q2").
-            # You might need more sophisticated parsing here depending on gem_pipe's exact output format.
-            # For simplicity, we'll assume it returns a single question string for now or a string that can be treated as one question.
-            generated_questions.append(question_output)
-            count += 1 # Increment for each question appended. If gem_pipe returns multiple questions in one call, you'd increment by the number of questions returned.
-        except Exception as e:
-            log_message(f"An error occurred during question generation for a chunk: {e}", "error")
-            # Decide whether to continue or break on error; here, we continue to try other chunks.
-
+    generated_questions = gem_pipe(chunks, num_questions)
     return generated_questions
 
-def process_article(url: str, num_questions: int = 10) -> List[str]:
+def process_article(url: str, num_questions) -> List:
     """
     Processes an article from a URL, chunks its content,
     and generates questions.
@@ -103,37 +80,21 @@ def process_article(url: str, num_questions: int = 10) -> List[str]:
         article_content, title = art.extract_and_save_text(url)
     except Exception as e:
         log_message(f"Could not extract article text from URL {url}: {e}", "error")
-        return [] # Return empty list on article extraction failure
-
+        return [],[] # Return empty list on article extraction failure
     if not article_content:
-        return []
-
+        return [], []
     chunks = []
     try:
         chunks = chunk_text(str(article_content))
     except Exception as e:
         log_message(f"Could not chunk article text: {e}", "error")
         return [] # Return empty list on chunking failure
-
-    generated_questions = []
-    count = 0
-    for chunk in chunks:
-        if count == num_questions:
-            break
-        else:
-            try:
-                question_output = gem_pipe(chunk)
-                for i in question_output:
-                    generated_questions.append(i)
-                    count += 1
-            except Exception as e:
-                log_message(f"An error occurred during question generation for an article chunk: {e}", "error")
-    log_message(f"Requested Number of Questions: {num_questions}  : Outputted number of questions: {len(generated_questions)}")
-    # if len(generated_questions) > num_questions:
-    #     generated_questions = generated_questions[:num_questions]
+    
+    generated_questions = gem_pipe(chunks, num_questions)
+    log_message(f"Generated Questions: {generated_questions}")
     return generated_questions, title
 
-def process_yt(url: str, num_questions:str) -> List[str]:
+async def process_yt(url: str, num_questions:str) -> List[str]:
     """
     Processes a YouTube video by transcribing it, chunking the transcription,
     and generating questions.
@@ -156,21 +117,6 @@ def process_yt(url: str, num_questions:str) -> List[str]:
     except Exception as e:
         log_message(f"An error occurred while chunking the transcription: {e}", "error")
         return "An error occurred",[] # Return empty list on chunking failure
-    count = 0
-    generated_questions = []
-    for chunk in chunks:
-        log_message(f"Requested Number: {num_questions}: Outputted questions: {len(generated_questions)}")
-        if count == num_questions:
-            break
-        try:
-            response = gem_pipe(chunk)
-            for i in response:
-                if count == num_questions:
-                    break
-                generated_questions.append(i)
-                count +=1
-        except Exception as e:
-            log_message(f"An error occurred while getting Gemini's response for a YouTube chunk: {e}", "error")
-    log_message(f"Requested Number: {num_questions}: Outputted questions: {len(generated_questions)}")
-    title = "Your Youtube Video"
-    return generated_questions, title
+    
+    generated_questions = await gem_pipe(chunks, num_questions)
+    return generated_questions

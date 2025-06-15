@@ -3,6 +3,9 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for, a
 import json
 import os
 import stripe
+from flask_bcrypt import Bcrypt
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 from pydantic import BaseModel # Keep Pydantic for validation if you like, or use simple dictionary checks
 from backend.log_helper.report import log_message
 # Import your backend processing functions directly
@@ -11,10 +14,23 @@ from backend.pipeline.pipe import process_article, process_document, process_yt
 from flask_cors import CORS
 from backend.pipeline.helper import get_content_between_curly_braces
 from ast import literal_eval
+from flask import render_template, redirect, url_for, flash, request
+from app.models import User
+from flask_login import login_user, current_user, logout_user, login_required
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
+
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 CORS(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 # Optional: Set Stripe API key from config for direct use
 #stripe.api_key = app.config.get('STRIPE_SECRET_KEY')
 
@@ -27,6 +43,45 @@ class FileInput(BaseModel):
 class URLInput(BaseModel):
     url: str
     num_questions: int = 10
+
+
+@app.route("/signup", methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        hashed_pw = bcrypt.generate_password_hash(password).decode('utf-8')
+        user = User(username=username, email=email, password=hashed_pw)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been created! You can now log in.', 'success')
+        return redirect(url_for('login'))
+    return render_template('signup.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        user = User.query.filter_by(email=email).first()
+        if user and bcrypt.check_password_hash(user.password, password):
+            login_user(user)
+            flash('Login successful', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Login unsuccessful. Check email and password', 'danger')
+        return render_template('login.html')
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 # --- Helper to load questions (remains) ---
 def load_questions(topic_filename):
@@ -45,6 +100,7 @@ def load_questions(topic_filename):
 
 # --- Existing Flask Routes (unchanged) ---
 @app.route('/')
+@login_required
 def index():
     return render_template('index.html')
 
@@ -63,10 +119,14 @@ def show_questions(topic='science_questions.json'):
         return render_template('questions.html', topic_data=questions_data)
     else:
         return render_template('error.html', message=f"No questions found for '{topic}' or file not accessible."), 404
+    
+@app.route('/payment')
+def payment():
+    return render_template('payment.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
 
 @app.route('/pricing')
 def pricing():
@@ -178,6 +238,7 @@ def generate_questions_from_url_api():
             log_message("Input data fetched")
         except Exception as e:
             abort(400, description=f"Invalid request body: {e}")
+            print(e)
             log_message(f"An error occurred while fetching input data: {e}", 'error')
 
         
