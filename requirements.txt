@@ -23,13 +23,7 @@ Flask-Migrate==4.1.0
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.2
 google-ai-generativelanguage
-google-api-core==2.24.2
-google-api-python-client==2.170.0
-google-auth==2.40.2
-google-auth-httplib2==0.2.0
-google-genai==1.16.1
-google-generativeai
-googleapis-common-protos==1.70.0
+google-api-core
 greenlet==3.2.2
 grpcio==1.71.0
 grpcio-status==1.71.0
