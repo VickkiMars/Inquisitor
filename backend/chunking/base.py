@@ -52,10 +52,12 @@ def chunk_text(text: str, num_questions=5, chunk_size: int = 9) -> list[list[str
 
     # Group sentences into chunks of the given size
     for i in range(0,  len(sentences), chunk_size):
-        if len(chunks) > x:
+        if len(chunks) >= x:
             return chunks
-        chunks.append(sentences[i:i + chunk_size])
+        else:
+            chunks.append(sentences[i:i + chunk_size])
  
+    log_message(f"Number of chunks: {len(chunks)}, Actual number of questions: {num_questions}, Possible nummber of questions: {len(chunks)*3}")
 
     return chunks
 

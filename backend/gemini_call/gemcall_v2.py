@@ -21,8 +21,6 @@ def safe_invoke(chain):
 
 def call_gemini(prompts, parser):
     api_key = os.getenv("GEMINI_API_KEY")
-    print("API KEY:",api_key)
-
     model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key)
 
     parallel_chain = {

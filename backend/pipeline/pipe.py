@@ -17,13 +17,11 @@ def gem_pipe(chunks: List, num_questions) -> List:
     Orchestrates the Gemini API calls for question generation.
     Returns a single generated question string.
     """
-    output_length = round(num_questions/3)
-    chunks = chunks[:output_length]
-
+    log_message(f"Number of chunks: {len(chunks)}")
     inputs_ = [generate_question_type(c) for c in chunks]
     log_message("Question type prompts generated")
     log_message(f"Number of prompts: {len(inputs_)}")
-    log_message(f"Number of questions: {num_questions}")
+    log_message(f"Number of questions requested: {num_questions}")
     
     results = call_gemini(inputs_, parser=PythonListOutputParser())
     log_message(f"Question types generated: type: {results[0]}")
@@ -37,7 +35,7 @@ def gem_pipe(chunks: List, num_questions) -> List:
     
     response = parse_gemini_question_blocks(response)
     log_message(f"Response length: {len(response)}")
-    return response
+    return response[:num_questions]
 
 
 ## Modified Processing Functions

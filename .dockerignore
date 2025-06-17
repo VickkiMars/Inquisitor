@@ -9,3 +9,4 @@ inquire/
 Dockerfile
 README.md
 *.sqlite3
+other/

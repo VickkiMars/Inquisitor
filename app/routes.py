@@ -122,10 +122,11 @@ def generate():
 @app.route('/questions/<topic>')
 @login_required
 def show_questions(topic="questions.json"):
-    questions_data = load_questions()
+    questions_data = load_questions(topic)
     if questions_data:
         if 'topic' not in questions_data or 'questions' not in questions_data:
             return render_template('error.html', message=f"Invalid JSON structure for '{topic}'."), 500
+        log_message(f"Questions data from routes: \n\n\n\n\n: {questions_data}\n\n")
         return render_template('questions.html', topic_data=questions_data)
     else:
         return render_template('error.html', message=f"No questions found for '{topic}' or file not accessible."), 404
@@ -136,6 +137,11 @@ def show_questions(topic="questions.json"):
 def payment():
     return render_template('payment.html')
 
+
+@app.route('/settings')
+@login_required
+def settings():
+    return render_template('settings.html')
 
 @app.route('/pricing')
 def pricing():
