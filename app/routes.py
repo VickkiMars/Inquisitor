@@ -93,6 +93,8 @@ def logout():
 def load_questions(topic_filename="questions.json"):
     data_path = os.path.join(app.root_path, 'data', topic_filename)
     try:
+        file = open(data_path, 'a', encoding='utf-8')
+        file.close()
         with open(data_path, 'r', encoding='utf-8') as f:
             log_message("File found, loading file for rendering")
             return json.load(f)

@@ -6,6 +6,7 @@ import os
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'a_very_insecure_default_key_replace_me'
     FLASK_ENV = os.environ.get('FLASK_ENV', 'development')
+    
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     # DEBUG is True only if FLASK_ENV is 'development'
     DEBUG = (FLASK_ENV == 'development')
