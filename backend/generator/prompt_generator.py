@@ -1,5 +1,35 @@
 from typing import List
 
+def generate_for_topic(n:int, difficulty:str, topic:str) ->str:
+    mapping = {
+        "beginner": "High School Certificate (HSC)",
+        "intermediate": "International General Certificate of Secondary Education (IGCSE)",
+        "advanced": "International Baccalaureate (IB) Diploma Programme",
+        "expert": "Graduate Record Examination"
+    }
+    PROMPT = f"""
+    Create {n} multiple choice or true/false questions with {mapping[difficulty]} difficulty based on the following topic {topic}.
+
+    The structure of the mcq and true false question is as follows:
+
+    {{
+            "type": "multiple_choice",
+            "question": "What is the capital of France?",
+            "options": ["Berlin", "Paris", "Rome", "Madrid"],
+            "answer": "Paris",
+            "explanation": "Paris is the capital city of France, known for landmarks like the Eiffel Tower"
+        }}
+
+    {{
+            "type": "true_false",
+            "question": "The boiling point of water is 100°C at sea level.",
+            "answer": "true",
+            "explanation": "At standard atmospheric pressure (sea level), water boils at 100°C."
+        }}
+
+
+    """
+
 def generate_question_type(context: str) -> str:
     PROMPT = f"""
     You are an expert question analyzer.

@@ -2,8 +2,11 @@ from nltk.tokenize import sent_tokenize
 from backend.log_helper.report import log_message
 import nltk
 
-
-nltk.download('punkt_tab')
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download("punkt")
+    
 # Function to remove references from the text
 def remove_references(text):
     # Define the keyword for the references section (simple 'References')

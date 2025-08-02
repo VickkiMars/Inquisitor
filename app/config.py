@@ -1,5 +1,8 @@
 # question_app/config.py
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 # Flask secret key for security (e.g., sessions, flash messages)
 # IMPORTANT: In a real application, retrieve this from an environment variable
 # export SECRET_KEY='your_very_secret_key_here' in your shell or .env file

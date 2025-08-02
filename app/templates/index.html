@@ -4,174 +4,100 @@
 {% block title %}Inquisitor{% endblock %}
 
 {% block content %}
-    <style>
-        /* Custom Animations */
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+<style>
+    .outlined-text {
+        color: transparent;
+        -webkit-text-stroke: 0.7px black; /* You can adjust width and color */
+        text-stroke: 1.5px black;         /* Standard property for wider support */
+        font-weight: inherit;             /* Keep original weight */
+    }
+
+
+    @media (max-width: 480px) {
+        .hero-heading {
+            font-size: 10vw;
         }
+    }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    @media (max-width: 360px) {
+        .hero-heading {
+            font-size: 11vw;
         }
+    }
+</style>
 
-        @keyframes pulseShadow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-            }
-        }
+<div class="bg-transparent text-gray-900">
+    <!-- Hero Section -->
+    <section class="max-w-7xl px-4 sm:px-6 lg:px-3 py-10 grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+        <!-- Left Content -->
+        <div class="text-center md:text-left">
+            <h1 class="hero-heading text-[9.5vw] sm:text-5xl lg:text-7xl font-extrabold leading-tight mb-4">
+                Built for Learners
+                <span class="block text-white outlined-text">Backed by Intelligence.</span>
+            </h1>
 
-        .animate-fadeInScale {
-            animation: fadeInScale 0.6s ease-out forwards;
-        }
+            <p class="text-xs sm:text-sm md:text-[15px] text-gray-500 mt-2 px-1 sm:px-0">
+                <span class="font-bold">Inquisitor</span> is your all-in-one <span class="font-bold">question generation engine</span> that instantly creates
+                <span class="font-bold"> high-quality</span>, <span class="font-bold">context-aware</span> questions for <span class="font-bold">exams, quizzes, practice tests, e-learning
+                modules</span>, or <span class="font-bold">interview prep</span>. It supports <span class="font-bold">multiple input formats</span> and delivers tailored,
+                high-quality content.
+            </p>
 
-        .animate-slideInUp {
-            animation: slideInUp 0.7s ease-out forwards;
-        }
-
-        .feature-card:hover {
-            animation: pulseShadow 1s infinite;
-        }
-
-        .testimonial-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Scrollbar styling for testimonials section */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-    </style>
-
-    <div class="w-full px-4 sm:px-6 lg:px-8 flex justify-center py-8">
-        <div class="w-full max-w-6xl">
-            <section class="w-full mb-16 animate-fadeInScale">
-                <div class="relative overflow-hidden rounded-lg min-h-[450px] flex items-center justify-center bg-gradient-to-br from-gray-900 to-black p-8 shadow-xl"
-                    style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBU-r0FnHEl4DchXwlhtItPwenKohjKYZH_NwMfEuZ1fS3xviEHEvYSZjtD4R0gXo5qvzDS_ADx02LNUbXciBUM8Ywrs0U8EwzZ9paYGBhXth6ifCDv-Rc717RP54ee8BZkAciDPHxRFAw6YjOsPFSV0H2FMyaqH3aJjgRxYjkxglzPMYJrfkOE-TYnomODGd5bMdg1d_iIrMlDrh6WjUD3MeZxDKGq-AH_7rz59788BbTkjPEd4_zkOy0-okmhSLMamiOmuHJZzKQ"); background-size: cover; background-position: center;'>
-                    
-                    <div class="text-center max-w-3xl mx-auto z-10">
-                        <h1 class="text-white text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl mb-6 drop-shadow-lg">
-                            Big Questions start here. The Inquisitor is ready...
-                        </h1>
-                        <p class="text-gray-300 text-lg sm:text-xl mb-8 opacity-90">
-                            The Inquisitor uses advanced AI to create questions that drive engagement and understanding. Perfect for educators, researchers, and anyone seeking deeper insights.
-                        </p><br>
-                        {% if current_user.is_authenticated %}
-                            <a href="/generate"
-                           class="inline-block bg-white text-gray-900 font-semibold rounded-full px-8 py-4 text-base sm:text-lg transition-all duration-300 ease-in-out hover:bg-gray-200 hover:scale-105 shadow-lg">
-                            Get Started
-                            </a>
-                        {% else %}
-                            <a href="/login"
-                            class="inline-block bg-white text-gray-900 font-semibold rounded-full px-8 py-4 text-base sm:text-lg transition-all duration-300 ease-in-out hover:bg-gray-200 hover:scale-105 shadow-lg">
-                                Get Started
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-20">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center px-4 sm:px-0 animate-slideInUp">Key Features</h2>
-                
-                <div class="mb-12 text-center px-4 sm:px-0 animate-slideInUp" style="animation-delay: 0.1s;">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Empowering Your Curiosity</h3>
-                    <p class="text-gray-600 text-base sm:text-lg max-w-4xl mx-auto">
-                        Inquisitor provides a suite of features designed to enhance your question-generation process and maximize impact.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-slideInUp" style="animation-delay: 0.2s;">
-                    <div class="bg-white border border-gray-100 rounded-xl p-8 shadow-md feature-card">
-                        <div class="text-black mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M48,64a8,8,0,0,1,8-8H72V40a8,8,0,0,1,16,0V56h16a8,8,0,0,1,0,16H88V88a8,8,0,0,1-16,0V72H56A8,8,0,0,1,48,64ZM184,192h-8v-8a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16h8v8a8,8,0,0,0,16,0v-8h8a8,8,0,0,0,0-16Zm56-48H224V128a8,8,0,0,0-16,0v16H192a8,8,0,0,0,0,16h16v16a8,8,0,0,0,16,0V160h16a8,8,0,0,0,0-16ZM219.31,80,80,219.31a16,16,0,0,1-22.62,0L36.68,198.63a16,16,0,0,1,0-22.63L176,36.69a16,16,0,0,1,22.63,0l20.68,20.68A16,16,0,0,1,219.31,80Zm-54.63,32L144,91.31l-96,96L68.68,208ZM208,68.69,187.31,48l-32,32L176,100.69Z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Question Generation</h3>
-                        <p class="text-gray-700 text-sm sm:text-base">
-                            Leverage cutting-edge AI to generate relevant and thought-provoking questions tailored to your specific needs.
-                        </p>
-                    </div>
-
-                    <div class="bg-white border border-gray-100 rounded-xl p-8 shadow-md feature-card" style="animation-delay: 0.3s;">
-                        <div class="text-black mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Customization Options</h3>
-                        <p class="text-gray-700 text-sm sm:text-base">
-                            Fine-tune question parameters, such as difficulty level, question type, and topic, to align with your objectives.
-                        </p>
-                    </div>
-
-                    <div class="bg-white border border-gray-100 rounded-xl p-8 shadow-md feature-card" style="animation-delay: 0.4s;">
-                        <div class="text-black mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H79.36L57.75,219a8,8,0,0,0,12.5,10l29.59-37h56.32l29.59,37a8,8,0,1,0,12.5-10l-21.61-27H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176ZM104,120v24a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm32-16v40a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32-16v56a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Analytics Dashboard</h3>
-                        <p class="text-gray-700 text-sm sm:text-base">
-                            Track question performance, gather insights, and optimize your strategies with our comprehensive analytics dashboard.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="bg-gray-900 rounded-xl p-10 sm:p-16 text-center mb-16 shadow-xl animate-fadeInScale">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Ready to Unlock Deeper Insights?</h2>
-                <p class="text-gray-300 mb-8 max-w-3xl mx-auto text-lg">
-                    Join thousands of users who are transforming their approach to questioning with Inquisitor.
-                </p>
-                <a href="/generate"
-                   class="inline-block bg-white text-gray-900 font-semibold rounded-full px-8 py-4 text-base sm:text-lg transition-all duration-300 ease-in-out hover:bg-gray-200 hover:scale-105 shadow-lg">
-                    Generate Questions Now
-                </a>
-            </section>
-        </div>
-    </div>
-
-    <footer class="bg-gray-950 border-t border-gray-800 py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8">
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                    <a class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=victorumoreng@gmail.com">About Us</a>
-                    <a class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors" href="#">Contact</a>
-                    <a class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors" href="#">Terms of Service</a>
-                    <a class="text-gray-400 hover:text-white text-sm sm:text-base transition-colors" href="#">Privacy Policy</a>
-                </div>
-                <p class="text-gray-500 text-sm sm:text-base">© 2025 Inquisitor. All rights reserved.</p>
+            <!-- CTA Buttons -->
+            <div class="mt-6 flex flex-col items-center gap-3 md:flex-row md:justify-start md:items-center lg:gap-4">
+                {% if current_user.is_authenticated %}
+                    <a href="/generate"
+                       class="bg-black text-white font-semibold rounded-full transition
+                              text-sm md:text-base lg:text-lg
+                              px-6 py-3 w-auto max-w-full sm:max-w-xs md:max-w-none
+                              hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                        Get Started For Free
+                    </a>
+                {% else %}
+                    <a href="/login"
+                       class="bg-black text-white font-semibold rounded-full transition
+                              text-sm md:text-base lg:text-lg
+                              px-6 py-3 w-auto max-w-full sm:max-w-xs md:max-w-none
+                              hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                        Get Started For Free
+                    </a>
+                {% endif %}
             </div>
         </div>
-    </footer>
+
+        <!-- Right Content (Image) -->
+        <div class="hidden md:flex justify-center md:justify-end">
+            <img src="/static/mark_light.png"
+                 alt="Hero Visual"
+                 class="w-full max-w-[200px] sm:max-w-sm lg:max-w-md rounded-lg">
+        </div>
+    </section>
+
+    <!-- Feature Pills -->
+    <section class="max-w-5xl mx-auto px-3 sm:px-6 py-10 flex flex-wrap justify-center gap-3">
+        {% set features = [
+            'AI-Powered Question Generation'
+        ] %}
+        {% for feature in features %}
+            <span class="px-5 py-2 text-xs sm:text-sm rounded-full border border-gray-300 font-medium text-center">
+                {{ feature }}
+            </span>
+        {% endfor %}
+    </section>
+
+    <!-- Modal Example (Optional Logic Block) -->
+    {% if show_modal %}
+    <div class="fixed inset-0 bg-white bg-opacity-95 flex items-center justify-center z-50">
+        <div class="relative w-full max-w-xl p-4">
+            <a href="#" class="absolute top-3 right-4 text-gray-600 hover:text-black text-2xl font-bold">&times;</a>
+            <!-- Insert signup form here -->
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Footer -->
+    <div class="text-center py-6 text-gray-500 text-xs sm:text-sm">
+        Inquisitor © 2025
+    </div>
+</div>
 {% endblock %}

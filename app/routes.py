@@ -14,12 +14,13 @@ from pydantic import BaseModel
 from ast import literal_eval
 from flask_wtf.csrf import generate_csrf, CSRFProtect
 from app import app, db, bcrypt, csrf # Assuming 'app', 'db', 'bcrypt', 'csrf' are initialized in app/__init__.py
-from app.models import User, QuestionHistory
+from app.models import User, QuestionHistory, Assessment, AssessmentResult
 from backend.log_helper.report import log_message
 # Import async versions of your processing functions
 from werkzeug.utils import secure_filename
 import uuid
 from backend.pipeline.pipe import process_article, process_document, process_yt
+from datetime import timedelta
 
 UPLOAD_FOLDER = os.path.join(app.root_path, 'uploads') # Create an 'uploads' directory
 if not os.path.exists(UPLOAD_FOLDER):
@@ -428,3 +429,93 @@ def load_history_record(record_id):
 
     # Redirect to view questions
     return redirect(url_for('show_questions', topic=filename))
+
+@app.route('/retrieveassessments', methods=['GET'])
+def retrieve_assessments():
+    try:
+        assessments = Assessment.query.all()
+        
+        if not assessments:
+            return jsonify([]), 200
+        
+        result = []
+        for a in assessments:
+            result.append({
+                "title": a.name,
+                "subject": a.code,
+                "duration": f"{a.duration_hour}h {a.duration_minute}m"
+            })
+        return jsonify(result), 200
+
+    except Exception as e:
+        app.logger.error(f"Error retrieving assessments: {e}")
+        return jsonify({"error": "Failed to fetch assessments."}), 500
+
+   
+@app.route('/assessmentdetails/<int:assessment_id>', methods=['GET'])
+def get_assessment_details(assessment_id):
+    try:
+        assessment = Assessment.query.get_or_404(assessment_id)
+        results = AssessmentResult.query.filter_by(assessment_id=assessment_id).all()
+
+        if not results:
+            return jsonify({"error": "No results for this assessment."}), 404
+
+        total_students = len(results)
+        total_score = sum(r.score for r in results)
+        passed_count = sum(1 for r in results if r.score >= 50)
+
+        average_score = round(total_score / total_students, 2)
+        pass_rate = round((passed_count / total_students) * 100, 2)
+
+        students_data = [
+            {"name": r.student_name, "regNo": r.reg_no, "score": r.score}
+            for r in results
+        ]
+
+        response = {
+            "title": assessment.name,
+            "metrics": {
+                "average_score": average_score,
+                "pass_rate": pass_rate,
+                "total_questions": 50  # Replace with dynamic count if needed
+            },
+            "students": students_data
+        }
+
+        return jsonify(response), 200
+
+    except Exception as e:
+        app.logger.error(f"Error retrieving assessment details: {e}")
+        return jsonify({"error": "Internal server error."}), 500
+
+
+@app.route('/start-assessment', methods=['POST'])
+def start_assessment():
+    try:
+        data = request.get_json()
+        access_code = data.get("access_code")
+        assessment_id = data.get("assessment_id")
+
+        if not all([access_code, assessment_id]):
+            return jsonify({"error": "Missing access code or assessment ID."}), 400
+
+        assessment = Assessment.query.filter_by(id=assessment_id, code=access_code).first()
+        if not assessment:
+            return jsonify({"error": "Assessment not found or invalid access code."}), 404
+
+        return jsonify({
+            "message": "Assessment access granted.",
+            "assessment_id": assessment.id,
+            "assessment_name": assessment.name,
+            "instructions": assessment.instructions,
+            "duration": {
+                "hour": assessment.duration_hour,
+                "minute": assessment.duration_minute
+            },
+            "questions": assessment.assessment_questions or []
+        }), 200
+
+    except Exception as e:
+        app.logger.error(f"Error starting assessment: {e}")
+        return jsonify({"error": "Internal server error."}), 500
