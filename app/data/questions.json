@@ -1,47 +1,35 @@
 {
-  "topic": "Dissolution of the Ottoman Empire - Wikipedia",
+  "topic": "biblestudynotes-aug-15",
   "questions": [
     {
-      "type": "multiple_choice",
-      "question": "Which event marked the beginning of the period of the Ottoman Empire's dissolution?",
-      "options": [
-        "World War I",
-        "The Young Turk Revolution",
-        "Treaty of S\u00e8vres",
-        "Italo-Turkish War"
-      ],
-      "answer": "The Young Turk Revolution",
-      "explanation": "The Young Turk Revolution in 1908 initiated the series of events leading to the empire's collapse."
+      "type": "short_answer",
+      "question": "According to the provided text, what is the key characteristic of 'sound doctrine' regarding its influence by external factors?",
+      "answer": "Sound doctrine is not environmentally or circumstantially influenced.",
+      "explanation": "The text explicitly states that sound doctrine remains unaffected by external factors."
+    },
+    {
+      "type": "true_false",
+      "question": "The text suggests that sound doctrine can be quickly established without thorough biblical study.",
+      "answer": "false",
+      "explanation": "The text emphasizes that sound doctrine takes time and must be 'endured,' implying a process of thorough study and understanding."
+    },
+    {
+      "type": "use_case",
+      "question": "A new church leader is introducing a new teaching.  How can they ensure their teaching aligns with sound doctrine based on the provided text?",
+      "answer": "They should ensure their teaching aligns with scripture from Genesis to Malachi, demonstrating a thorough understanding of biblical principles and avoiding statements like 'we are not Old Testament people'.",
+      "explanation": "The text highlights the importance of grounding doctrine in the entirety of scripture and avoiding arbitrary distinctions between different parts of the Bible."
+    },
+    {
+      "type": "analysis",
+      "question": "Analyze the connection between sound doctrine, transformation of lives, and sound minds, as described in the provided text.",
+      "answer": "Sound doctrine leads to sound minds, which in turn results in the transformation of lives.  A sound mind is capable of rightly interpreting and applying scripture leading to personal growth and change.",
+      "explanation": "The text establishes a causal relationship: sound doctrine -> sound mind -> transformation of lives."
     },
     {
       "type": "short_answer",
-      "question": "Briefly define Ottomanism.",
-      "answer": "A movement promoting a collective Ottoman nationalism, transcending religious and ethnic differences, to maintain the empire's unity.",
-      "explanation": "This concisely captures the essence of Ottomanism's aim."
-    },
-    {
-      "type": "long_answer",
-      "question": "Analyze the impact of military defeats, such as the Italo-Turkish War and the Balkan Wars, on the stability and eventual dissolution of the Ottoman Empire.  Consider internal and external factors.",
-      "answer": "The military defeats significantly weakened the Ottoman Empire's prestige and territorial integrity, fueling internal dissent and emboldening separatist movements within the empire.  Externally, these defeats demonstrated the empire's vulnerability to European powers and further encouraged their intervention in Ottoman affairs.  The loss of territory and the exposure of military weaknesses contributed directly to the growing instability that ultimately led to the empire's dissolution.",
-      "explanation": "This addresses both internal and external pressures stemming from military failures, showcasing a thorough understanding of the topic."
-    },
-    {
-      "type": "short_answer",
-      "question": "What system did the Ottoman Empire use to govern its diverse population?",
-      "answer": "The millet system",
-      "explanation": "This system allowed different religious communities to govern their internal affairs."
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Which event directly led to the mobilization of the Turkish national movement?",
-      "options": [
-        "The Treaty of London",
-        "The abolition of the Ottoman Sultanate",
-        "The occupation of Constantinople and Smyrna",
-        "The rise of nationalism in Europe"
-      ],
-      "answer": "The occupation of Constantinople and Smyrna",
-      "explanation": "The occupation of these key cities sparked widespread resistance and fueled the Turkish national movement."
+      "question": "According to the provided text, what is one key characteristic of sound doctrine?",
+      "answer": "Builds persuasion and conviction",
+      "explanation": "The text explicitly states that sound doctrine builds persuasion and conviction."
     }
   ]
 }
