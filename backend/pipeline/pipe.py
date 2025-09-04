@@ -92,7 +92,7 @@ def process_article(url: str, num_questions) -> List:
     log_message(f"Generated Questions: {generated_questions}")
     return generated_questions, title
 
-async def process_yt(url: str, num_questions:str) -> List[str]:
+def process_yt(url: str, num_questions:str) -> List[str]:
     """
     Processes a YouTube video by transcribing it, chunking the transcription,
     and generating questions.
@@ -116,5 +116,5 @@ async def process_yt(url: str, num_questions:str) -> List[str]:
         log_message(f"An error occurred while chunking the transcription: {e}", "error")
         return "An error occurred",[] # Return empty list on chunking failure
     
-    generated_questions = await gem_pipe(chunks, num_questions)
+    generated_questions = gem_pipe(chunks, num_questions)
     return generated_questions

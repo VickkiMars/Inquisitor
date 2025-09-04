@@ -1,35 +1,35 @@
 {
-  "topic": "biblestudynotes-aug-15",
+  "topic": "MiniProject",
   "questions": [
     {
       "type": "short_answer",
-      "question": "According to the provided text, what is the key characteristic of 'sound doctrine' regarding its influence by external factors?",
-      "answer": "Sound doctrine is not environmentally or circumstantially influenced.",
-      "explanation": "The text explicitly states that sound doctrine remains unaffected by external factors."
+      "question": "What is the name of the student who completed the SIWES report?",
+      "answer": "Umoren Victor Martin",
+      "explanation": "This is explicitly stated in the provided text."
     },
     {
-      "type": "true_false",
-      "question": "The text suggests that sound doctrine can be quickly established without thorough biblical study.",
-      "answer": "false",
-      "explanation": "The text emphasizes that sound doctrine takes time and must be 'endured,' implying a process of thorough study and understanding."
+      "type": "long_answer",
+      "question": "Based on the provided snippets, describe the structure and content you would expect to find in a complete SIWES report for Umoren Victor Martin.  Justify your answer by referencing the given text.",
+      "answer": "The report would likely include an introduction, problem statement, description of the project idea, details on the tools used, an explanation of any limitations encountered, and a conclusion. This is inferred from the table of contents, which lists these sections.  The introduction would likely contain background information on the SIWES program and the student's experience at Kodehauz Solutions Planet, as indicated in the second snippet.",
+      "explanation": "The answer synthesizes information from multiple snippets to construct a plausible structure for the full report."
     },
     {
       "type": "use_case",
-      "question": "A new church leader is introducing a new teaching.  How can they ensure their teaching aligns with sound doctrine based on the provided text?",
-      "answer": "They should ensure their teaching aligns with scripture from Genesis to Malachi, demonstrating a thorough understanding of biblical principles and avoiding statements like 'we are not Old Testament people'.",
-      "explanation": "The text highlights the importance of grounding doctrine in the entirety of scripture and avoiding arbitrary distinctions between different parts of the Bible."
+      "question": "Imagine Umoren's SIWES supervisor at Kodehauz wants to assess the practical application of his skills.  Describe a scenario where the supervisor could evaluate Umoren's ability to solve a real-world problem using the skills learned during his internship.",
+      "answer": "The supervisor could present Umoren with a small-scale software development task that mirrors real-world challenges faced by Kodehauz, such as designing a simple database interface or debugging a short code segment.  This allows the supervisor to assess Umoren's problem-solving abilities, coding skills, and ability to apply theoretical knowledge to a practical situation.",
+      "explanation": "This outlines a realistic evaluation scenario that directly connects theoretical knowledge to practical application."
     },
     {
-      "type": "analysis",
-      "question": "Analyze the connection between sound doctrine, transformation of lives, and sound minds, as described in the provided text.",
-      "answer": "Sound doctrine leads to sound minds, which in turn results in the transformation of lives.  A sound mind is capable of rightly interpreting and applying scripture leading to personal growth and change.",
-      "explanation": "The text establishes a causal relationship: sound doctrine -> sound mind -> transformation of lives."
+      "type": "fill_in_the_blank",
+      "question": "Umoren Victor Martin's SIWES was undertaken at ______ Solutions Planet in ______, Akwa Ibom State.",
+      "answer": "Kodehauz, Eket",
+      "explanation": "This information is directly stated in the provided text."
     },
     {
       "type": "short_answer",
-      "question": "According to the provided text, what is one key characteristic of sound doctrine?",
-      "answer": "Builds persuasion and conviction",
-      "explanation": "The text explicitly states that sound doctrine builds persuasion and conviction."
+      "question": "According to the text, what are the two stages of understanding?",
+      "answer": "Knowledge Acquisition and Knowledge Reinforcement",
+      "explanation": "These two stages are explicitly stated as the simplified form of understanding."
     }
   ]
 }
